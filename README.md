@@ -52,7 +52,7 @@ Exploratory data analysis, bootstrapping resample, and hypothesis test to evalua
 
 <div align="center">
  
-![mariajosemv's GitHub stats](https://github-readme-stats.vercel.app/api?username=mariajosemv&unhide=contribs,prs&theme=buefy&show_icons=true) 
+![mariajosemv's GitHub stats](https://github-readme-stats.vercel.app/api?username=SantiiRepair&unhide=contribs,prs&theme=buefy&show_icons=true) 
 
 </div>
  

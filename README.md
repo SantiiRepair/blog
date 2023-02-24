@@ -1,8 +1,8 @@
-<h1 align="left">Hi, I'm Santiago ✨ </h3>
+<h1 align="left">What's up, I'm Santiago ⚡</h3>
 
 I'm a Physicist and currently I'm studying for a master's degree in Economics. 👩🏻‍🎓 I've worked as a freelancer with different people around the world creating Python ETL pipelines and creating specialized content about Data Science and Machine learning. Now, I'm working as a Data engineer. 👩🏻‍🔧
 
-In my free time I enjoy experimenting (*a.k.a. break stuff*) in Linux operative systems 🐧 and keep records of my learning on [Notion](https://mariajosemv.super.site).  ✨
+In my free time I enjoy experimenting (*a.k.a. break stuff*) in Linux operative systems 🐧 and keep records of my learning on Gitpod.  ✨
 
  🗨️ Ask me about whatever you want. I am interested in helping and sharing.
 

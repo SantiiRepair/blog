@@ -1,6 +1,8 @@
-<h1 align="left">What's up, I'm Santiago ⚡</h3>
+## Hello stalkers ⚡
 
-I'm a Physicist and currently I'm studying for a master's degree in Economics. 👩🏻‍🎓 I've worked as a freelancer with different people around the world creating Python ETL pipelines and creating specialized content about Data Science and Machine learning. Now, I'm working as a Data engineer. 👩🏻‍🔧
+I'm one more boy studying to be a master dev. 
+
+👩🏻‍🎓 I've worked as a freelancer with different people around the world creating Python ETL pipelines and creating specialized content about Data Science and Machine learning. Now, I'm working as a Data engineer. 👩🏻‍🔧
 
 In my free time I enjoy experimenting (*a.k.a. break stuff*) in Linux operative systems 🐧 and keep records of my learning on Gitpod.  ✨
 

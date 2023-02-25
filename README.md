@@ -39,9 +39,9 @@ A pancakeswap clone with additional features. Stake, Lottery, Casino, and upcomi
 
 Have you ever invested in a "super project" but got scammed? USDT transactions on the Tron network. Pretty simple but good enough for you to understand.
  
-- 👩🏻‍🔬 [40 Years of Evolution in Data](https://github.com/mariajosemv/40-Years-of-Evolution-in-Data) 
- 
-Exploratory data analysis, bootstrapping resample, and hypothesis test to evaluate the evolution of species. 
+- 🍔 [Burger Cash](https://github.com/SantiiRepair/Burger-Cash) 
+
+BNB miner on the Binance Smart Chain network. Excellent to understand how Smart Contracts written in solidity works. 
  
  <h2 align="left"> Find me around the web </h4>
 

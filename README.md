@@ -1,12 +1,10 @@
-## Hello stalkers ⚡
+## Hi stalkers ⚡
 
 I'm one more boy studying to be a master dev. 
 
-👩🏻‍🎓 I've worked as a freelancer with different people around the world creating Python ETL pipelines and creating specialized content about Data Science and Machine learning. Now, I'm working as a Data engineer. 👩🏻‍🔧
+In my free time I enjoy experimenting and I create platform clones that do not have free source code in order to further expand my knowledge and contribute to other people. I keep records of my learning on Gitpod. 🍄 
 
-In my free time I enjoy experimenting (*a.k.a. break stuff*) in Linux operative systems 🐧 and keep records of my learning on Gitpod.  ✨
-
- 🗨️ Ask me about whatever you want. I am interested in helping and sharing.
+Ask me about whatever you want. I am interested in helping and sharing.
 
  
 <div align="center">
@@ -31,7 +29,7 @@ In my free time I enjoy experimenting (*a.k.a. break stuff*) in Linux operative 
  
  <h2 align="left"> Some of my projects: </h4>
  
-- 📈 [Real Time Predictions](https://github.com/mariajosemv/Real-Time-Predictions)
+- 🍺 [Beer Swap](https://github.com/mariajosemv/Real-Time-Predictions)
  
 Train in real-time a neural network model for predict the price of house sales. After this, you can evaluate the model using the learning curves.
  

@@ -32,7 +32,7 @@ I am interested in helping and sharing.
 
 </div>
  
- <h2 align="left"> Some of my projects </h4>
+ <h2 align="left"> Some of my top projects </h4>
  
 - 🍺 [Beer Swap](https://github.com/SantiiRepair/beer-swap)
  

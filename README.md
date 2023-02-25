@@ -2,7 +2,7 @@
 
 I'm one more boy studying to be a master dev. 
 
-In my free time I enjoy experimenting and I create platform clones that do not have free source code in order to further expand my knowledge and contribute to other people. I keep records of my learning on Gitpod. 
+In my free time I enjoy experimenting and I create platform clones that do not have free source code in order to further expand my knowledge and contribute to other people. 
 
 Ask me about whatever you want. 
 

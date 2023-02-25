@@ -4,7 +4,9 @@ I'm one more boy studying to be a master dev.
 
 In my free time I enjoy experimenting and I create platform clones that do not have free source code in order to further expand my knowledge and contribute to other people. I keep records of my learning on Gitpod. 🍄 
 
-Ask me about whatever you want. I am interested in helping and sharing.
+Ask me about whatever you want. 
+
+I am interested in helping and sharing.
 
  
 <div align="center">
@@ -27,7 +29,7 @@ Ask me about whatever you want. I am interested in helping and sharing.
 
 </div>
  
- <h2 align="left"> Some of my projects: </h4>
+ <h2 align="left"> Some of my projects </h4>
  
 - 🍺 [Beer Swap](https://github.com/SantiiRepair/beer-swap)
  
@@ -41,14 +43,14 @@ Have you ever invested in a "super project" but got scammed? USDT transactions o
  
 Exploratory data analysis, bootstrapping resample, and hypothesis test to evaluate the evolution of species. 
  
- <h2 align="left"> Find me around the web: </h4>
+ <h2 align="left"> Find me around the web </h4>
 
- - Talking and sharing in [Twitter](https://twitter.com/mariajosemvv).
- - Writing in [my blog](https://mariajosemv.com/blog/).
- - And know a little more about my work in [Linkedin](https://www.linkedin.com/in/mariajosemv/).
+ - Talking and sharing in [Twitter](https://twitter.com/SantiiRepair).
+ - Watching memes on [Facebook](https://www.facebook.com/SantiiRepair).
+ - Having fun with friends in [Telegram](https://t.me/SantiiRepair).
  
 
-<h2 align="left"> Some of my stats are: </h4>
+<h2 align="left"> Some of my stats are </h4>
 
 <div align="center">
  

@@ -29,9 +29,9 @@ Ask me about whatever you want. I am interested in helping and sharing.
  
  <h2 align="left"> Some of my projects: </h4>
  
-- 🍺 [Beer Swap](https://github.com/mariajosemv/Real-Time-Predictions)
+- 🍺 [Beer Swap](https://github.com/SantiiRepair/beer-swap)
  
-Train in real-time a neural network model for predict the price of house sales. After this, you can evaluate the model using the learning curves.
+A pancakeswap clone with additional features. Stake, Lottery, Casino, and upcoming features. Open Source! feel free to use it.
  
 - 🧩 [ETL News Website](https://github.com/mariajosemv/ETL-for-news-websites) 
 

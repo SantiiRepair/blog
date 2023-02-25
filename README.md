@@ -53,7 +53,7 @@ BNB miner on the Binance Smart Chain network. Excellent to understand how Smart 
  - Having fun with friends in [Telegram](https://t.me/SantiiRepair).
  
 
-<h2 align="left"> Some of my stats are </h4>
+<h2 align="left"> Some of my stats </h4>
 
 <div align="center">
  

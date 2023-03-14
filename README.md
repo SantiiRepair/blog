@@ -53,11 +53,11 @@ BNB miner on the Binance Smart Chain network. Excellent to understand how Smart 
  - Having fun with friends in [Telegram](https://t.me/SantiiRepair).
  
 
-<h2 align="left"> Some of my stats </h4>
+<h2 align="left">My streaks</h4>
 
 <div align="center">
  
-![SantiiRepair GitHub stats](http://github-readme-streak-stats.herokuapp.com/?user=SantiiRepair&theme=calm&hide_border=true&locale=es&fire=00DD1B&background=0d1117&ring=00DD1B&sideNums=00DD1B) 
+![SantiiRepair GitHub stats](http://github-readme-streak-stats.herokuapp.com/?user=SantiiRepair&theme=calm&hide_border=true&locale=en&fire=00DD1B&background=0d1117&ring=00DD1B&sideNums=00DD1B) 
 
 </div>
  

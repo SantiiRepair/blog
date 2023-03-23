@@ -57,7 +57,7 @@ BNB miner on the Binance Smart Chain network. Excellent to understand how Smart 
 
 <div align="center">
  
-![SantiiRepair GitHub stats](https://github-readme-stats.vercel.app/api?username=SantiiRepair&show_icons=true&bg_color=00000000)
+![SantiiRepair GitHub stats](https://github-readme-stats.vercel.app/api?username=SantiiRepair&show_icons=true&bg_color=0d1117)
 </div>
  
  

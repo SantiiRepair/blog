@@ -11,7 +11,7 @@ body {
   font-style: normal;
   margin: 0;
   background-color: #1F2E34;
-  background-image: url(images/yas.gif);
+  background-image: url(/imges/yas.gif);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
@@ -79,7 +79,7 @@ aside {
   border-image-width: 20px 20px 20px 20px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
-  border-image-source: url("https://xxxmachinegirlxxx.neocities.org/border.png");
+  border-image-source: url("/images/border.png");
   border-style: solid;
   padding: 1%;
   margin-bottom: 3%;

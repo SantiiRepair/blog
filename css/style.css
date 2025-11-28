@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-:root {
-  --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
-  --body-bg-image: url('https://sadhost.neocities.org/images/tiles/purplesky.gif');
-  --content: #43256E;
-}
-
 body {
   font-family: "Press Start 2P", system-ui;
   font-style: normal;

@@ -16,7 +16,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             margin-top: 20px;
         }
 
@@ -24,8 +24,8 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
         .image-item {
@@ -38,19 +38,37 @@
             max-width: 100%;
             height: auto;
             display: block;
+            border: 2px solid #A1A1A1;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .image-item {
                 flex: 0 0 calc(50% - 10px);
                 max-width: calc(50% - 10px);
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .image-item {
-                flex: 0 0 100%;
-                max-width: 100%;
+                flex: 0 0 calc(50% - 8px);
+                max-width: calc(50% - 8px);
+            }
+
+            .image-gallery,
+            .image-row {
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .image-item {
+                flex: 0 0 calc(50% - 5px);
+                max-width: calc(50% - 5px);
+            }
+
+            .image-gallery,
+            .image-row {
+                gap: 5px;
             }
         }
     </style>

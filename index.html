@@ -56,23 +56,24 @@
         audio.play();
       });
 
-      var titletext = document.querySelector("title").text;
-      var repeat = true;
-      set = setTimeout;
-      var index = 0;
-      function scrolltitle() {
-        if (index <= titletext.length) {
-          document.title = titletext.substring(0, index);
-          index++;
-          set("scrolltitle()", 200);
-        } else {
-          index = 0;
-          if (repeat) set("scrolltitle()", 1000);
+      document.addEventListener('DOMContentLoaded', function () {
+        var titleText = document.querySelector("title").text;
+        var repeat = true;
+        var index = 0;
+
+        function scrollTitle() {
+          if (index <= titleText.length) {
+            document.title = titleText.substring(0, index);
+            index++;
+            setTimeout(scrollTitle, 200);
+          } else {
+            index = 0;
+            if (repeat) setTimeout(scrollTitle, 1000);
+          }
         }
-      }
-      window.onload = function () {
-        if (!document.layers) set("scrolltitle()", 1000);
-      };
+
+        scrollTitle();
+      });
     </script>
     <script defer src="https://cloud.umami.is/script.js"
       data-website-id="ce625abf-956a-4572-9c80-f5e651eb789d"></script>

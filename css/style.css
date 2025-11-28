@@ -162,3 +162,8 @@ a:hover {
   margin-top: 20px;
   font-size: 0.3em;
 }
+
+audio {
+  visibility: hidden;
+  position: absolute;
+}

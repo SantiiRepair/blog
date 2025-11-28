@@ -7,9 +7,10 @@
 </head>
 
 <body>
-  <title>About Me</title>
+  <title>get the fuck out</title>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
   <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 
   <div id="container">
@@ -21,8 +22,8 @@
     <div id="flex">
       <aside id="leftSidebar" style="margin-right: 2.5%; font-size: 170%">
         <br />
-        <a href="aboutme.html">About Me</a><br /><a href="favorites.html">Favorites</a><br /><a
-          href="whathappened.html">Home</a><br /><a href="misc.html">Misc</a><br /><a href="diary.html">Diary</a>
+        <a href="/">About Me</a><br /><a href="favorites.html">Favorites</a><br /><a
+          href="whathappened.html">Home</a><br /><a href="misc.html">Misc</a>
       </aside>
       <main>
         <div class="text-container">
@@ -36,7 +37,7 @@
               bad coding practices. If I don't make it, please know that I'm grateful you stumbled your way to my
               digital corner.
             </p>
-            
+
             <p class="ps-note">
               p.s hmu if you like talking about road trips and craft beers ;p
             </p>
@@ -49,8 +50,13 @@
       </aside>
     </div>
 
-    <script lang="js">
-      var titletext = "get the fuck out";
+    <script type="application/javascript">
+      document.addEventListener('click', function () {
+        const audio = document.querySelector('audio');
+        audio.play();
+      });
+
+      var titletext = document.querySelector("title").text;
       var repeat = true;
       set = setTimeout;
       var index = 0;
@@ -68,9 +74,12 @@
         if (!document.layers) set("scrolltitle()", 1000);
       };
     </script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="ce625abf-956a-4572-9c80-f5e651eb789d"></script>
-    
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/xxVA9m73dmU?autoplay=1&loop=1" title="get the fuck out." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <script defer src="https://cloud.umami.is/script.js"
+      data-website-id="ce625abf-956a-4572-9c80-f5e651eb789d"></script>
+
+    <audio autoplay>
+      <source src="audio/get_the_fuck_out.mp3" type="audio/mpeg">
+    </audio>
   </div>
 </body>
 

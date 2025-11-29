@@ -15,7 +15,7 @@
               setTimeout(scrollTitle, 200);
             } else {
               index = 0;
-              if (repet) setTimeout(scrollTitle, 1000);
+              if (repeat) setTimeout(scrollTitle, 1000);
             }
           }
 

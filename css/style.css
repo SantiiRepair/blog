@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url('https://fonts.cdnfonts.com/css/w95fa');
 
 body {
-  font-family: "Press Start 2P", system-ui;
+  font-family: "W95FA", system-ui;
   font-style: normal;
   margin: 0;
   background-color: #1f2e34;
@@ -58,7 +58,7 @@ body {
 }
 
 .navbar li a {
-  color: #ed64f5;
+  color: #f5c764;
   font-weight: 800;
   text-decoration: none;
 }
@@ -131,22 +131,17 @@ a:link {
   color: black;
   background-color: transparent;
   text-decoration: none;
-  font-size: small;
 }
 
 a:hover {
-  color: blue;
+  color: rgb(255, 200, 0);
   background-color: transparent;
   text-decoration: underline;
 }
 
 .ps-note {
   margin-top: 20px;
-  font-size: 0.3em;
-}
-
-.text-container p {
-  font-size: small;
+  font-size: large;
 }
 
 audio {
@@ -213,15 +208,11 @@ audio {
   }
 
   .text-container p {
-    font-size: 0.5em;
+    font-size: larger;
   }
 
   .ps-note {
     font-size: 0.4em;
-  }
-
-  .sidebar-left {
-    font-size: 120%;
   }
 }
 

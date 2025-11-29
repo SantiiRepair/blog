@@ -13,62 +13,73 @@
 
     <style>
         .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
         }
 
         .image-row {
             display: flex;
-            justify-content: center;
-            width: 100%;
-            gap: 15px;
-            margin-bottom: 15px;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            gap: 10px;
         }
 
         .image-item {
-            flex: 0 0 calc(33.33% - 10px);
-            max-width: calc(33.33% - 10px);
-            text-align: center;
+            width: 32%; 
         }
 
         .image-item img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            display: block;
             border: 2px solid #A1A1A1;
+            display: block;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .image-item {
-                flex: 0 0 calc(50% - 10px);
-                max-width: calc(50% - 10px);
+                width: 48% !important; 
             }
-        }
-
-        @media (max-width: 600px) {
-            .image-item {
-                flex: 0 0 calc(50% - 8px);
-                max-width: calc(50% - 8px);
-            }
-
-            .image-gallery,
+            
             .image-row {
                 gap: 8px;
             }
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 480px) {
             .image-item {
-                flex: 0 0 calc(50% - 5px);
-                max-width: calc(50% - 5px);
+                width: 48% !important;
             }
-
-            .image-gallery,
+            
             .image-row {
-                gap: 5px;
+                gap: 6px;
+            }
+            
+            .image-gallery {
+                padding: 5px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .sidebar, .main-content {
+                width: 100% !important;
+                margin: 10px 0 !important;
+            }
+            
+            .main-content {
+                order: 1;
+                overflow: hidden !important;
+            }
+            
+            .sidebar-left {
+                order: 2;
+            }
+            
+            .sidebar-right {
+                order: 3;
             }
         }
     </style>
@@ -77,17 +88,17 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/welcum.png" style="width: 27%" />
+            <img src="images/welcum.png" style="width: 27%; max-width: 100%;" />
         </div>
-        <div class="header-area"></div>
 
         <div class="flex-container">
-            <aside class="sidebar sidebar-left" style="font-size: 170%">
+            <aside class="sidebar sidebar-left">
                 <br />
                 <a href="/">About Me</a><br />
                 <a href="favorites.html">Favorites</a><br />
                 <a href="trips.html">Trips</a>
             </aside>
+            
             <main class="main-content">
                 <div class="text-container">
                     <div style="text-align:center;">
@@ -116,11 +127,11 @@
                                     <img src="images/mito.jpg" alt="Mito">
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </main>
+            
             <aside class="sidebar sidebar-right">
                 <iframe src="https://www3.cbox.ws/box/?boxid=3550520&boxtag=1VI7sn" width="100%" height="100%"
                     allowtransparency="yes" allowm="autoplay" frameborder="0" scrolling="auto"></iframe>

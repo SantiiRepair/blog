@@ -29,7 +29,6 @@
               <br /><br />
               <img src="images/moto.png" alt="Motorcycle" style="width: 40%" />
               <br />
-
               <p>
                 Little things, simple things... going anywhere just to burn some
                 gas, listening to nostalgic music from old bands, watching
@@ -54,6 +53,27 @@
                     <img src="images/tobby3.jpg" alt="funny face" />
                   </div>
                 </div>
+              </div>
+
+              <p>movies</p>
+              <div class="video-container">
+                <p class="ps-note">
+                  i don't know what it was, but I was totally hooked on every
+                  movie.
+                </p>
+                <video
+                  src="videos/harry_hermione_dance_to_forget_their_worries.mp4"
+                  title="Harry &amp; Hermione Dance to Forget Their Worries | Harry Potter and the Deathly Hallows Pt. 1"
+                  frameborder="0"
+                  autoplay
+                  muted
+                  loop
+                  style="pointer-events: none"
+                  controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
+                  disablePictureInPicture
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></video>
               </div>
 
               <p>series</p>
@@ -167,17 +187,14 @@
 
           container.addEventListener("touchstart", () => {
             video.muted = false;
-            isMuted = false;
           });
 
           container.addEventListener("touchend", () => {
             video.muted = true;
-            isMuted = true;
           });
 
           container.addEventListener("click", (e) => {
             e.preventDefault();
-            isMuted = !isMuted;
             video.muted = isMuted;
           });
         });

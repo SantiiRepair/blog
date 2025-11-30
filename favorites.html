@@ -2,24 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>dawgggggggggggggggg</title>
+    <title>i eat losers for breakfast</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="shortcut icon" href="images/favicon-5ico.png" type="image/x-icon">
-    <style>
-      .git-receipt {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .git-receipt iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-    </style>
+    <link rel="shortcut icon" href="images/favicon-5ico.png" type="image/x-icon" />
   </head>
 
   <body>
@@ -52,6 +39,9 @@
               </p>
 
               <p>pets</p>
+              <p class="ps-note">
+                this is Tobby, as you can see he likes to sleep, who doesn't?
+              </p>
               <div class="image-gallery">
                 <div class="image-row">
                   <div class="image-item">
@@ -65,9 +55,62 @@
                   </div>
                 </div>
               </div>
-              <p class="ps-note">
-                this is Tobby, as you can see he likes to sleep, who doesn't?
-              </p>
+
+              <p>series</p>
+              <div class="video-container">
+                <p class="ps-note">
+                  how did I get here? Too many memes everywhere, I had to see
+                  it.
+                </p>
+                <video
+                  src="videos/yeahhh_come_on_baby.mp4"
+                  title="Jesse Pinkman and Walter White Yeahhh come on baby scene - Breaking Bad"
+                  frameborder="0"
+                  autoplay
+                  muted
+                  loop
+                  style="pointer-events: none"
+                  controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
+                  disablePictureInPicture
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></video>
+              </div>
+              <div class="video-container">
+                <p class="ps-note">recommended by a maracucho digital nomad.</p>
+                <video
+                  src="videos/every_that_s_what_she_said_ever.mp4"
+                  title="Every That&#39;s What She Said Ever  - The Office US"
+                  frameborder="0"
+                  autoplay
+                  muted
+                  loop
+                  style="pointer-events: none"
+                  controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
+                  disablePictureInPicture
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></video>
+              </div>
+              <div class="video-container">
+                <p class="ps-note">
+                  traded shows with a special girl: I watched hers, she's
+                  watching Breaking Bad. I loved it.
+                </p>
+                <video
+                  src="videos/will_the_sorcerer_awakens.mp4"
+                  title="Vecna Returns,Eleven&#39;s in Danger, Will the Sorcerer Awakens and Destroys Demogorgon #strangerthings"
+                  frameborder="0"
+                  autoplay
+                  muted
+                  loop
+                  style="pointer-events: none"
+                  controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
+                  disablePictureInPicture
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></video>
+              </div>
 
               <p>music</p>
               <div class="spotify-container">
@@ -79,14 +122,13 @@
                     width="100%"
                     height="352"
                     frameborder="0"
-                    allowfullscreen=""
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   ></iframe>
                 </div>
               </div>
-              <p>coding</p>
 
+              <p>coding</p>
               <div class="git-receipt">
                 <iframe
                   src="https://santiirepair.tail012146.ts.net/SantiiRepair"
@@ -111,6 +153,35 @@
       </div>
 
       <script type="application/javascript" src="js/main.js"></script>
+      <script type="application/javascript">
+        document.querySelectorAll(".video-container").forEach((container) => {
+          const video = container.querySelector("video");
+
+          container.addEventListener("mouseenter", () => {
+            video.muted = false;
+          });
+
+          container.addEventListener("mouseleave", () => {
+            video.muted = true;
+          });
+
+          container.addEventListener("touchstart", () => {
+            video.muted = false;
+            isMuted = false;
+          });
+
+          container.addEventListener("touchend", () => {
+            video.muted = true;
+            isMuted = true;
+          });
+
+          container.addEventListener("click", (e) => {
+            e.preventDefault();
+            isMuted = !isMuted;
+            video.muted = isMuted;
+          });
+        });
+      </script>
     </div>
   </body>
 </html>

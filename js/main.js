@@ -1,8 +1,3 @@
-document.addEventListener("click", function () {
-  const audio = document.querySelector("audio");
-  audio.play();
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   var titleText = document.querySelector("title").text;
   var repeat = true;

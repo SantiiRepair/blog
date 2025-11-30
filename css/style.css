@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/w95fa');
+@import url("https://fonts.cdnfonts.com/css/w95fa");
 
 body {
   font-family: "W95FA", system-ui;
@@ -261,6 +261,32 @@ audio {
   .image-gallery {
     padding: 5px;
   }
+}
+
+.git-receipt {
+  height: 80vh;
+  overflow: hidden;
+}
+
+.git-receipt iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-container {
+  display: inline-block;
+  cursor: default;
+  max-width: 100%;
+  width: 100%;
+}
+
+.video-container video {
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  max-width: 1210px;
+  max-height: 681px;
 }
 
 body *::-webkit-scrollbar {

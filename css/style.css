@@ -1,14 +1,21 @@
-@import url("https://fonts.cdnfonts.com/css/w95fa");
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-family: "W95FA";
+  src: local("W95FA"),
+    url("https://fonts.cdnfonts.com/s/45697/W95FA.woff") format("woff");
+}
 
 body {
   font-family: "W95FA", system-ui;
   font-style: normal;
-  margin: 0;
   background-color: #1f2e34;
   background-image: url(/images/yas.gif);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
+  margin: 0;
 }
 
 * {

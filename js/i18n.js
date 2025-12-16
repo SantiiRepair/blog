@@ -25,7 +25,32 @@ i18next.init({
         'azulita_alt': 'Azulita',
         'alambique_alt': 'Alambique tavern',
         'cata_alt': 'Cata',
-        'welcum_alt': 'Welcome'
+        'welcum_alt': 'Welcome',
+        'favorites_description': 'My favorites section, if you\'re curious about it, there you go.',
+        'favorites_title': 'i eat losers for breakfast',
+        'moto_alt': 'Motorcycle',
+        'intro_text': 'Little things, simple things... going anywhere just to burn some gas, listening to nostalgic music from old bands, watching fantasy movies or series, having a Nescafe in the early morning, watching a sunrise, drinking and laughing until your chest hurts... just enjoying anything in this chaotic world.',
+        'pets_title': 'pets',
+        'tobby_note': 'this is Tobby, as you can see he likes to sleep, who doesn\'t?',
+        'tobby1_alt': 'Tobby making a funny face',
+        'tobby2_alt': 'Sleepy Tobby',
+        'tobby3_alt': 'Tobby with funny expression',
+        'movies_title': 'movies',
+        'harry_note': 'i don\'t know what it was, but I was totally hooked on every movie.',
+        'harry_title': 'Harry & Hermione Dance to Forget Their Worries | Harry Potter and the Deathly Hallows Pt. 1',
+        'joe_note': 'i\'m not really into romantic movies, but...',
+        'joe_title': 'Meet Joe Black (1998) Coffee Shop Scene Part 2 | HD',
+        'wolf_note': 'every fucking time.',
+        'wolf_title': 'Wolf of Wall Street - motivational speech',
+        'series_title': 'series',
+        'breaking_note': 'how did I get here? Too many memes everywhere, I had to see it.',
+        'breaking_title': 'Jesse Pinkman and Walter White Yeahhh come on baby scene - Breaking Bad',
+        'office_note': 'recommended by a maracucho digital nomad.',
+        'office_title': 'Every That\'s What She Said Ever - The Office US',
+        'stranger_note': 'traded shows with a special girl: I watched hers, she\'s watching Breaking Bad. I loved it.',
+        'stranger_title': 'Max\'s Song (Full Scene) | Kate Bush - Running Up That Hill | Stranger Things | Netflix',
+        'music_title': 'music',
+        'spotify_title': 'My Favorites Playlist'
       }
     },
     es: {
@@ -51,7 +76,32 @@ i18next.init({
         'azulita_alt': 'Azulita',
         'alambique_alt': 'Tasca Alambique',
         'cata_alt': 'Cata',
-        'welcum_alt': 'Welcome'
+        'welcum_alt': 'Welcome',
+        'favorites_description': 'Mi sección de favoritos, si te da curiosidad, ahí lo tienes.',
+        'favorites_title': 'me como a los perdedores en el desayuno',
+        'moto_alt': 'Motocicleta',
+        'intro_text': 'Pequeñas cosas, cosas simples... ir a cualquier lado solo para quemar gasolina, escuchar música nostálgica de bandas viejas, ver películas o series de fantasía, tomar un Nescafé en la madrugada, ver un amanecer, beber y reír hasta que te duela el pecho... solo disfrutar cualquier cosa en este mundo caótico.',
+        'pets_title': 'mascotas',
+        'tobby_note': 'este es Tobby, como puedes ver le gusta dormir, ¿a quién no?',
+        'tobby1_alt': 'Tobby haciendo una cara graciosa',
+        'tobby2_alt': 'Tobby dormilón',
+        'tobby3_alt': 'Tobby con expresión divertida',
+        'movies_title': 'películas',
+        'harry_note': 'no sé qué fue, pero me enganché totalmente con cada película.',
+        'harry_title': 'Harry y Hermione bailan para olvidar sus preocupaciones | Harry Potter y las Reliquias de la Muerte Parte 1',
+        'joe_note': 'no me gustan mucho las películas románticas, pero...',
+        'joe_title': 'Meet Joe Black (1998) Escena de la cafetería Parte 2 | HD',
+        'wolf_note': 'todas las malditas veces.',
+        'wolf_title': 'El Lobo de Wall Street - discurso motivacional',
+        'series_title': 'series',
+        'breaking_note': '¿cómo llegué aquí? Demasiados memes por todos lados, tuve que verla.',
+        'breaking_title': 'Jesse Pinkman y Walter White escena Yeahhh come on baby - Breaking Bad',
+        'office_note': 'recomendada por un nómada digital maracucho.',
+        'office_title': 'Cada "Eso es lo que ella dijo" de siempre - The Office US',
+        'stranger_note': 'intercambié series con una chica especial: yo vi las suyas, ella está viendo Breaking Bad. Me encantó.',
+        'stranger_title': 'La canción favorita de Max (Escena completa) | Kate Bush - Running Up That Hill | Stranger Things | Netflix',
+        'music_title': 'música',
+        'spotify_title': 'Mi Lista de Favoritos'
       }
     },
     de: {
@@ -77,7 +127,32 @@ i18next.init({
         'azulita_alt': 'Azulita',
         'alambique_alt': 'Alambique Taverne',
         'cata_alt': 'Cata',
-        'welcum_alt': 'Welcome'
+        'welcum_alt': 'Welcome',
+        'favorites_description': 'Meine Favoriten-Sektion, wenn du neugierig bist, hier ist sie.',
+        'favorites_title': 'ich frühstücke Verlierer',
+        'moto_alt': 'Motorrad',
+        'intro_text': 'Kleine Dinge, einfache Dinge... irgendwohin fahren, nur um Benzin zu verbrennen, nostalgische Musik von alten Bands hören, Fantasy-Filme oder Serien schauen, frühmorgens einen Nescafe trinken, einen Sonnenaufgang beobachten, trinken und lachen bis die Brust schmerzt... einfach alles genießen in dieser chaotischen Welt.',
+        'pets_title': 'haustiere',
+        'tobby_note': 'das ist Tobby, wie du sehen kannst, schläft er gerne, wer tut das nicht?',
+        'tobby1_alt': 'Tobby macht ein lustiges Gesicht',
+        'tobby2_alt': 'Schläfriger Tobby',
+        'tobby3_alt': 'Tobby mit lustigem Ausdruck',
+        'movies_title': 'filme',
+        'harry_note': 'ich weiß nicht was es war, aber ich war bei jedem Film total gefesselt.',
+        'harry_title': 'Harry & Hermione tanzen um Sorgen zu vergessen | Harry Potter und die Heiligtümer des Todes Teil 1',
+        'joe_note': 'ich stehe nicht wirklich auf Liebesfilme, aber...',
+        'joe_title': 'Meet Joe Black (1998) Cafeteria-Szene Teil 2 | HD',
+        'wolf_note': 'jedes verdammte Mal.',
+        'wolf_title': 'Wolf of Wall Street - motivierende Rede',
+        'series_title': 'serien',
+        'breaking_note': 'wie bin ich hierher gekommen? Zu viele Memes überall, ich musste es sehen.',
+        'breaking_title': 'Jesse Pinkman und Walter White Yeahhh come on baby Szene - Breaking Bad',
+        'office_note': 'empfohlen von einem maracucho digitalen Nomaden.',
+        'office_title': 'Jedes "Das ist was sie sagte" jemals - The Office US',
+        'stranger_note': 'Serien mit einem besonderen Mädchen getauscht: ich habe ihre gesehen, sie schaut Breaking Bad. Ich habe es geliebt.',
+        'stranger_title': 'Max\'s Lieblingssong (Vollständige Szene) | Kate Bush - Running Up That Hill | Stranger Things | Netflix',
+        'music_title': 'musik',
+        'spotify_title': 'Meine Favoriten Playlist'
       }
     },
     ru: {
@@ -103,7 +178,32 @@ i18next.init({
         'azulita_alt': 'Азулита',
         'alambique_alt': 'Таверна Аламбике',
         'cata_alt': 'Ката',
-        'welcum_alt': 'Welcome'
+        'welcum_alt': 'Welcome',
+        'favorites_description': 'Мой раздел с избранным, если тебе интересно, вот он.',
+        'favorites_title': 'я ем неудачников на завтрак',
+        'moto_alt': 'Мотоцикл',
+        'intro_text': 'Маленькие вещи, простые вещи... ехать куда угодно просто чтобы сжечь бензин, слушать ностальгическую музыку старых групп, смотреть фэнтези фильмы или сериалы, пить Nescafe ранним утром, наблюдать восход солнца, пить и смеяться пока не заболит грудь... просто наслаждаться чем угодно в этом хаотичном мире.',
+        'pets_title': 'питомцы',
+        'tobby_note': 'это Тоби, как видишь, он любит спать, а кто нет?',
+        'tobby1_alt': 'Тоби строит смешную рожицу',
+        'tobby2_alt': 'Сонный Тоби',
+        'tobby3_alt': 'Тоби со смешным выражением',
+        'movies_title': 'фильмы',
+        'harry_note': 'не знаю что это было, но я был полностью поглощен каждым фильмом.',
+        'harry_title': 'Гарри и Гермиона танцуют чтобы забыть о проблемах | Гарри Поттер и Дары Смерти Часть 1',
+        'joe_note': 'я не особо люблю романтические фильмы, но...',
+        'joe_title': 'Знакомьтесь, Джо Блэк (1998) Сцена в кофейне Часть 2 | HD',
+        'wolf_note': 'каждый чертов раз.',
+        'wolf_title': 'Волк с Уолл-стрит - мотивационная речь',
+        'series_title': 'сериалы',
+        'breaking_note': 'как я здесь оказался? Слишком много мемов везде, пришлось посмотреть.',
+        'breaking_title': 'Джесси Пинкман и Уолтер Уайт сцена Yeahhh come on baby - Во все тяжкие',
+        'office_note': 'рекомендовано маракучским цифровым кочевником.',
+        'office_title': 'Каждое "Это то что она сказала" когда-либо - Офис US',
+        'stranger_note': 'обменялся сериалами с особенной девушкой: я посмотрел её, она смотрит Во все тяжкие. Мне понравилось.',
+        'stranger_title': 'Любимая песня Макс (Полная сцена) | Кейт Буш - Running Up That Hill | Очень странные дела | Netflix',
+        'music_title': 'музыка',
+        'spotify_title': 'Мой Плейлист Избранного'
       }
     }
   }
@@ -125,6 +225,11 @@ function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     element.textContent = i18next.t(key);
+  });
+
+  document.querySelectorAll('video[data-i18n^="[title]"]').forEach(video => {
+    const key = video.getAttribute('data-i18n').replace('[title]', '');
+    video.setAttribute('title', i18next.t(key));
   });
 
   const metaDescription = document.querySelector('meta[name="description"]');

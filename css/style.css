@@ -156,6 +156,10 @@ audio {
   position: absolute;
 }
 
+  .text-container p {
+    font-size: smaller;
+  }
+
 @media only screen and (max-width: 1000px) {
   .flex-container {
     flex-direction: column;
@@ -194,7 +198,7 @@ audio {
   }
 
   .text-container p {
-    font-size: 0.6em;
+    font-size: x-large;
     line-height: 1.5;
   }
 

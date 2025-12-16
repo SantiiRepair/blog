@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(script);
   })();
 
+  const i18nextScript = document.createElement("script");
+  i18nextScript.src = "https://cdn.jsdelivr.net/npm/i18next/dist/umd/i18next.min.js";
+  
+  const i18nScript = document.createElement("script");
+  i18nScript.src = "js/i18n.js";
+  
+  i18nextScript.onload = function() {
+    document.head.appendChild(i18nScript);
+  };
+  
+  document.head.appendChild(i18nextScript);
+
   var text = document.title;
   var index = 0;
 

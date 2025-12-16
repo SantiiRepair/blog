@@ -62,7 +62,7 @@ i18next.init({
         'favorites': 'Favoritos',
         'trips': 'Viajes',
         'about_image_alt': 'yo',
-        'about_text': "Soy el freaky gocho con moto. No me vas a encontrar en casa. Cada día estoy en un lugar nuevo, persiguiendo curvas, sintiendo el viento. Cuando cae el sol soy un zombie: codeo en la oscuridad, me pierdo en películas y series que me encuentran más que yo a ellas, y sigo así hasta que el cansancio me noquea. Así que si estás por ahí y el aburrimiento empieza a asomarse… manda una señal. Yo ya estoy mirando al horizonte; la veré. ¿Qué te parece? ¿Quieres beber algo? ¿O prefieres dar una vuelta a donde sea? Quizá solo tomar café mientras el mundo duerme. Estoy aquí. Estoy aquí fuera. Así que dime… ¿qué buscas? ¿qué haces aquí?",
+        'about_text': "El freaky gocho con moto. No me vas a encontrar en casa. Cada día estoy en un lugar nuevo, persiguiendo curvas, sintiendo el viento. Cuando cae el sol soy un zombie: codeo en la oscuridad, me pierdo en películas y series que me encuentran más que yo a ellas, y sigo así hasta que el cansancio me noquea. Así que si estás por ahí y el aburrimiento empieza a asomarse… manda una señal. Yo ya estoy mirando al horizonte; la veré. ¿Qué te parece? ¿Quieres beber algo? ¿O prefieres dar una vuelta a donde sea? Quizá solo tomar café mientras el mundo duerme. Estoy aquí. Estoy aquí fuera. Así que dime… ¿qué buscas? ¿qué haces aquí?",
         'ps_note': "pd. hablame si te gusta hablar de rutas y tragos ;p",
         'chat_title': 'Cbox es una aplicación web de chat en tiempo real integrada',
         'memory_quote': 'The best you ever had is just a memory',

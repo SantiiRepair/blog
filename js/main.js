@@ -9,29 +9,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const i18nextScript = document.createElement("script");
   i18nextScript.src = "https://cdn.jsdelivr.net/npm/i18next/dist/umd/i18next.min.js";
-  
-  const i18nScript = document.createElement("script");
-  i18nScript.src = "js/i18n.js";
-  
-  i18nextScript.onload = function() {
+
+  i18nextScript.onload = function () {
+    const i18nScript = document.createElement("script");
+    i18nScript.src = "js/i18n.js";
+    i18nScript.onload = function () {
+      startTitleAnimation();
+    };
+
     document.head.appendChild(i18nScript);
   };
-  
+
   document.head.appendChild(i18nextScript);
 
-  var text = document.title;
-  var index = 0;
+  function startTitleAnimation() {
+    var text = document.title;
+    var index = 0;
 
-  function transform() {
-    if (index <= text.length) {
-      document.title = text.substring(0, index);
-      index++;
-      setTimeout(transform, 200);
-    } else {
-      index = 0;
-      setTimeout(transform, 1000);
+    function transform() {
+      if (index <= text.length) {
+        document.title = text.substring(0, index);
+        index++;
+        setTimeout(transform, 200);
+      } else {
+        index = 0;
+        setTimeout(transform, 1000);
+      }
     }
-  }
 
-  transform();
+    transform();
+  }
 });

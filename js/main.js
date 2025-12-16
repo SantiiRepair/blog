@@ -14,10 +14,44 @@ document.addEventListener("DOMContentLoaded", function () {
     const i18nScript = document.createElement("script");
     i18nScript.src = "js/i18n.js";
     i18nScript.onload = function () {
-      startTitleAnimation();
+      const flexContainer = document.querySelector('.flex-container');
+      if (!flexContainer) {
+        return;
+      }
+
+      let cboxContainer = document.querySelector('.sidebar-right');
+
+      if (!cboxContainer) {
+        cboxContainer = document.createElement('aside');
+        cboxContainer.className = 'sidebar sidebar-right';
+        cboxContainer.id = 'cbox-container';
+
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent && mainContent.nextSibling) {
+          flexContainer.insertBefore(cboxContainer, mainContent.nextSibling);
+        } else {
+          flexContainer.appendChild(cboxContainer);
+        }
+      }
+
+      const iframe = document.createElement('iframe');
+      iframe.title = i18next && i18next.t ? i18next.t('chat_title') : 'Chat';
+      iframe.src = 'https://www3.cbox.ws/box/?boxid=3550520&boxtag=1VI7sn';
+      iframe.width = '100%';
+      iframe.height = '100%';
+      iframe.allowtransparency = 'yes';
+      iframe.allow = 'autoplay';
+      iframe.frameBorder = '0';
+      iframe.scrolling = 'auto';
+      iframe.style.border = 'none';
+      iframe.style.minHeight = '400px';
+
+      cboxContainer.innerHTML = '';
+      cboxContainer.appendChild(iframe);
     };
 
     document.head.appendChild(i18nScript);
+    startTitleAnimation();
   };
 
   document.head.appendChild(i18nextScript);

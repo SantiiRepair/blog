@@ -113,6 +113,14 @@ i18next.init({
   document.documentElement.lang = i18next.language;
 });
 
+function detectLanguage() {
+  const browserLang = navigator.language || navigator.userLanguage;
+  const langCode = browserLang.split('-')[0];
+  const supportedLangs = ['en', 'es', 'de', 'ru'];
+
+  return supportedLangs.includes(langCode) ? langCode : 'en';
+}
+
 function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');

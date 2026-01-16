@@ -41,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
       iframe.height = '100%';
       iframe.allowtransparency = 'yes';
       iframe.allow = 'autoplay';
-      iframe.frameBorder = '0';
-      iframe.scrolling = 'auto';
       iframe.style.border = 'none';
       iframe.style.minHeight = '400px';
 

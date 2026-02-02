@@ -49,7 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     document.head.appendChild(i18nScript);
-    startTitleAnimation();
+    if (!location.pathname === "/") {
+      startTitleAnimation();
+    }
   };
 
   document.head.appendChild(i18nextScript);

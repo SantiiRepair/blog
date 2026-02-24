@@ -4,7 +4,7 @@ i18next.init({
   resources: {
     en: {
       translation: {
-        'title': 'get the fuck out',
+        'title': 'burn the ships',
         'description': 'Digital obsession, open-source philosophy, motorcycle road trips and alternative music. Personal space with zero fucks given.',
         'og_description': 'Digital obsession, motorcycle road trips and alternative music',
         'about_title': 'About Me',
@@ -56,7 +56,7 @@ i18next.init({
     },
     es: {
       translation: {
-        'title': 'get the fuck out',
+        'title': 'burn the ships',
         'description': 'Obsesión digital, filosofía open-source, viajes en motocicleta y música alternativa. Espacio personal, si no te gusta, vete.',
         'og_description': 'Obsesión digital, viajes en motocicleta y música alternativa',
         'about_title': 'Sobre mí',
@@ -108,7 +108,7 @@ i18next.init({
     },
     de: {
       translation: {
-        'title': 'get the fuck out',
+        'title': 'burn the ships',
         'description': 'Digitale Obsession, Open-Source-Philosophie, Motorradreisen und alternative Musik. Persönlicher Raum, auf den geschissen wird.',
         'og_description': 'Digitale Obsession, Motorradreisen und alternative Musik',
         'about_title': 'Über mich',
@@ -160,7 +160,7 @@ i18next.init({
     },
     ru: {
       translation: {
-        'title': 'get the fuck out',
+        'title': 'burn the ships',
         'description': 'Цифровая одержимость, философия открытого исходного кода, мотоциклетные путешествия и альтернативная музыка. Личное пространство, на которое всем плевать.',
         'og_description': 'Цифровая одержимость, мотоциклетные путешествия и альтернативная музыка',
         'about_title': 'Обо мне',

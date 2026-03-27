@@ -11,7 +11,7 @@ body {
   font-family: "W95FA", system-ui;
   font-style: normal;
   background-color: #1f2e34;
-  background-image: url(/images/yas.gif);
+  background-image: url("../images/yas.gif");
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
@@ -88,7 +88,7 @@ body {
   border-image-width: 20px 20px 20px 20px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
-  border-image-source: url("/images/border.png");
+  border-image-source: url("../images/border.png");
   border-style: solid;
   padding: 1%;
   margin-bottom: 3%;

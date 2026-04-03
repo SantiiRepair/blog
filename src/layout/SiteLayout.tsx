@@ -11,7 +11,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <div className="container">
       <div className="header">
-        <img src={welcumImg} alt={t("welcum_alt")} style={{ width: "27%", maxWidth: "100%" }} />
+        <img src={welcumImg} alt={t("welcum_alt")} className="header-logo" />
       </div>
 
       <div className="flex-container">
@@ -32,12 +32,13 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
 
         <aside className="sidebar sidebar-right" id="cbox-container">
           <iframe
+            className="chat-iframe"
             title={t("chat_title")}
             src="https://www3.cbox.ws/box/?boxid=3550520&boxtag=1VI7sn"
             width="100%"
             height="100%"
             allow="autoplay"
-            style={{ border: "none", minHeight: "400px" }}
+            style={{ border: "none" }}
           />
         </aside>
       </div>

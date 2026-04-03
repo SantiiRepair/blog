@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import useAnimatedTitle from "./hooks/useAnimatedTitle";
 import SiteLayout from "./layout/SiteLayout";
@@ -6,6 +6,12 @@ import AboutPage from "./pages/AboutPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import TripsPage from "./pages/TripsPage";
 import { t } from "./lib/i18n";
+
+type UmamiWindow = Window & {
+  umami?: {
+    track: () => void;
+  };
+};
 
 export default function App() {
   const location = useLocation();
@@ -23,6 +29,14 @@ export default function App() {
   }, [location.pathname]);
 
   useAnimatedTitle(location.pathname, title);
+
+  useEffect(() => {
+    const umamiWindow = window as UmamiWindow;
+
+    if (typeof umamiWindow.umami?.track === "function") {
+      umamiWindow.umami.track();
+    }
+  }, [location.pathname]);
 
   return (
     <SiteLayout>

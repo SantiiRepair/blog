@@ -45,12 +45,11 @@ jobs:
             --exclude=.github \
             --exclude='.[^/]*' \
             .
-          gzip -9 "$RUNNER_TEMP/artifact.tar"
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
           name: github-pages
-          path: ${{ runner.temp }}/artifact.tar.gz
+          path: ${{ runner.temp }}/artifact.tar
           retention-days: 1
           if-no-files-found: error
 

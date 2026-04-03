@@ -18,8 +18,17 @@ const resources: TranslationResources = {
       trips: "Travels",
       contact: "Contact",
       about_image_alt: "me",
+      about_intro_kicker: "home base",
+      about_intro_title: "Ghost rider, night coder",
+      about_intro_lead:
+        "Roads by day, keyboard glow by night. This is my corner of the internet.",
+      about_tag_road: "road trips",
+      about_tag_code: "coding nights",
+      about_tag_coffee: "late coffee",
       about_text:
         "I'm that guy — the ghost with a motorcycle. You won't find me home. Every day I'm rolling somewhere new, chasing curves or quiet corners. When the sun dips, I turn into something else: a creature of the screen glow, coding in the dark, getting lost in random movies and series that find me more than I find them. So if you're out there and boredom's creeping in… send up a smoke signal. I'm already looking at the horizon; I'll see it. What do you say? Feel like a drink with a phantom rider? Or just join me on the road for a while, no destination needed. Maybe we just talk over coffee while the world sleeps. I'm here. I'm out here. So tell me… what do you want?",
+      about_text_short:
+        "I live between asphalt and screen glow: road trips by day, code, movies, music, and coffee by night.",
       ps_note: "p.s hmu if you like talking about road trips and drinks ;p",
       chat_title: "Cbox is an embedded real-time chat web app",
       memory_quote: "The best you ever had is just a memory",
@@ -76,8 +85,17 @@ const resources: TranslationResources = {
       trips: "Viajes",
       contact: "Contacto",
       about_image_alt: "yo",
+      about_intro_kicker: "base",
+      about_intro_title: "Rider fantasma, coder nocturno",
+      about_intro_lead:
+        "Carretera de dia, pantalla de noche. Este es mi rincon en internet.",
+      about_tag_road: "rutas",
+      about_tag_code: "noches de codigo",
+      about_tag_coffee: "cafe tarde",
       about_text:
         "El freaky gocho con moto. No me vas a encontrar en casa. Cada día estoy en un lugar nuevo, persiguiendo curvas, sintiendo el viento. Cuando cae el sol soy un zombie: codeo en la oscuridad, me pierdo en películas y series que me encuentran más que yo a ellas, y sigo así hasta que el cansancio me noquea. Así que si estás por ahí y el aburrimiento empieza a asomarse… manda una señal. Yo ya estoy mirando al horizonte; la veré. ¿Qué te parece? ¿Quieres beber algo? ¿O prefieres dar una vuelta a donde sea? Quizá solo tomar café mientras el mundo duerme. Estoy aquí. Estoy aquí fuera. Así que dime… ¿qué buscas? ¿qué haces aquí?",
+      about_text_short:
+        "Vivo entre asfalto y pantalla: de día ruta, de noche código, pelis, música y café.",
       ps_note: "pd. hablame si te gusta hablar de rutas y tragos ;p",
       chat_title: "Cbox es una aplicación web de chat en tiempo real integrada",
       memory_quote: "The best you ever had is just a memory",
@@ -134,8 +152,17 @@ const resources: TranslationResources = {
       trips: "Reisen",
       contact: "Kontakt",
       about_image_alt: "ich",
+      about_intro_kicker: "home base",
+      about_intro_title: "Geisterfahrer, Nachtcoder",
+      about_intro_lead:
+        "Tagsuber auf der Strasse, nachts im Bildschirmlicht. Das ist mein Platz im Netz.",
+      about_tag_road: "roadtrips",
+      about_tag_code: "coding-nachte",
+      about_tag_coffee: "spater kaffee",
       about_text:
         "Ich bin dieser Typ — das Gespenst mit Motorrad. Du wirst mich nicht zu Hause finden. Jeden Tag rolle ich woanders hin, jage Kurven oder stille Ecken. Wenn die Sonne untergeht, verwandle ich mich in etwas anderes: ein Geschöpf des Bildschirmscheins, programmiere im Dunkeln, verliere mich in zufälligen Filmen und Serien, die mich eher finden als ich sie. Also wenn du da draußen bist und die Langeweile schleicht sich ein… schick ein Rauchzeichen. Ich schaue schon auf den Horizont; ich werde es sehen. Was sagst du? Lust auf einen Drink mit einem Phantomfahrer? Oder begleite mich einfach eine Weile auf der Straße, ohne Ziel. Vielleicht reden wir nur bei Kaffee, während die Welt schläft. Ich bin hier. Ich bin hier draußen. Also sag mir… was willst du?",
+      about_text_short:
+        "Ich lebe zwischen Asphalt und Bildschirmlicht: tags auf der Strasse, nachts Code, Filme, Musik und Kaffee.",
       ps_note: "ps. melde dich, wenn du über Roadtrips und Drinks reden magst ;p",
       chat_title: "Cbox ist eine eingebettete Echtzeit-Chat-Web-App",
       memory_quote: "The best you ever had is just a memory",
@@ -193,8 +220,17 @@ const resources: TranslationResources = {
       trips: "Поездки",
       contact: "Контакт",
       about_image_alt: "я",
+      about_intro_kicker: "home base",
+      about_intro_title: "Призрачный райдер, ночной кодер",
+      about_intro_lead:
+        "Днем дорога, ночью свет экрана. Это мой уголок в интернете.",
+      about_tag_road: "поездки",
+      about_tag_code: "ночной код",
+      about_tag_coffee: "поздний кофе",
       about_text:
         "Я тот самый парень — призрак с мотоциклом. Ты не найдешь меня дома. Каждый день я качу куда-то новое, гоняюсь за поворотами или тихими уголками. Когда садится солнце, я превращаюсь во что-то другое: существо из свечения экрана, программирую в темноте, теряюсь в случайных фильмах и сериалах, которые находят меня чаще, чем я их. Так что если ты там снаружи и скука подкрадывается… подавай дымовой сигнал. Я уже смотрю на горизонт; я увижу его. Что скажешь? Хочешь выпить с призрачным наездником? Или просто присоединись ко мне на дороге на время, без необходимости в пункте назначения. Может, просто поболтаем за кофе, пока мир спит. Я здесь. Я здесь, снаружи. Так что скажи мне… чего ты хочешь?",
+      about_text_short:
+        "Я живу между асфальтом и светом экрана: днем дорога, ночью код, фильмы, музыка и кофе.",
       ps_note: "п.с. напиши, если любишь говорить о поездках на мотоцикле и выпивке ;p",
       chat_title: "Cbox — это встроенное веб-приложение для чата в реальном времени",
       memory_quote: "The best you ever had is just a memory",

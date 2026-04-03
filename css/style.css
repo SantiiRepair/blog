@@ -151,6 +151,55 @@ a:hover {
   font-size: large;
 }
 
+.about-intro {
+  width: 100%;
+}
+
+.about-kicker {
+  margin: 0;
+  color: #a49cba;
+  font-size: 0.55em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-avatar {
+  width: 30%;
+  max-width: 280px;
+  border: 2px solid #a1a1a1;
+  margin-top: 8px;
+}
+
+.about-title {
+  margin: 10px 0 6px;
+  color: #f5c764;
+  font-size: 0.9em;
+  line-height: 1.2;
+}
+
+.about-lead {
+  margin: 0 auto;
+  max-width: 720px;
+  color: #dfdfdf;
+  font-size: 0.6em;
+}
+
+.about-tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.about-tags span {
+  color: #f5c764;
+  background-color: #13092d;
+  border: 2px outset #a49cba;
+  font-size: 0.5em;
+  padding: 4px 8px;
+}
+
 audio {
   visibility: hidden;
   position: absolute;
@@ -202,6 +251,17 @@ audio {
     line-height: 1.5;
   }
 
+  .about-kicker,
+  .about-title,
+  .about-lead,
+  .about-tags span {
+    font-size: 0.9em;
+  }
+
+  .about-avatar {
+    width: 45%;
+  }
+
   .ps-note {
     font-size: 0.5em;
   }
@@ -220,6 +280,19 @@ audio {
 
   .text-container p {
     font-size: larger;
+  }
+
+  .about-avatar {
+    width: 62%;
+  }
+
+  .about-tags {
+    gap: 6px;
+  }
+
+  .about-tags span {
+    width: 100%;
+    max-width: 280px;
   }
 
   .ps-note {

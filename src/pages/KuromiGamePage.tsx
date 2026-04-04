@@ -16,8 +16,8 @@ const SPAWN_MS = 900;
 const VISIBLE_MS = 560;
 const WINK_MS = 140;
 const BEST_TIME_STORAGE_KEY = "kuromiBestTimeSeconds";
-const HIT_SOUND_URL = "/audio/hit.mp3";
-const MISS_SOUND_URL = "/audio/huh.mp3";
+const HIT_SOUND_URL = "../../audio/hit.mp3";
+const MISS_SOUND_URL = "../../audio/huh.mp3";
 const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
 
 type GameStatus = "playing" | "won" | "lost";

@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import kuromiIdle from "../../images/sprites/idle.png";
-import kuromiWalk from "../../images/sprites/walk.png";
-import kuromiAttack from "../../images/sprites/attack.png";
-import kuromiCelebrate from "../../images/sprites/jump2.png";
-import kuromiWink from "../../images/sprites/wink.png";
+import kuromiIdle from "../../images/sprites/idle.webp";
+import kuromiWalk from "../../images/sprites/walk.webp";
+import kuromiAttack from "../../images/sprites/attack.webp";
+import kuromiCelebrate from "../../images/sprites/jump2.webp";
+import kuromiWink from "../../images/sprites/wink.webp";
+import kuromiWink2 from "../../images/sprites/wink2.webp";
 import "../../css/kuromi-game.css";
 import { t } from "../lib/i18n";
 
@@ -41,6 +42,7 @@ export default function KuromiGamePage() {
   const [status, setStatus] = useState<GameStatus>("playing");
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(START_TIME);
+  const [hasStarted, setHasStarted] = useState(false);
   const [kuromiIndex, setKuromiIndex] = useState<number | null>(null);
   const [winkIndex, setWinkIndex] = useState<number | null>(null);
   const [cursorIndex, setCursorIndex] = useState(4);
@@ -67,6 +69,8 @@ export default function KuromiGamePage() {
     () => Math.min(100, Math.floor((score / TARGET_SCORE) * 100)),
     [score]
   );
+  const isPreStart = status === "playing" && !hasStarted;
+  const characterSrc = isPreStart ? kuromiWink2 : KUROMI_ANIM_SOURCES[anim];
 
   useEffect(() => {
     document.body.classList.add("kuromi-game-body");
@@ -214,6 +218,7 @@ export default function KuromiGamePage() {
     }
 
     const timer = window.setInterval(() => {
+      setHasStarted(true);
       const nextIndex = randomInt(BOARD_SLOTS);
       setKuromiIndex(nextIndex);
       setWinkIndex(null);
@@ -348,6 +353,7 @@ export default function KuromiGamePage() {
     setStatus("playing");
     setScore(0);
     setTimeLeft(START_TIME);
+    setHasStarted(false);
     setKuromiIndex(null);
     setWinkIndex(null);
     setCursorIndex(4);
@@ -375,7 +381,7 @@ export default function KuromiGamePage() {
       <div className="kuromi-hero" aria-hidden="true">
         <img
           className="kuromi-character"
-          src={KUROMI_ANIM_SOURCES[anim]}
+          src={characterSrc}
           alt={t("kuromi_alt")}
           data-anim={anim}
         />
@@ -409,7 +415,7 @@ export default function KuromiGamePage() {
               {isVisible && (
                 <img
                   className="kuromi-pop-sprite"
-                  src={isWink ? kuromiWink : kuromiWalk}
+                  src={isWink ? kuromiWink : kuromiAttack}
                   alt={t("kuromi_target_alt")}
                   draggable={false}
                 />

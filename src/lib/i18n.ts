@@ -100,7 +100,7 @@ const resources: TranslationResources = {
       kuromi_play_again: "Play again",
       kuromi_surprise_kicker: "Secret surprise unlocked",
       kuromi_surprise_title: "HAPPY BIRTHDAY VALE!!!",
-      kuromi_surprise_text: "You did it. This easter egg was made just for you.",
+      kuromi_surprise_text: "You did it. This easter egg was made just for you. 🙃",
       kuromi_close: "Close"
     }
   },
@@ -197,7 +197,7 @@ const resources: TranslationResources = {
       kuromi_play_again: "Jugar de nuevo",
       kuromi_surprise_kicker: "Sorpresa secreta desbloqueada",
       kuromi_surprise_title: "FELIZ CUMPLEANOS VALE!!!",
-      kuromi_surprise_text: "Lo lograste. Este easter egg era solo para ti.",
+      kuromi_surprise_text: "Lo lograste. Este easter egg era solo para ti. 🙃",
       kuromi_close: "Cerrar"
     }
   },
@@ -295,7 +295,7 @@ const resources: TranslationResources = {
       kuromi_play_again: "Nochmal spielen",
       kuromi_surprise_kicker: "Geheime Ueberraschung freigeschaltet",
       kuromi_surprise_title: "ALLES GUTE ZUM GEBURTSTAG VALE!!!",
-      kuromi_surprise_text: "Geschafft. Dieses Easter Egg war nur fuer dich.",
+      kuromi_surprise_text: "Geschafft. Dieses Easter Egg war nur fuer dich. 🙃",
       kuromi_close: "Schliessen"
     }
   },
@@ -393,7 +393,7 @@ const resources: TranslationResources = {
       kuromi_play_again: "Играть снова",
       kuromi_surprise_kicker: "Секретный сюрприз открыт",
       kuromi_surprise_title: "С ДНЕМ РОЖДЕНИЯ, ВАЛЕ!!!",
-      kuromi_surprise_text: "Ты справился. Эта пасхалка была только для тебя.",
+      kuromi_surprise_text: "Ты справился. Эта пасхалка была только для тебя. 🙃",
       kuromi_close: "Закрыть"
     }
   }

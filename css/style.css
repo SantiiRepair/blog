@@ -469,3 +469,397 @@ body *::-webkit-scrollbar-button:single-button:horizontal:increment {
 body *::-webkit-scrollbar-corner {
   background: silver;
 }
+
+.kuromi-screen {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+  color: #dfdfdf;
+  border: 3px outset #a1a1a1;
+  background: linear-gradient(180deg, rgba(19, 9, 45, 0.92), rgba(31, 46, 52, 0.95));
+}
+
+.kuromi-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+.kuromi-screen.kuromi-flash-hit {
+  box-shadow: 0 0 0 2px rgba(68, 218, 167, 0.45) inset;
+}
+
+.kuromi-screen.kuromi-flash-miss {
+  box-shadow: 0 0 0 2px rgba(255, 131, 150, 0.45) inset;
+}
+
+.kuromi-topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.kuromi-arcade-badge {
+  border: 2px solid #f5c764;
+  color: #f5c764;
+  padding: 3px 7px;
+  font-size: 0.56em;
+  letter-spacing: 0.8px;
+}
+
+.kuromi-sound-toggle {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #ffd7ec;
+  padding: 4px 8px;
+  min-height: 34px;
+  font-family: inherit;
+  font-size: 0.62em;
+}
+
+.kuromi-title {
+  margin: 0;
+  color: #f5c764;
+  font-size: clamp(1.1rem, 2.3vw, 1.8rem);
+}
+
+.kuromi-easter-kicker {
+  margin: 0 0 6px;
+  color: #f5c764;
+  font-size: 0.7em;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.kuromi-easter-note {
+  margin: 5px 0 10px;
+  color: #ffd7ec;
+  font-size: 0.72em;
+}
+
+.kuromi-subtitle {
+  margin: 8px 0 14px;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+}
+
+.kuromi-hud {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  font-size: 0.85em;
+}
+
+.kuromi-hero {
+  width: clamp(120px, 31vw, 170px);
+  margin: 4px auto 12px;
+}
+
+.kuromi-character {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 2px rgba(245, 199, 100, 0.45));
+  animation: kuromi-bob 1s ease-in-out infinite;
+}
+
+.kuromi-character[data-anim="attack"] {
+  animation: kuromi-hit 0.26s steps(2, end) 1;
+}
+
+.kuromi-character[data-anim="jump"] {
+  animation: kuromi-jump 0.26s ease-out 1;
+}
+
+.kuromi-character[data-anim="celebrate"] {
+  animation: kuromi-celebrate 0.7s ease-in-out infinite;
+}
+
+.kuromi-progress {
+  height: 10px;
+  margin: 0 auto 12px;
+  width: min(100%, 440px);
+  border: 2px inset #a1a1a1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.kuromi-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d83469, #f5c764);
+  transition: width 0.2s linear;
+}
+
+.kuromi-pop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 480px);
+  margin: 0 auto;
+}
+
+.kuromi-pop-slot {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 2px outset #a49cba;
+  background: linear-gradient(180deg, #2a3141, #1b2130);
+  padding: 0;
+  min-height: 84px;
+}
+
+.kuromi-pop-slot.is-cursor {
+  border-color: #f5c764;
+  box-shadow: 0 0 0 2px rgba(245, 199, 100, 0.28) inset;
+}
+
+.kuromi-pop-hole {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64%;
+  height: 28%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(245, 199, 100, 0.35);
+}
+
+.kuromi-pop-sprite {
+  position: absolute;
+  left: 50%;
+  bottom: 28%;
+  width: 60%;
+  transform: translateX(-50%);
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+  animation: kuromi-pop-up 0.14s ease-out 1;
+  pointer-events: none;
+}
+
+.kuromi-pop-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54%);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.kuromi-pop-gift {
+  color: #f5c764;
+}
+
+.kuromi-pop-bomb {
+  color: #ff8396;
+}
+
+.kuromi-pop-kuromi {
+  color: #d1d5ff;
+  font-size: clamp(1rem, 2.6vw, 1.4rem);
+}
+
+@keyframes kuromi-pop-up {
+  0% {
+    transform: translateX(-50%) translateY(12px) scale(0.94);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kuromi-bob {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes kuromi-hit {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(2px) scale(1.03);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes kuromi-jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes kuromi-celebrate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-4deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.kuromi-overlay {
+  margin-top: 12px;
+  border: 2px inset #a1a1a1;
+  padding: 12px;
+  background-color: rgba(19, 9, 45, 0.95);
+}
+
+.kuromi-overlay h2 {
+  margin: 0 0 6px;
+  color: #f5c764;
+}
+
+.kuromi-overlay p {
+  margin: 0 0 12px;
+  font-size: 0.7em;
+}
+
+.kuromi-overlay button {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #f5c764;
+  padding: 6px 10px;
+  font-family: inherit;
+}
+
+.kuromi-surprise-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(8, 4, 18, 0.76);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 14px;
+}
+
+.kuromi-surprise-popup {
+  width: min(100%, 520px);
+  border: 3px outset #f5c764;
+  background: linear-gradient(180deg, #210d3c, #1a1230);
+  padding: 16px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  animation: kuromi-popup-in 0.24s ease-out 1;
+}
+
+.kuromi-surprise-kicker {
+  margin: 0;
+  font-size: 0.62em;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffd7ec;
+}
+
+.kuromi-surprise-popup h2 {
+  margin: 7px 0 8px;
+  color: #f5c764;
+  font-size: clamp(1.1rem, 3.1vw, 1.6rem);
+}
+
+.kuromi-surprise-popup p {
+  margin: 0;
+  font-size: 0.72em;
+}
+
+.kuromi-surprise-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.kuromi-surprise-actions button {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #f5c764;
+  padding: 7px 11px;
+  min-height: 40px;
+  font-family: inherit;
+}
+
+@keyframes kuromi-popup-in {
+  from {
+    transform: translateY(10px) scale(0.97);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.kuromi-mobile-controls {
+  margin-top: 10px;
+  display: grid;
+  justify-content: center;
+  gap: 6px;
+}
+
+.kuromi-mobile-controls div {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.kuromi-mobile-controls button {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #f5c764;
+  padding: 8px 12px;
+  min-width: 96px;
+  min-height: 44px;
+  font-family: inherit;
+}
+
+@media (max-width: 800px) {
+  .kuromi-pop-grid {
+    gap: 8px;
+    width: min(100%, 410px);
+  }
+
+  .kuromi-pop-slot {
+    min-height: 76px;
+  }
+}

@@ -1,0 +1,448 @@
+body.kuromi-game-body {
+  background-image: url("https://i.pinimg.com/originals/6f/89/1f/6f891f21e00f2e313734a15f547268e2.jpg");
+}
+
+.kuromi-screen {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+  color: #dfdfdf;
+  border: 3px outset #a1a1a1;
+  background: linear-gradient(180deg, rgba(19, 9, 45, 0.92), rgba(31, 46, 52, 0.95));
+}
+
+.kuromi-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+.kuromi-screen.kuromi-flash-hit {
+  box-shadow: 0 0 0 2px rgba(68, 218, 167, 0.45) inset;
+}
+
+.kuromi-screen.kuromi-flash-miss {
+  box-shadow: 0 0 0 2px rgba(255, 131, 150, 0.45) inset;
+}
+
+.kuromi-topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.kuromi-arcade-badge {
+  border: 2px solid #f3adc7;
+  color: #f3adc7;
+  padding: 3px 7px;
+  font-size: 0.56em;
+  letter-spacing: 0.8px;
+}
+
+.kuromi-sound-toggle {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #ffd7ec;
+  padding: 4px 8px;
+  min-height: 34px;
+  font-family: inherit;
+  font-size: 0.62em;
+}
+
+.kuromi-title {
+  margin: 0;
+  color: #f3adc7;
+  font-size: clamp(1.1rem, 2.3vw, 1.8rem);
+}
+
+.kuromi-easter-kicker {
+  margin: 0 0 6px;
+  color: #f3adc7;
+  font-size: 0.7em;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.kuromi-easter-note {
+  margin: 5px 0 10px;
+  color: #ffd7ec;
+  font-size: 0.72em;
+}
+
+.kuromi-subtitle {
+  margin: 8px 0 14px;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+}
+
+.kuromi-hud {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  font-size: 0.85em;
+}
+
+.kuromi-hero {
+  width: clamp(120px, 31vw, 170px);
+  margin: 4px auto 12px;
+}
+
+.kuromi-character {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 2px rgba(243, 173, 199, 0.45));
+  animation: kuromi-bob 1s ease-in-out infinite;
+}
+
+.kuromi-character[data-anim="attack"] {
+  animation: kuromi-hit 0.26s steps(2, end) 1;
+}
+
+.kuromi-character[data-anim="jump"] {
+  animation: kuromi-jump 0.26s ease-out 1;
+}
+
+.kuromi-character[data-anim="celebrate"] {
+  animation: kuromi-celebrate 0.7s ease-in-out infinite;
+}
+
+.kuromi-progress {
+  position: relative;
+  height: 16px;
+  margin: 2px auto 14px;
+  width: min(100%, 440px);
+  border: 2px outset #b8a4c9;
+  background: linear-gradient(180deg, rgba(20, 10, 34, 0.95), rgba(12, 7, 24, 0.95));
+  box-shadow: 0 0 0 1px rgba(243, 173, 199, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.kuromi-progress::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(243, 173, 199, 0.08) 0,
+    rgba(243, 173, 199, 0.08) 6px,
+    rgba(255, 255, 255, 0.03) 6px,
+    rgba(255, 255, 255, 0.03) 12px
+  );
+}
+
+.kuromi-progress-fill {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(90deg, #c12d8f 0%, #e76cb9 52%, #f3adc7 100%);
+  box-shadow: 0 0 12px rgba(243, 173, 199, 0.45);
+  transition: width 0.2s linear, filter 0.2s ease;
+  animation: kuromi-progress-pulse 1.1s ease-in-out infinite;
+}
+
+.kuromi-progress-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 35%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: kuromi-progress-shine 1.8s linear infinite;
+}
+
+.kuromi-pop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 480px);
+  margin: 0 auto;
+}
+
+.kuromi-pop-slot {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 2px outset #a49cba;
+  background: linear-gradient(180deg, #2a3141, #1b2130);
+  padding: 0;
+  min-height: 84px;
+}
+
+.kuromi-pop-slot.is-cursor {
+  border-color: #f3adc7;
+  box-shadow: 0 0 0 2px rgba(243, 173, 199, 0.28) inset;
+}
+
+.kuromi-pop-hole {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64%;
+  height: 28%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(243, 173, 199, 0.35);
+}
+
+.kuromi-pop-sprite {
+  position: absolute;
+  left: 50%;
+  bottom: 28%;
+  width: 60%;
+  transform: translateX(-50%);
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+  animation: kuromi-pop-up 0.14s ease-out 1;
+  pointer-events: none;
+}
+
+.kuromi-pop-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54%);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.kuromi-pop-gift {
+  color: #f3adc7;
+}
+
+.kuromi-pop-bomb {
+  color: #ff8396;
+}
+
+.kuromi-pop-kuromi {
+  color: #d1d5ff;
+  font-size: clamp(1rem, 2.6vw, 1.4rem);
+}
+
+@keyframes kuromi-pop-up {
+  0% {
+    transform: translateX(-50%) translateY(12px) scale(0.94);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kuromi-bob {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes kuromi-hit {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(2px) scale(1.03);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes kuromi-jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes kuromi-celebrate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-4deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.kuromi-overlay {
+  margin-top: 12px;
+  border: 2px inset #a1a1a1;
+  padding: 12px;
+  background-color: rgba(19, 9, 45, 0.95);
+}
+
+.kuromi-overlay h2 {
+  margin: 0 0 6px;
+  color: #f3adc7;
+}
+
+.kuromi-overlay p {
+  margin: 0 0 12px;
+  font-size: 0.7em;
+}
+
+.kuromi-overlay button {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #f3adc7;
+  padding: 6px 10px;
+  font-family: inherit;
+}
+
+.kuromi-surprise-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(8, 4, 18, 0.76);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 14px;
+}
+
+.kuromi-surprise-popup {
+  width: min(100%, 520px);
+  border: 3px outset #f3adc7;
+  background: linear-gradient(180deg, #210d3c, #1a1230);
+  padding: 16px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  animation: kuromi-popup-in 0.24s ease-out 1;
+}
+
+.kuromi-surprise-kicker {
+  margin: 0;
+  font-size: 0.62em;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffd7ec;
+}
+
+.kuromi-surprise-popup h2 {
+  margin: 7px 0 8px;
+  color: #f3adc7;
+  font-size: clamp(1.1rem, 3.1vw, 1.6rem);
+}
+
+.kuromi-surprise-popup p {
+  margin: 0;
+  font-size: 0.72em;
+}
+
+.kuromi-surprise-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.kuromi-surprise-actions button {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #f3adc7;
+  padding: 7px 11px;
+  min-height: 40px;
+  font-family: inherit;
+}
+
+@keyframes kuromi-popup-in {
+  from {
+    transform: translateY(10px) scale(0.97);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kuromi-progress-shine {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes kuromi-progress-pulse {
+  0%,
+  100% {
+    filter: saturate(1);
+  }
+
+  50% {
+    filter: saturate(1.16) brightness(1.04);
+  }
+}
+
+.kuromi-mobile-controls {
+  margin-top: 10px;
+  display: grid;
+  justify-content: center;
+  gap: 6px;
+}
+
+.kuromi-mobile-controls div {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.kuromi-mobile-controls button {
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #f3adc7;
+  padding: 8px 12px;
+  min-width: 96px;
+  min-height: 44px;
+  font-family: inherit;
+}
+
+@media (max-width: 800px) {
+  .kuromi-pop-grid {
+    gap: 8px;
+    width: min(100%, 410px);
+  }
+
+  .kuromi-pop-slot {
+    min-height: 76px;
+  }
+}

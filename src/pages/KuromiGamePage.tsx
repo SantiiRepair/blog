@@ -4,6 +4,7 @@ import kuromiWalk from "../../images/sprites/walk.png";
 import kuromiAttack from "../../images/sprites/attack.png";
 import kuromiCelebrate from "../../images/sprites/jump2.png";
 import kuromiWink from "../../images/sprites/wink.png";
+import "../../css/kuromi-game.css";
 import { t } from "../lib/i18n";
 
 const BOARD_SLOTS = 9;
@@ -59,6 +60,14 @@ export default function KuromiGamePage() {
     () => Math.min(100, Math.floor((score / TARGET_SCORE) * 100)),
     [score]
   );
+
+  useEffect(() => {
+    document.body.classList.add("kuromi-game-body");
+
+    return () => {
+      document.body.classList.remove("kuromi-game-body");
+    };
+  }, []);
 
   const stopCurrentTimers = useCallback(() => {
     if (hideTimerRef.current !== null) {

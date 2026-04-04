@@ -5,6 +5,8 @@ import kuromiAttack from "../../images/sprites/attack.webp";
 import kuromiCelebrate from "../../images/sprites/jump2.webp";
 import kuromiWink from "../../images/sprites/wink.webp";
 import kuromiWink2 from "../../images/sprites/wink2.webp";
+import hitSoundUrl from "../../audio/hit.mp3";
+import missSoundUrl from "../../audio/huh.mp3";
 import "../../css/kuromi-game.css";
 import { t } from "../lib/i18n";
 
@@ -16,8 +18,6 @@ const SPAWN_MS = 900;
 const VISIBLE_MS = 560;
 const WINK_MS = 140;
 const BEST_TIME_STORAGE_KEY = "kuromiBestTimeSeconds";
-const HIT_SOUND_URL = "../../audio/hit.mp3";
-const MISS_SOUND_URL = "../../audio/huh.mp3";
 const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
 
 type GameStatus = "playing" | "won" | "lost";
@@ -323,11 +323,11 @@ export default function KuromiGamePage() {
   }, [cursorIndex, hitSlot, moveCursor]);
 
   useEffect(() => {
-    hitAudioRef.current = new Audio(HIT_SOUND_URL);
+    hitAudioRef.current = new Audio(hitSoundUrl);
     hitAudioRef.current.volume = 0.35;
     hitAudioRef.current.preload = "auto";
 
-    missAudioRef.current = new Audio(MISS_SOUND_URL);
+    missAudioRef.current = new Audio(missSoundUrl);
     missAudioRef.current.volume = 0.3;
     missAudioRef.current.preload = "auto";
 

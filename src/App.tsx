@@ -9,15 +9,24 @@ import TripsPage from "./pages/TripsPage";
 import { t } from "./lib/i18n";
 
 const SECRET_PATH = "/valen-game";
-const INITIAL_HASH_PATH = (() => {
-  const initialHash = window.location.hash.replace(/^#/, "");
+const normalizePath = (path: string): string => {
+  const pathWithoutQuery = path.split("?")[0];
+  const pathWithoutHash = pathWithoutQuery.split("#")[0];
 
-  if (!initialHash) {
+  if (!pathWithoutHash) {
     return "/";
   }
 
-  return initialHash.startsWith("/") ? initialHash : `/${initialHash}`;
-})();
+  const withLeadingSlash = pathWithoutHash.startsWith("/")
+    ? pathWithoutHash
+    : `/${pathWithoutHash}`;
+
+  if (withLeadingSlash === "/") {
+    return withLeadingSlash;
+  }
+
+  return withLeadingSlash.replace(/\/+$/, "");
+};
 
 type UmamiWindow = Window & {
   umami?: {
@@ -27,26 +36,25 @@ type UmamiWindow = Window & {
 
 export default function App() {
   const location = useLocation();
-  const isSecretRoute = location.pathname === SECRET_PATH;
-  const allowSecretRoute = INITIAL_HASH_PATH === SECRET_PATH;
+  const currentPath = normalizePath(location.pathname);
 
   const title = useMemo(() => {
-    if (location.pathname === SECRET_PATH) {
+    if (currentPath === SECRET_PATH) {
       return t("kuromi_page_title");
     }
 
-    if (location.pathname === "/favorites") {
+    if (currentPath === "/favorites") {
       return t("favorites_title");
     }
 
-    if (location.pathname === "/trips") {
+    if (currentPath === "/trips") {
       return "we are infinite";
     }
 
     return t("title");
-  }, [location.pathname]);
+  }, [currentPath]);
 
-  useAnimatedTitle(location.pathname, title);
+  useAnimatedTitle(currentPath, title);
 
   useEffect(() => {
     const umamiWindow = window as UmamiWindow;
@@ -54,24 +62,36 @@ export default function App() {
     if (typeof umamiWindow.umami?.track === "function") {
       umamiWindow.umami.track();
     }
-  }, [location.pathname]);
-
-  if (isSecretRoute) {
-    if (!allowSecretRoute) {
-      return <Navigate to="/" replace />;
-    }
-
-    return <KuromiGamePage />;
-  }
+  }, [currentPath]);
 
   return (
-    <SiteLayout>
-      <Routes>
-        <Route path="/" element={<AboutPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/trips" element={<TripsPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </SiteLayout>
+    <Routes>
+      <Route path="/valen-game" element={<KuromiGamePage />} />
+      <Route
+        path="/"
+        element={
+          <SiteLayout>
+            <AboutPage />
+          </SiteLayout>
+        }
+      />
+      <Route
+        path="/favorites"
+        element={
+          <SiteLayout>
+            <FavoritesPage />
+          </SiteLayout>
+        }
+      />
+      <Route
+        path="/trips"
+        element={
+          <SiteLayout>
+            <TripsPage />
+          </SiteLayout>
+        }
+      />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }

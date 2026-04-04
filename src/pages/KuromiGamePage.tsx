@@ -3,6 +3,7 @@ import kuromiIdle from "../../images/sprites/idle.png";
 import kuromiWalk from "../../images/sprites/walk.png";
 import kuromiAttack from "../../images/sprites/attack.png";
 import kuromiCelebrate from "../../images/sprites/jump2.png";
+import kuromiWink from "../../images/sprites/wink.png";
 import { t } from "../lib/i18n";
 
 const BOARD_SLOTS = 9;
@@ -11,6 +12,7 @@ const TARGET_SCORE = 10;
 const START_TIME = 28;
 const SPAWN_MS = 900;
 const VISIBLE_MS = 560;
+const WINK_MS = 140;
 const HIT_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2043/2043-preview.mp3";
 const MISS_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3";
 const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
@@ -38,6 +40,7 @@ export default function KuromiGamePage() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(START_TIME);
   const [kuromiIndex, setKuromiIndex] = useState<number | null>(null);
+  const [winkIndex, setWinkIndex] = useState<number | null>(null);
   const [cursorIndex, setCursorIndex] = useState(4);
   const [anim, setAnim] = useState<KuromiAnim>("idle");
   const [isMuted, setIsMuted] = useState(false);
@@ -45,6 +48,7 @@ export default function KuromiGamePage() {
   const [showSurprisePopup, setShowSurprisePopup] = useState(false);
 
   const hideTimerRef = useRef<number | null>(null);
+  const winkTimerRef = useRef<number | null>(null);
   const animTimerRef = useRef<number | null>(null);
   const hitAudioRef = useRef<HTMLAudioElement | null>(null);
   const missAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -60,6 +64,11 @@ export default function KuromiGamePage() {
     if (hideTimerRef.current !== null) {
       window.clearTimeout(hideTimerRef.current);
       hideTimerRef.current = null;
+    }
+
+    if (winkTimerRef.current !== null) {
+      window.clearTimeout(winkTimerRef.current);
+      winkTimerRef.current = null;
     }
 
     if (animTimerRef.current !== null) {
@@ -135,6 +144,16 @@ export default function KuromiGamePage() {
 
       setScore((current) => current + 1);
       setKuromiIndex(null);
+      setWinkIndex(slotIndex);
+
+      if (winkTimerRef.current !== null) {
+        window.clearTimeout(winkTimerRef.current);
+      }
+
+      winkTimerRef.current = window.setTimeout(() => {
+        setWinkIndex(null);
+      }, WINK_MS);
+
       triggerAnim("attack");
       playSound(hitAudioRef);
       triggerFlash("hit");
@@ -175,6 +194,7 @@ export default function KuromiGamePage() {
     const timer = window.setInterval(() => {
       const nextIndex = randomInt(BOARD_SLOTS);
       setKuromiIndex(nextIndex);
+      setWinkIndex(null);
       setAnim("walk");
 
       if (hideTimerRef.current !== null) {
@@ -201,6 +221,7 @@ export default function KuromiGamePage() {
       stopCurrentTimers();
       setStatus("won");
       setKuromiIndex(null);
+      setWinkIndex(null);
       setAnim("celebrate");
       setShowSurprisePopup(true);
       playSound(winAudioRef);
@@ -219,6 +240,7 @@ export default function KuromiGamePage() {
     stopCurrentTimers();
     setStatus("lost");
     setKuromiIndex(null);
+    setWinkIndex(null);
     setAnim("idle");
   }, [status, timeLeft, stopCurrentTimers]);
 
@@ -299,6 +321,7 @@ export default function KuromiGamePage() {
     setScore(0);
     setTimeLeft(START_TIME);
     setKuromiIndex(null);
+    setWinkIndex(null);
     setCursorIndex(4);
     setAnim("idle");
     setShowSurprisePopup(false);
@@ -342,7 +365,8 @@ export default function KuromiGamePage() {
       <div className="kuromi-pop-grid" role="application" aria-label={t("kuromi_board_label")}>
         {Array.from({ length: BOARD_SLOTS }, (_, slotIndex) => {
           const isCursor = cursorIndex === slotIndex;
-          const isVisible = kuromiIndex === slotIndex;
+          const isWink = winkIndex === slotIndex;
+          const isVisible = kuromiIndex === slotIndex || isWink;
 
           return (
             <button
@@ -356,7 +380,7 @@ export default function KuromiGamePage() {
               {isVisible && (
                 <img
                   className="kuromi-pop-sprite"
-                  src={kuromiWalk}
+                  src={isWink ? kuromiWink : kuromiWalk}
                   alt={t("kuromi_target_alt")}
                   draggable={false}
                 />
@@ -364,16 +388,6 @@ export default function KuromiGamePage() {
             </button>
           );
         })}
-      </div>
-
-      <div className="kuromi-mobile-controls" aria-label={t("kuromi_touch_controls")}>
-        <button type="button" onClick={() => moveCursor(-1, 0)}>{t("kuromi_up")}</button>
-        <div>
-          <button type="button" onClick={() => moveCursor(0, -1)}>{t("kuromi_left")}</button>
-          <button type="button" onClick={() => hitSlot(cursorIndex)}>{t("kuromi_hit")}</button>
-          <button type="button" onClick={() => moveCursor(0, 1)}>{t("kuromi_right")}</button>
-        </div>
-        <button type="button" onClick={() => moveCursor(1, 0)}>{t("kuromi_down")}</button>
       </div>
 
       {status === "lost" && (

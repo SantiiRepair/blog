@@ -14,6 +14,7 @@ const START_TIME = 28;
 const SPAWN_MS = 900;
 const VISIBLE_MS = 560;
 const WINK_MS = 140;
+const BEST_TIME_STORAGE_KEY = "kuromiBestTimeSeconds";
 const HIT_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2043/2043-preview.mp3";
 const MISS_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3";
 const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
@@ -47,6 +48,12 @@ export default function KuromiGamePage() {
   const [isMuted, setIsMuted] = useState(false);
   const [flashState, setFlashState] = useState<"none" | "hit" | "miss">("none");
   const [showSurprisePopup, setShowSurprisePopup] = useState(false);
+  const [bestTime, setBestTime] = useState<number | null>(() => {
+    const savedRaw = window.localStorage.getItem(BEST_TIME_STORAGE_KEY);
+    const savedValue = savedRaw ? Number(savedRaw) : Number.NaN;
+
+    return Number.isFinite(savedValue) && savedValue >= 0 ? savedValue : null;
+  });
 
   const hideTimerRef = useRef<number | null>(null);
   const winkTimerRef = useRef<number | null>(null);
@@ -89,6 +96,12 @@ export default function KuromiGamePage() {
       window.clearTimeout(flashTimerRef.current);
       flashTimerRef.current = null;
     }
+  }, []);
+
+  const saveBestTime = useCallback((nextBestTime: number) => {
+    setBestTime(nextBestTime);
+
+    window.localStorage.setItem(BEST_TIME_STORAGE_KEY, String(nextBestTime));
   }, []);
 
   const playSound = useCallback(
@@ -227,6 +240,12 @@ export default function KuromiGamePage() {
     }
 
     if (score >= TARGET_SCORE) {
+      const completedInSeconds = Math.max(0, START_TIME - timeLeft);
+
+      if (bestTime === null || completedInSeconds < bestTime) {
+        saveBestTime(completedInSeconds);
+      }
+
       stopCurrentTimers();
       setStatus("won");
       setKuromiIndex(null);
@@ -235,7 +254,7 @@ export default function KuromiGamePage() {
       setShowSurprisePopup(true);
       playSound(winAudioRef);
     }
-  }, [playSound, score, status, stopCurrentTimers]);
+  }, [bestTime, playSound, saveBestTime, score, status, stopCurrentTimers, timeLeft]);
 
   useEffect(() => {
     if (status !== "playing") {
@@ -365,6 +384,7 @@ export default function KuromiGamePage() {
       <div className="kuromi-hud">
         <span>{t("kuromi_points_label")}: {score}/{TARGET_SCORE}</span>
         <span>{t("kuromi_time_label")}: {timeLeft}s</span>
+        <span>{t("kuromi_best_time_label")}: {bestTime === null ? "--" : `${bestTime}s`}</span>
       </div>
 
       <div className="kuromi-progress" aria-hidden="true">

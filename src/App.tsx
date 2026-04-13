@@ -8,7 +8,7 @@ import KuromiGamePage from "./pages/KuromiGamePage";
 import TripsPage from "./pages/TripsPage";
 import { t } from "./lib/i18n";
 
-const SECRET_PATH = "/valen-game";
+const SECRET_PATH = "/222";
 const normalizePath = (path: string): string => {
   const pathWithoutQuery = path.split("?")[0];
   const pathWithoutHash = pathWithoutQuery.split("#")[0];
@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/valen-game" element={<KuromiGamePage />} />
+      <Route path="/222" element={<KuromiGamePage />} />
       <Route
         path="/"
         element={

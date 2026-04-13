@@ -19,6 +19,9 @@ const VISIBLE_MS = 560;
 const WINK_MS = 140;
 const BEST_TIME_STORAGE_KEY = "kuromiBestTimeSeconds";
 const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
+const BIRTH_YEAR = 2006;
+const BIRTH_MONTH = 4;
+const BIRTH_DAY = 28;
 
 type GameStatus = "playing" | "won" | "lost";
 type KuromiAnim = "idle" | "walk" | "attack" | "celebrate";
@@ -36,6 +39,35 @@ function randomInt(maxExclusive: number): number {
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
+}
+
+function getCurrentAge(
+  birthYear: number,
+  birthMonthOneBased: number,
+  birthDay: number,
+  today = new Date()
+): number {
+  let age = today.getFullYear() - birthYear;
+  const month = today.getMonth() + 1;
+  const hasHadBirthdayThisYear =
+    month > birthMonthOneBased ||
+    (month === birthMonthOneBased && today.getDate() >= birthDay);
+
+  if (!hasHadBirthdayThisYear) {
+    age -= 1;
+  }
+
+  return Math.max(age, 0);
+}
+
+function isBirthdayDate(
+  birthMonthOneBased: number,
+  birthDay: number,
+  today = new Date()
+): boolean {
+  const month = today.getMonth() + 1;
+
+  return month === birthMonthOneBased && today.getDate() === birthDay;
 }
 
 export default function KuromiGamePage() {
@@ -68,6 +100,18 @@ export default function KuromiGamePage() {
   const progress = useMemo(
     () => Math.min(100, Math.floor((score / TARGET_SCORE) * 100)),
     [score]
+  );
+  const birthdayAge = useMemo(
+    () => getCurrentAge(BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY),
+    []
+  );
+  const birthdayAgeMilestone = useMemo(
+    () => `${birthdayAge}${t("kuromi_surprise_age_suffix")}`,
+    [birthdayAge]
+  );
+  const isBirthdayToday = useMemo(
+    () => isBirthdayDate(BIRTH_MONTH, BIRTH_DAY),
+    []
   );
   const isPreStart = status === "playing" && !hasStarted;
   const characterSrc = isPreStart ? kuromiWink2 : KUROMI_ANIM_SOURCES[anim];
@@ -438,9 +482,12 @@ export default function KuromiGamePage() {
       {showSurprisePopup && (
         <div className="kuromi-surprise-backdrop" role="dialog" aria-modal="true" aria-live="polite">
           <div className="kuromi-surprise-popup">
-            <p className="kuromi-surprise-kicker">{t("kuromi_surprise_kicker")}</p>
-            <h2>{t("kuromi_surprise_title")}</h2>
-            <p>{t("kuromi_surprise_text")}</p>
+            <p className="kuromi-surprise-kicker">
+              {isBirthdayToday ? t("kuromi_surprise_kicker") : t("kuromi_win_kicker")}
+            </p>
+            <h2>{isBirthdayToday ? t("kuromi_surprise_title") : t("kuromi_win_title")}</h2>
+            {isBirthdayToday && <p>{`${t("kuromi_surprise_age_label")} ${birthdayAgeMilestone}`}</p>}
+            <p>{isBirthdayToday ? t("kuromi_surprise_text") : t("kuromi_win_text")}</p>
             <div className="kuromi-surprise-actions">
               <button type="button" onClick={() => setShowSurprisePopup(false)}>
                 {t("kuromi_close")}

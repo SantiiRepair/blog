@@ -10,6 +10,18 @@ import missSoundUrl from "../../audio/huh.mp3";
 import "../../css/kuromi-game.css";
 import { t } from "../lib/i18n";
 
+function getMonthsAndDaysSince(date: Date, today = new Date()): { months: number; days: number } {
+  let months = (today.getFullYear() - date.getFullYear()) * 12 + (today.getMonth() - date.getMonth());
+  let days = today.getDate() - date.getDate();
+  if (days < 0) {
+    months -= 1;
+    // Get days in previous month
+    const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+    days += prevMonth.getDate();
+  }
+  return { months, days };
+}
+
 const BOARD_SLOTS = 9;
 const BOARD_COLS = 3;
 const TARGET_SCORE = 10;
@@ -499,9 +511,14 @@ export default function KuromiGamePage() {
             <h2>{isBirthdayToday ? t("kuromi_surprise_title") : t("kuromi_win_title")}</h2>
             {isBirthdayToday && <p>{`${t("kuromi_surprise_age_label")} ${birthdayAgeMilestone}`}</p>}
             <p>
-              {isBirthdayToday
-                ? t(birthdayMessageKey)
-                : t("kuromi_win_text")}
+              {isBirthdayToday && birthdayMessageKey === "kuromi_surprise_text_3"
+                ? (() => {
+                    const { months, days } = getMonthsAndDaysSince(new Date(2025, 10, 16));
+                    return t("kuromi_surprise_text_3", { months, days });
+                  })()
+                : isBirthdayToday
+                  ? t(birthdayMessageKey)
+                  : t("kuromi_win_text")}
             </p>
             <div className="kuromi-surprise-actions">
               <button type="button" onClick={() => setShowSurprisePopup(false)}>

@@ -103,9 +103,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Great run. You won this round like a boss.",
       kuromi_surprise_kicker: "Secret surprise unlocked",
       kuromi_surprise_title: "HAPPY BIRTHDAY VALE!!!",
-      kuromi_surprise_text_1: "You did it. This easter egg was made just for you. 🙃",
-      kuromi_surprise_text_2: "Another win, another birthday level unlocked just for you.",
-      kuromi_surprise_text_3: "Birthday mode active. You cleared it and claimed your surprise.",
+      kuromi_surprise_text_1: "Is it today, April 28th? Was it today????? 😵‍💫",
+      kuromi_surprise_text_2: "Did you know... for your brain, a 'what if' weighs the same as a fact?",
+      kuromi_surprise_text_3: "In those {{months}} months and {{days}} days, did you ever go to Sushi Tei?",
       kuromi_surprise_age_label: "Happy",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Close"
@@ -207,9 +207,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Ganaste esta ronda. Tremenda partida.",
       kuromi_surprise_kicker: "Sorpresa secreta desbloqueada",
       kuromi_surprise_title: "FELIZ CUMPLEANOS VALE!!!",
-      kuromi_surprise_text_1: "Lo lograste. Este easter egg era solo para ti. 🙃",
-      kuromi_surprise_text_2: "Otra victoria mas para desbloquear esta sorpresa de cumpleanos.",
-      kuromi_surprise_text_3: "Modo cumpleanos activado: ganaste y te llevaste tu sorpresa.",
+      kuromi_surprise_text_1: "Es hoy 28 de Abril, ¿no? Era hoy verdad????? 😵‍💫",
+      kuromi_surprise_text_2: "¿Sabías que... para tu cerebro un \"ojalá\" pesa lo mismo que un hecho?",
+      kuromi_surprise_text_3: "En estos {{months}} meses y {{days}} días fuiste a Sushi Tei?",
       kuromi_surprise_age_label: "Felices",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Cerrar"
@@ -312,9 +312,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Du hast die Runde gewonnen. Sauber!",
       kuromi_surprise_kicker: "Geheime Ueberraschung freigeschaltet",
       kuromi_surprise_title: "ALLES GUTE ZUM GEBURTSTAG VALE!!!",
-      kuromi_surprise_text_1: "Geschafft. Dieses Easter Egg war nur fuer dich. 🙃",
-      kuromi_surprise_text_2: "Noch ein Sieg und noch eine Geburtstags-Ueberraschung nur fuer dich.",
-      kuromi_surprise_text_3: "Geburtstagsmodus aktiv. Gewonnen und die Ueberraschung eingesackt.",
+      kuromi_surprise_text_1: "Ist heute der 28. April? War es heute????? 😵‍💫",
+      kuromi_surprise_text_2: "Wusstest du, dass... für dein Gehirn ein 'Was wäre wenn' genauso viel wiegt wie eine Tatsache?",
+      kuromi_surprise_text_3: "In diesen {{months}} Monaten und {{days}} Tagen, warst du irgendwann bei Sushi Tei?",
       kuromi_surprise_age_label: "Aktuelles Alter:",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Schliessen"
@@ -417,9 +417,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Ты выиграл этот раунд. Круто сыграно!",
       kuromi_surprise_kicker: "Секретный сюрприз открыт",
       kuromi_surprise_title: "С ДНЕМ РОЖДЕНИЯ, ВАЛЕ!!!",
-      kuromi_surprise_text_1: "Ты справился. Эта пасхалка была только для тебя. 🙃",
-      kuromi_surprise_text_2: "Еще одна победа и еще один праздничный сюрприз только для тебя.",
-      kuromi_surprise_text_3: "Режим дня рождения активирован: ты победил и забрал свой сюрприз.",
+      kuromi_surprise_text_1: "Сегодня 28 апреля, да? Сегодня был этот день????? 😵‍💫",
+      kuromi_surprise_text_2: "Знаешь ли ты... для твоего мозга 'а если бы' весит столько же, сколько и факт?",
+      kuromi_surprise_text_3: "За эти {{months}} месяцев и {{days}} дней ты хоть раз был в Sushi Tei?",
       kuromi_surprise_age_label: "Текущий возраст:",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Закрыть"
@@ -435,8 +435,8 @@ export async function initI18n(): Promise<void> {
   });
 }
 
-export function t(key: string): string {
-  return i18next.t(key);
+export function t(key: string, options?: Record<string, any>): string {
+  return i18next.t(key, options);
 }
 
 export function currentLanguage(): string {

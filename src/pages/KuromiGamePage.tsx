@@ -19,6 +19,11 @@ const VISIBLE_MS = 560;
 const WINK_MS = 140;
 const BEST_TIME_STORAGE_KEY = "kuromiBestTimeSeconds";
 const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
+const BIRTHDAY_MESSAGE_KEYS = [
+  "kuromi_surprise_text_1",
+  "kuromi_surprise_text_2",
+  "kuromi_surprise_text_3"
+];
 const BIRTH_YEAR = 2006;
 const BIRTH_MONTH = 4;
 const BIRTH_DAY = 28;
@@ -82,6 +87,7 @@ export default function KuromiGamePage() {
   const [isMuted, setIsMuted] = useState(false);
   const [flashState, setFlashState] = useState<"none" | "hit" | "miss">("none");
   const [showSurprisePopup, setShowSurprisePopup] = useState(false);
+  const [birthdayMessageKey, setBirthdayMessageKey] = useState(BIRTHDAY_MESSAGE_KEYS[0]);
   const [bestTime, setBestTime] = useState<number | null>(() => {
     const savedRaw = window.localStorage.getItem(BEST_TIME_STORAGE_KEY);
     const savedValue = savedRaw ? Number(savedRaw) : Number.NaN;
@@ -300,10 +306,14 @@ export default function KuromiGamePage() {
       setKuromiIndex(null);
       setWinkIndex(null);
       setAnim("celebrate");
+      if (isBirthdayToday) {
+        const idx = randomInt(BIRTHDAY_MESSAGE_KEYS.length);
+        setBirthdayMessageKey(BIRTHDAY_MESSAGE_KEYS[idx]);
+      }
       setShowSurprisePopup(true);
       playSound(winAudioRef);
     }
-  }, [bestTime, playSound, saveBestTime, score, status, stopCurrentTimers, timeLeft]);
+  }, [bestTime, isBirthdayToday, playSound, saveBestTime, score, status, stopCurrentTimers, timeLeft]);
 
   useEffect(() => {
     if (status !== "playing") {
@@ -403,6 +413,7 @@ export default function KuromiGamePage() {
     setCursorIndex(4);
     setAnim("idle");
     setShowSurprisePopup(false);
+    setBirthdayMessageKey(BIRTHDAY_MESSAGE_KEYS[0]);
   }, [stopCurrentTimers]);
 
   return (
@@ -487,7 +498,11 @@ export default function KuromiGamePage() {
             </p>
             <h2>{isBirthdayToday ? t("kuromi_surprise_title") : t("kuromi_win_title")}</h2>
             {isBirthdayToday && <p>{`${t("kuromi_surprise_age_label")} ${birthdayAgeMilestone}`}</p>}
-            <p>{isBirthdayToday ? t("kuromi_surprise_text") : t("kuromi_win_text")}</p>
+            <p>
+              {isBirthdayToday
+                ? t(birthdayMessageKey)
+                : t("kuromi_win_text")}
+            </p>
             <div className="kuromi-surprise-actions">
               <button type="button" onClick={() => setShowSurprisePopup(false)}>
                 {t("kuromi_close")}

@@ -103,8 +103,10 @@ const resources: TranslationResources = {
       kuromi_win_text: "Great run. You won this round like a boss.",
       kuromi_surprise_kicker: "Secret surprise unlocked",
       kuromi_surprise_title: "HAPPY BIRTHDAY VALE!!!",
-      kuromi_surprise_text: "You did it. This easter egg was made just for you. 🙃",
-      kuromi_surprise_age_label: "Felices",
+      kuromi_surprise_text_1: "You did it. This easter egg was made just for you. 🙃",
+      kuromi_surprise_text_2: "Another win, another birthday level unlocked just for you.",
+      kuromi_surprise_text_3: "Birthday mode active. You cleared it and claimed your surprise.",
+      kuromi_surprise_age_label: "Happy",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Close"
     }
@@ -205,7 +207,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Ganaste esta ronda. Tremenda partida.",
       kuromi_surprise_kicker: "Sorpresa secreta desbloqueada",
       kuromi_surprise_title: "FELIZ CUMPLEANOS VALE!!!",
-      kuromi_surprise_text: "Lo lograste. Este easter egg era solo para ti. 🙃",
+      kuromi_surprise_text_1: "Lo lograste. Este easter egg era solo para ti. 🙃",
+      kuromi_surprise_text_2: "Otra victoria mas para desbloquear esta sorpresa de cumpleanos.",
+      kuromi_surprise_text_3: "Modo cumpleanos activado: ganaste y te llevaste tu sorpresa.",
       kuromi_surprise_age_label: "Felices",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Cerrar"
@@ -308,7 +312,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Du hast die Runde gewonnen. Sauber!",
       kuromi_surprise_kicker: "Geheime Ueberraschung freigeschaltet",
       kuromi_surprise_title: "ALLES GUTE ZUM GEBURTSTAG VALE!!!",
-      kuromi_surprise_text: "Geschafft. Dieses Easter Egg war nur fuer dich. 🙃",
+      kuromi_surprise_text_1: "Geschafft. Dieses Easter Egg war nur fuer dich. 🙃",
+      kuromi_surprise_text_2: "Noch ein Sieg und noch eine Geburtstags-Ueberraschung nur fuer dich.",
+      kuromi_surprise_text_3: "Geburtstagsmodus aktiv. Gewonnen und die Ueberraschung eingesackt.",
       kuromi_surprise_age_label: "Aktuelles Alter:",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Schliessen"
@@ -411,7 +417,9 @@ const resources: TranslationResources = {
       kuromi_win_text: "Ты выиграл этот раунд. Круто сыграно!",
       kuromi_surprise_kicker: "Секретный сюрприз открыт",
       kuromi_surprise_title: "С ДНЕМ РОЖДЕНИЯ, ВАЛЕ!!!",
-      kuromi_surprise_text: "Ты справился. Эта пасхалка была только для тебя. 🙃",
+      kuromi_surprise_text_1: "Ты справился. Эта пасхалка была только для тебя. 🙃",
+      kuromi_surprise_text_2: "Еще одна победа и еще один праздничный сюрприз только для тебя.",
+      kuromi_surprise_text_3: "Режим дня рождения активирован: ты победил и забрал свой сюрприз.",
       kuromi_surprise_age_label: "Текущий возраст:",
       kuromi_surprise_age_suffix: "s",
       kuromi_close: "Закрыть"

@@ -447,7 +447,6 @@ audio {
 }
 
 .video-container video {
-  pointer-events: none;
   width: 100%;
   height: auto;
   max-width: 1210px;

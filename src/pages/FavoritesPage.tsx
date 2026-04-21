@@ -53,10 +53,10 @@ export default function FavoritesPage() {
             <iframe
               title={t("spotify_title")}
               data-testid="embed-iframe"
+              className="spotify-iframe"
               style={{ borderRadius: "12px" }}
               src="https://open.spotify.com/embed/playlist/1g9TavmxITZQDnaooVzEIy?utm_source=generator"
               width="100%"
-              height="352"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             />

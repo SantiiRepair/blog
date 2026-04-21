@@ -8,7 +8,7 @@ import paraglidingImg from "../../images/paragliding.webp";
 import morroImg from "../../images/morro.webp";
 import azulitaImg from "../../images/azulita.webp";
 import alambiqueImg from "../../images/alambique.webp";
-import cataImg from "../../images/cata.webp";
+import bodegonImg from "../../images/bodegon.webp";
 
 export default function TripsPage() {
   return (
@@ -49,7 +49,7 @@ export default function TripsPage() {
               <img src={alambiqueImg} alt={t("alambique_alt")} />
             </div>
             <div className="image-item">
-              <img src={cataImg} alt={t("cata_alt")} />
+              <img src={bodegonImg} alt={t("cata_alt")} />
             </div>
           </div>
         </div>

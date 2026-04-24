@@ -517,10 +517,12 @@ export default function KuromiGamePage() {
     }
 
     window.addEventListener("pointerdown", markInteraction, { once: true });
+    window.addEventListener("touchstart", markInteraction, { once: true });
     window.addEventListener("keydown", markInteraction, { once: true });
 
     return () => {
       window.removeEventListener("pointerdown", markInteraction);
+      window.removeEventListener("touchstart", markInteraction);
       window.removeEventListener("keydown", markInteraction);
     };
   }, []);

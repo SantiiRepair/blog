@@ -103,6 +103,7 @@ export default function KuromiGamePage() {
   const [anim, setAnim] = useState<KuromiAnim>("idle");
   const [isMuted, setIsMuted] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const [isAudioReady, setIsAudioReady] = useState(false);
   const [flashState, setFlashState] = useState<"none" | "hit" | "miss">("none");
   const [showSurprisePopup, setShowSurprisePopup] = useState(false);
   const [birthdayMessageKey, setBirthdayMessageKey] = useState(BIRTHDAY_MESSAGE_KEYS[0]);
@@ -497,9 +498,11 @@ export default function KuromiGamePage() {
     bgAudioRef.current = new Audio(bgMusicUrl);
     bgAudioRef.current.preload = "auto";
     bgAudioRef.current.volume = 0;
+    setIsAudioReady(true);
 
     return () => {
       stopCurrentTimers();
+      setIsAudioReady(false);
 
       [hitAudioRef.current, missAudioRef.current, winAudioRef.current, bgAudioRef.current].forEach((audio) => {
         if (!audio) {
@@ -528,6 +531,10 @@ export default function KuromiGamePage() {
   }, []);
 
   useEffect(() => {
+    if (!isAudioReady) {
+      return;
+    }
+
     const audio = bgAudioRef.current;
     if (!audio) {
       return;
@@ -548,7 +555,7 @@ export default function KuromiGamePage() {
     if (audio.paused) {
       startBackgroundCycle();
     }
-  }, [fadeAudio, hasUserInteracted, isMuted, startBackgroundCycle]);
+  }, [fadeAudio, hasUserInteracted, isAudioReady, isMuted, startBackgroundCycle]);
 
   const resetGame = useCallback(() => {
     stopCurrentTimers();

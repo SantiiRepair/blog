@@ -6,8 +6,10 @@ import kuromiCelebrate from "../../images/sprites/jump2.webp";
 import kuromiWink from "../../images/sprites/wink.webp";
 import kuromiWink2 from "../../images/sprites/wink2.webp";
 import spotifyLogoUrl from "../../images/spotify.svg";
-import hitSoundUrl from "../../audio/hit.mp3";
-import missSoundUrl from "../../audio/huh.mp3";
+import hitSoundUrl from "../../audio/hit.m4a";
+import missSoundUrl from "../../audio/huh.m4a";
+import bgMusicUrl from "../../audio/bg.m4a";
+import winSoundUrl from "../../audio/win.m4a";
 import "../../css/kuromi-game.css";
 import { t } from "../lib/i18n";
 
@@ -29,8 +31,9 @@ const START_TIME = 28;
 const SPAWN_MS = 900;
 const VISIBLE_MS = 560;
 const WINK_MS = 140;
+const BG_LOOP_FADE_MS = 1200;
+const BG_MUSIC_TARGET_VOLUME = 0.26;
 const BEST_TIME_STORAGE_KEY = "kuromiBestTimeSeconds";
-const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3";
 const BIRTHDAY_MESSAGE_KEYS = [
   "kuromi_surprise_text_1",
   "kuromi_surprise_text_2",
@@ -99,6 +102,7 @@ export default function KuromiGamePage() {
   const [cursorIndex, setCursorIndex] = useState(4);
   const [anim, setAnim] = useState<KuromiAnim>("idle");
   const [isMuted, setIsMuted] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const [flashState, setFlashState] = useState<"none" | "hit" | "miss">("none");
   const [showSurprisePopup, setShowSurprisePopup] = useState(false);
   const [birthdayMessageKey, setBirthdayMessageKey] = useState(BIRTHDAY_MESSAGE_KEYS[0]);
@@ -115,6 +119,10 @@ export default function KuromiGamePage() {
   const hitAudioRef = useRef<HTMLAudioElement | null>(null);
   const missAudioRef = useRef<HTMLAudioElement | null>(null);
   const winAudioRef = useRef<HTMLAudioElement | null>(null);
+  const bgAudioRef = useRef<HTMLAudioElement | null>(null);
+  const bgLoopCheckTimerRef = useRef<number | null>(null);
+  const bgFadeRafRef = useRef<number | null>(null);
+  const bgCycleEndingRef = useRef(false);
   const flashTimerRef = useRef<number | null>(null);
 
   const progress = useMemo(
@@ -164,7 +172,90 @@ export default function KuromiGamePage() {
       window.clearTimeout(flashTimerRef.current);
       flashTimerRef.current = null;
     }
+
+    if (bgLoopCheckTimerRef.current !== null) {
+      window.clearInterval(bgLoopCheckTimerRef.current);
+      bgLoopCheckTimerRef.current = null;
+    }
+
+    if (bgFadeRafRef.current !== null) {
+      window.cancelAnimationFrame(bgFadeRafRef.current);
+      bgFadeRafRef.current = null;
+    }
   }, []);
+
+  const fadeAudio = useCallback((
+    audio: HTMLAudioElement,
+    from: number,
+    to: number,
+    durationMs: number,
+    onComplete?: () => void
+  ) => {
+    if (bgFadeRafRef.current !== null) {
+      window.cancelAnimationFrame(bgFadeRafRef.current);
+      bgFadeRafRef.current = null;
+    }
+
+    const start = performance.now();
+    audio.volume = clamp(from, 0, 1);
+
+    const tick = (now: number): void => {
+      const elapsed = now - start;
+      const progressValue = Math.min(1, elapsed / durationMs);
+      const nextVolume = from + (to - from) * progressValue;
+      audio.volume = clamp(nextVolume, 0, 1);
+
+      if (progressValue < 1) {
+        bgFadeRafRef.current = window.requestAnimationFrame(tick);
+        return;
+      }
+
+      bgFadeRafRef.current = null;
+      if (onComplete) {
+        onComplete();
+      }
+    };
+
+    bgFadeRafRef.current = window.requestAnimationFrame(tick);
+  }, []);
+
+  const startBackgroundCycle = useCallback(() => {
+    const audio = bgAudioRef.current;
+    if (!audio || isMuted) {
+      return;
+    }
+
+    bgCycleEndingRef.current = false;
+    audio.currentTime = 0;
+    audio.volume = 0;
+
+    void audio.play().then(() => {
+      fadeAudio(audio, 0, BG_MUSIC_TARGET_VOLUME, BG_LOOP_FADE_MS);
+
+      if (bgLoopCheckTimerRef.current !== null) {
+        window.clearInterval(bgLoopCheckTimerRef.current);
+      }
+
+      bgLoopCheckTimerRef.current = window.setInterval(() => {
+        if (!audio.duration || Number.isNaN(audio.duration) || bgCycleEndingRef.current || isMuted) {
+          return;
+        }
+
+        const remaining = audio.duration - audio.currentTime;
+        if (remaining > BG_LOOP_FADE_MS / 1000) {
+          return;
+        }
+
+        bgCycleEndingRef.current = true;
+        fadeAudio(audio, audio.volume, 0, BG_LOOP_FADE_MS, () => {
+          audio.pause();
+          startBackgroundCycle();
+        });
+      }, 120);
+    }).catch(() => {
+      // Ignore autoplay restrictions until user interacts.
+    });
+  }, [fadeAudio, isMuted]);
 
   const saveBestTime = useCallback((nextBestTime: number) => {
     setBestTime(nextBestTime);
@@ -399,14 +490,18 @@ export default function KuromiGamePage() {
     missAudioRef.current.volume = 0.3;
     missAudioRef.current.preload = "auto";
 
-    winAudioRef.current = new Audio(WIN_SOUND_URL);
+    winAudioRef.current = new Audio(winSoundUrl);
     winAudioRef.current.volume = 0.5;
     winAudioRef.current.preload = "auto";
+
+    bgAudioRef.current = new Audio(bgMusicUrl);
+    bgAudioRef.current.preload = "auto";
+    bgAudioRef.current.volume = 0;
 
     return () => {
       stopCurrentTimers();
 
-      [hitAudioRef.current, missAudioRef.current, winAudioRef.current].forEach((audio) => {
+      [hitAudioRef.current, missAudioRef.current, winAudioRef.current, bgAudioRef.current].forEach((audio) => {
         if (!audio) {
           return;
         }
@@ -415,6 +510,43 @@ export default function KuromiGamePage() {
       });
     };
   }, [stopCurrentTimers]);
+
+  useEffect(() => {
+    function markInteraction(): void {
+      setHasUserInteracted(true);
+    }
+
+    window.addEventListener("pointerdown", markInteraction, { once: true });
+    window.addEventListener("keydown", markInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", markInteraction);
+      window.removeEventListener("keydown", markInteraction);
+    };
+  }, []);
+
+  useEffect(() => {
+    const audio = bgAudioRef.current;
+    if (!audio) {
+      return;
+    }
+
+    if (isMuted) {
+      bgCycleEndingRef.current = false;
+      fadeAudio(audio, audio.volume, 0, 260, () => {
+        audio.pause();
+      });
+      return;
+    }
+
+    if (!hasUserInteracted) {
+      return;
+    }
+
+    if (audio.paused) {
+      startBackgroundCycle();
+    }
+  }, [fadeAudio, hasUserInteracted, isMuted, startBackgroundCycle]);
 
   const resetGame = useCallback(() => {
     stopCurrentTimers();

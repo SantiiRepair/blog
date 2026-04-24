@@ -109,8 +109,7 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}s? Really? I beat you 😝. Come on, you can do it faster",
       kuromi_surprise_age_label: "Happy",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Close",
-      kuromi_birthday_song_button: "Do you want to hear a song?"
+      kuromi_close: "Close"
     }
   },
   es: {
@@ -215,8 +214,7 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}s? ¿En serio? Te gané 😝. Vamos, puedes hacerlo más rápido",
       kuromi_surprise_age_label: "Felices",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Cerrar",
-      kuromi_birthday_song_button: "¿Quieres oír una canción?"
+      kuromi_close: "Cerrar"
     }
   },
   de: {
@@ -322,8 +320,7 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}s? Echt jetzt? Ich war schneller 😝. Du schaffst das noch schneller!",
       kuromi_surprise_age_label: "Aktuelles Alter:",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Schliessen",
-      kuromi_birthday_song_button: "Möchtest du ein Lied hören?"
+      kuromi_close: "Schliessen"
     }
   },
   ru: {
@@ -429,8 +426,7 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}с? Серьёзно? Я тебя обогнал 😝. Давай, ты можешь быстрее!",
       kuromi_surprise_age_label: "Текущий возраст:",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Закрыть",
-      kuromi_birthday_song_button: "Хочешь послушать песню?"
+      kuromi_close: "Закрыть"
     }
   }
 };

@@ -533,19 +533,6 @@ export default function KuromiGamePage() {
               <button type="button" onClick={() => setShowSurprisePopup(false)}>
                 {t("kuromi_close")}
               </button>
-              {isBirthdayToday && (
-                <a
-                  className="kuromi-spotify-button"
-                  href={BIRTHDAY_SONG_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="kuromi-spotify-icon" aria-hidden="true">
-                    <img src={spotifyLogoUrl} alt="" />
-                  </span>
-                  <span>{t("kuromi_birthday_song_button")}</span>
-                </a>
-              )}
               <button type="button" onClick={resetGame}>
                 {t("kuromi_play_again")}
               </button>

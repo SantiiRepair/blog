@@ -11,10 +11,6 @@ body {
   font-family: "W95FA", system-ui;
   font-style: normal;
   background-color: #1f2e34;
-  background-image: url("../images/yas.gif");
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
   margin: 0;
 }
 
@@ -28,6 +24,21 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+.site-layout-root {
+  position: relative;
+  z-index: 1;
+}
+
+.site-bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .header-logo {
@@ -165,31 +176,6 @@ a:hover {
 
 .about-intro {
   width: 100%;
-}
-
-.about-main-page {
-  position: relative;
-  overflow: hidden;
-  min-height: 100%;
-}
-
-.about-main-bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-  filter: saturate(1.05) contrast(1.02);
-}
-
-.about-main-content {
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(to bottom, rgba(31, 46, 52, 0.66), rgba(31, 46, 52, 0.74));
-  min-height: 100%;
-  padding: 8px;
 }
 
 .about-kicker {

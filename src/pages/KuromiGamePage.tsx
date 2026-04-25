@@ -122,8 +122,11 @@ export default function KuromiGamePage() {
   const winAudioRef = useRef<HTMLAudioElement | null>(null);
   const bgAudioRef = useRef<HTMLAudioElement | null>(null);
   const bgLoopCheckTimerRef = useRef<number | null>(null);
+  const bgFadeOutTimerRef = useRef<number | null>(null);
   const bgFadeRafRef = useRef<number | null>(null);
   const bgCycleEndingRef = useRef(false);
+  const interactionHandledRef = useRef(false);
+  const pageHiddenRef = useRef(document.visibilityState === "hidden");
   const flashTimerRef = useRef<number | null>(null);
 
   const progress = useMemo(
@@ -173,16 +176,25 @@ export default function KuromiGamePage() {
       window.clearTimeout(flashTimerRef.current);
       flashTimerRef.current = null;
     }
+  }, []);
 
+  const stopBackgroundTimers = useCallback(() => {
     if (bgLoopCheckTimerRef.current !== null) {
       window.clearInterval(bgLoopCheckTimerRef.current);
       bgLoopCheckTimerRef.current = null;
+    }
+
+    if (bgFadeOutTimerRef.current !== null) {
+      window.clearTimeout(bgFadeOutTimerRef.current);
+      bgFadeOutTimerRef.current = null;
     }
 
     if (bgFadeRafRef.current !== null) {
       window.cancelAnimationFrame(bgFadeRafRef.current);
       bgFadeRafRef.current = null;
     }
+
+    bgCycleEndingRef.current = false;
   }, []);
 
   const fadeAudio = useCallback((
@@ -222,10 +234,11 @@ export default function KuromiGamePage() {
 
   const startBackgroundCycle = useCallback(() => {
     const audio = bgAudioRef.current;
-    if (!audio || isMuted) {
+    if (!audio || isMuted || pageHiddenRef.current) {
       return;
     }
 
+    stopBackgroundTimers();
     bgCycleEndingRef.current = false;
     audio.currentTime = 0;
     audio.volume = 0;
@@ -233,30 +246,59 @@ export default function KuromiGamePage() {
     void audio.play().then(() => {
       fadeAudio(audio, 0, BG_MUSIC_TARGET_VOLUME, BG_LOOP_FADE_MS);
 
-      if (bgLoopCheckTimerRef.current !== null) {
-        window.clearInterval(bgLoopCheckTimerRef.current);
+      const scheduleFadeOut = (): void => {
+        if (!audio.duration || Number.isNaN(audio.duration)) {
+          return;
+        }
+
+        const fadeOutDelayMs = Math.max(0, Math.floor(audio.duration * 1000) - BG_LOOP_FADE_MS);
+        bgFadeOutTimerRef.current = window.setTimeout(() => {
+          if (bgCycleEndingRef.current || isMuted || pageHiddenRef.current) {
+            return;
+          }
+
+          bgCycleEndingRef.current = true;
+          fadeAudio(audio, audio.volume, 0, BG_LOOP_FADE_MS, () => {
+            audio.pause();
+            startBackgroundCycle();
+          });
+        }, fadeOutDelayMs);
+      };
+
+      if (audio.duration && !Number.isNaN(audio.duration)) {
+        scheduleFadeOut();
+      } else {
+        const onLoadedMetadata = (): void => {
+          audio.removeEventListener("loadedmetadata", onLoadedMetadata);
+          if (!bgCycleEndingRef.current && !isMuted && !pageHiddenRef.current) {
+            scheduleFadeOut();
+          }
+        };
+
+        audio.addEventListener("loadedmetadata", onLoadedMetadata);
+
+        if (bgLoopCheckTimerRef.current !== null) {
+          window.clearInterval(bgLoopCheckTimerRef.current);
+        }
+
+        // Fallback for devices that delay metadata for streaming m4a.
+        bgLoopCheckTimerRef.current = window.setInterval(() => {
+          if (audio.duration && !Number.isNaN(audio.duration)) {
+            audio.removeEventListener("loadedmetadata", onLoadedMetadata);
+            if (bgLoopCheckTimerRef.current !== null) {
+              window.clearInterval(bgLoopCheckTimerRef.current);
+              bgLoopCheckTimerRef.current = null;
+            }
+            if (!bgCycleEndingRef.current && !isMuted && !pageHiddenRef.current) {
+              scheduleFadeOut();
+            }
+          }
+        }, 150);
       }
-
-      bgLoopCheckTimerRef.current = window.setInterval(() => {
-        if (!audio.duration || Number.isNaN(audio.duration) || bgCycleEndingRef.current || isMuted) {
-          return;
-        }
-
-        const remaining = audio.duration - audio.currentTime;
-        if (remaining > BG_LOOP_FADE_MS / 1000) {
-          return;
-        }
-
-        bgCycleEndingRef.current = true;
-        fadeAudio(audio, audio.volume, 0, BG_LOOP_FADE_MS, () => {
-          audio.pause();
-          startBackgroundCycle();
-        });
-      }, 120);
     }).catch(() => {
       // Ignore autoplay restrictions until user interacts.
     });
-  }, [fadeAudio, isMuted]);
+  }, [fadeAudio, isMuted, stopBackgroundTimers]);
 
   const saveBestTime = useCallback((nextBestTime: number) => {
     setBestTime(nextBestTime);
@@ -498,10 +540,12 @@ export default function KuromiGamePage() {
     bgAudioRef.current = new Audio(bgMusicUrl);
     bgAudioRef.current.preload = "auto";
     bgAudioRef.current.volume = 0;
+    bgAudioRef.current.loop = false;
     setIsAudioReady(true);
 
     return () => {
       stopCurrentTimers();
+      stopBackgroundTimers();
       setIsAudioReady(false);
 
       [hitAudioRef.current, missAudioRef.current, winAudioRef.current, bgAudioRef.current].forEach((audio) => {
@@ -512,11 +556,82 @@ export default function KuromiGamePage() {
         audio.pause();
       });
     };
-  }, [stopCurrentTimers]);
+  }, [stopBackgroundTimers, stopCurrentTimers]);
+
+  useEffect(() => {
+    const audio = bgAudioRef.current;
+    if (!audio) {
+      return;
+    }
+
+    const onEnded = (): void => {
+      if (isMuted || pageHiddenRef.current || !hasUserInteracted) {
+        return;
+      }
+
+      startBackgroundCycle();
+    };
+
+    audio.addEventListener("ended", onEnded);
+
+    return () => {
+      audio.removeEventListener("ended", onEnded);
+    };
+  }, [hasUserInteracted, isMuted, startBackgroundCycle]);
+
+  useEffect(() => {
+    const handleVisibilityChange = (): void => {
+      const audio = bgAudioRef.current;
+      const isHidden = document.visibilityState === "hidden";
+      pageHiddenRef.current = isHidden;
+
+      if (!audio) {
+        return;
+      }
+
+      if (isHidden) {
+        stopBackgroundTimers();
+        fadeAudio(audio, audio.volume, 0, 180, () => {
+          audio.pause();
+        });
+        return;
+      }
+
+      if (!isMuted && hasUserInteracted && isAudioReady) {
+        startBackgroundCycle();
+      }
+    };
+
+    const handlePageHide = (): void => {
+      const audio = bgAudioRef.current;
+      pageHiddenRef.current = true;
+      stopBackgroundTimers();
+      if (audio) {
+        audio.pause();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("pagehide", handlePageHide);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("pagehide", handlePageHide);
+    };
+  }, [fadeAudio, hasUserInteracted, isAudioReady, isMuted, startBackgroundCycle, stopBackgroundTimers]);
 
   useEffect(() => {
     function markInteraction(): void {
+      if (interactionHandledRef.current) {
+        return;
+      }
+
+      interactionHandledRef.current = true;
       setHasUserInteracted(true);
+
+      if (!isMuted) {
+        startBackgroundCycle();
+      }
     }
 
     window.addEventListener("pointerdown", markInteraction, { once: true });
@@ -528,7 +643,7 @@ export default function KuromiGamePage() {
       window.removeEventListener("touchstart", markInteraction);
       window.removeEventListener("keydown", markInteraction);
     };
-  }, []);
+  }, [isMuted, startBackgroundCycle]);
 
   useEffect(() => {
     if (!isAudioReady) {
@@ -541,7 +656,7 @@ export default function KuromiGamePage() {
     }
 
     if (isMuted) {
-      bgCycleEndingRef.current = false;
+      stopBackgroundTimers();
       fadeAudio(audio, audio.volume, 0, 260, () => {
         audio.pause();
       });
@@ -555,7 +670,7 @@ export default function KuromiGamePage() {
     if (audio.paused) {
       startBackgroundCycle();
     }
-  }, [fadeAudio, hasUserInteracted, isAudioReady, isMuted, startBackgroundCycle]);
+  }, [fadeAudio, hasUserInteracted, isAudioReady, isMuted, startBackgroundCycle, stopBackgroundTimers]);
 
   const resetGame = useCallback(() => {
     stopCurrentTimers();

@@ -700,7 +700,7 @@ export default function KuromiGamePage() {
       </div>
       <p className="kuromi-easter-kicker">{t("easter_egg_found")}</p>
       <h1 className="kuromi-title">{t("kuromi_game_title")}</h1>
-      <p className="kuromi-easter-note">{t("easter_egg_only_for_you")}</p>
+      <p className="kuromi-easter-note">{t("kuromi_page_semititle")}</p>
       <p className="kuromi-subtitle">{t("kuromi_game_subtitle")}</p>
 
       <div className="kuromi-hero" aria-hidden="true">

@@ -522,6 +522,7 @@ export default function KuromiGamePage() {
                   ? t(birthdayMessageKey)
                   : t("kuromi_win_text")}
             </p>
+            {isBirthdayToday && <p>{t("kuromi_surprise_text_age", { age: birthdayAge })}</p>}
             <div className="kuromi-surprise-actions">
               <button type="button" onClick={() => setShowSurprisePopup(false)}>
                 {t("kuromi_close")}

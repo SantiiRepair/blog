@@ -16,7 +16,6 @@ function getMonthsAndDaysSince(date: Date, today = new Date()): { months: number
   let days = today.getDate() - date.getDate();
   if (days < 0) {
     months -= 1;
-    // Get days in previous month
     const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
     days += prevMonth.getDate();
   }
@@ -35,7 +34,7 @@ const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-pre
 const BIRTHDAY_MESSAGE_KEYS = [
   "kuromi_surprise_text_1",
   "kuromi_surprise_text_2",
-  //"kuromi_surprise_text_3"
+  "kuromi_surprise_text_3"
 ];
 const BIRTH_YEAR = 2006;
 const BIRTH_MONTH = 4;

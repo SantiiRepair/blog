@@ -113,7 +113,8 @@ const resources: TranslationResources = {
         kuromi_surprise_text_4_age: "And hey, happy {{age}}{{kuromi_surprise_age_suffix}}, have a great one 🫶🏻",
       kuromi_surprise_age_label: "Happy",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Close"
+      kuromi_close: "Close",
+      kuromi_birthday_song_button: "Do you want to hear a song?"
     }
   },
   es: {
@@ -222,7 +223,8 @@ const resources: TranslationResources = {
         kuromi_surprise_text_4_age: "Y hey, felices {{age}}{{kuromi_surprise_age_suffix}}, pásala genial 🫶🏻",
       kuromi_surprise_age_label: "Felices",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Cerrar"
+      kuromi_close: "Cerrar",
+      kuromi_birthday_song_button: "¿Quieres oír una canción?"
     }
   },
   de: {
@@ -332,7 +334,8 @@ const resources: TranslationResources = {
         kuromi_surprise_text_4_age: "Und hey, schöne {{age}}{{kuromi_surprise_age_suffix}}, feier schön 🫶🏻",
       kuromi_surprise_age_label: "Aktuelles Alter:",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Schliessen"
+      kuromi_close: "Schliessen",
+      kuromi_birthday_song_button: "Möchtest du ein Lied hören?"
     }
   },
   ru: {
@@ -442,7 +445,8 @@ const resources: TranslationResources = {
         kuromi_surprise_text_4_age: "И эй, с {{age}}{{kuromi_surprise_age_suffix}}, отлично отпразднуй 🫶🏻",
       kuromi_surprise_age_label: "Текущий возраст:",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Закрыть"
+      kuromi_close: "Закрыть",
+      kuromi_birthday_song_button: "Хочешь послушать песню?"
     }
   }
 };

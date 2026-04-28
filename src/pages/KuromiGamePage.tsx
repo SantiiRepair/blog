@@ -5,6 +5,7 @@ import kuromiAttack from "../../images/sprites/attack.webp";
 import kuromiCelebrate from "../../images/sprites/jump2.webp";
 import kuromiWink from "../../images/sprites/wink.webp";
 import kuromiWink2 from "../../images/sprites/wink2.webp";
+import spotifyLogoUrl from "../../images/spotify.svg";
 import hitSoundUrl from "../../audio/hit.mp3";
 import missSoundUrl from "../../audio/huh.mp3";
 import "../../css/kuromi-game.css";
@@ -34,11 +35,13 @@ const WIN_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2013/2013-pre
 const BIRTHDAY_MESSAGE_KEYS = [
   "kuromi_surprise_text_1",
   "kuromi_surprise_text_2",
-  "kuromi_surprise_text_3"
+  //"kuromi_surprise_text_3"
 ];
 const BIRTH_YEAR = 2006;
 const BIRTH_MONTH = 4;
 const BIRTH_DAY = 28;
+const BIRTHDAY_SONG_URL =
+  "https://open.spotify.com/track/4AL4EamHEBKPpdcFRkYdXN?si=e8047f00ce1f4ebe";
 
 type GameStatus = "playing" | "won" | "lost";
 type KuromiAnim = "idle" | "walk" | "attack" | "celebrate";
@@ -523,6 +526,19 @@ export default function KuromiGamePage() {
               <button type="button" onClick={() => setShowSurprisePopup(false)}>
                 {t("kuromi_close")}
               </button>
+              {isBirthdayToday && (
+                <a
+                  className="kuromi-spotify-button"
+                  href={BIRTHDAY_SONG_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="kuromi-spotify-icon" aria-hidden="true">
+                    <img src={spotifyLogoUrl} alt="" />
+                  </span>
+                  <span>{t("kuromi_birthday_song_button")}</span>
+                </a>
+              )}
               <button type="button" onClick={resetGame}>
                 {t("kuromi_play_again")}
               </button>

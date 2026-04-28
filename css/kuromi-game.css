@@ -368,20 +368,54 @@ body.kuromi-game-body {
   font-size: 0.72em;
 }
 
+.kuromi-spotify-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px outset #a49cba;
+  background-color: #13092d;
+  color: #ffd7ec;
+  padding: 7px 11px;
+  min-height: 40px;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.kuromi-spotify-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.kuromi-spotify-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .kuromi-surprise-actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   margin-top: 12px;
 }
 
-.kuromi-surprise-actions button {
+.kuromi-surprise-actions button,
+.kuromi-surprise-actions .kuromi-spotify-button {
   border: 2px outset #a49cba;
   background-color: #13092d;
   color: #f3adc7;
   padding: 7px 11px;
   min-height: 40px;
   font-family: inherit;
+}
+
+.kuromi-surprise-actions .kuromi-spotify-button {
+  color: #ffd7ec;
+  text-decoration: none;
 }
 
 @keyframes kuromi-popup-in {
@@ -444,5 +478,17 @@ body.kuromi-game-body {
 
   .kuromi-pop-slot {
     min-height: 76px;
+  }
+}
+
+@media (max-width: 520px) {
+  .kuromi-surprise-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .kuromi-surprise-actions button,
+  .kuromi-surprise-actions .kuromi-spotify-button {
+    width: 100%;
   }
 }

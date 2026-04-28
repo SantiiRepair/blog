@@ -509,7 +509,6 @@ export default function KuromiGamePage() {
               {isBirthdayToday ? t("kuromi_surprise_kicker") : t("kuromi_win_kicker")}
             </p>
             <h2>{isBirthdayToday ? t("kuromi_surprise_title") : t("kuromi_win_title")}</h2>
-            {isBirthdayToday && <p>{`${t("kuromi_surprise_age_label")} ${birthdayAgeMilestone}`}</p>}
             <p>
               {isBirthdayToday && birthdayMessageKey === "kuromi_surprise_text_3"
                 ? (() => {

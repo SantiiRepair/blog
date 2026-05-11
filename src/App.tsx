@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import KuromiGamePage from "./pages/KuromiGamePage";
 import TripsPage from "./pages/TripsPage";
+import DiaryPage from "./pages/DiaryPage";
 import { t } from "./lib/i18n";
 
 const SECRET_PATH = "/nv";
@@ -88,6 +89,14 @@ export default function App() {
         element={
           <SiteLayout>
             <TripsPage />
+          </SiteLayout>
+        }
+      />
+      <Route
+        path="/diary"
+        element={
+          <SiteLayout>
+            <DiaryPage />
           </SiteLayout>
         }
       />

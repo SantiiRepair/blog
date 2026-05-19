@@ -1,0 +1,9 @@
+{
+  "schedule": "daily",
+  "ignoredFiles": [],
+  "compressor": {
+    "png": "pngquant",
+    "jpg": "jpegtran"
+  },
+  "quality": "high"
+}

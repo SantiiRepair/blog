@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { t } from "../lib/i18n";
 import welcumImg from "../../images/welcum.png";
-import sunsetVideo from "../../videos/sunset.mp4";
+import PixelSnow from "../components/PixelSnow";
 
 type SiteLayoutProps = {
   children: ReactNode;
@@ -11,17 +11,7 @@ type SiteLayoutProps = {
 export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <>
-      <video
-        className="site-bg-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-      >
-        <source src={sunsetVideo} type="video/mp4" />
-      </video>
+      <PixelSnow />
 
       <div className="container site-layout-root">
         <div className="header">

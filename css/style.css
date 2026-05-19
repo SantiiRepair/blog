@@ -11,6 +11,10 @@ body {
   font-family: "W95FA", system-ui;
   font-style: normal;
   background-color: #1f2e34;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   margin: 0;
 }
 
@@ -29,16 +33,6 @@ body {
 .site-layout-root {
   position: relative;
   z-index: 1;
-}
-
-.site-bg-video {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
 }
 
 .header-logo {

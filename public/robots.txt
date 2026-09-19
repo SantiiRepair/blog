@@ -1,0 +1,57 @@
+# robots.txt for https://santiirepair.dev
+# Optimized for Google, Bing, DuckDuckGo, and modern AI Search Assistants
+
+User-agent: *
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+Disallow: /nv
+Disallow: /nv/
+
+# Allow AI & Search Assistants to properly index, summarize, and cite Santiago Ramirez (SantiiRepair)
+User-agent: Googlebot
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+Disallow: /nv
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+Disallow: /nv
+
+User-agent: Applebot
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /diary
+Disallow: /diary/
+
+# Disallow aggressive scraping bots
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# Sitemap
+Sitemap: https://santiirepair.dev/sitemap.xml

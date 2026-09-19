@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { t } from "../lib/i18n";
-import welcumImg from "../../images/welcum.png";
 import PixelSnow from "../components/PixelSnow";
+
+const welcumImg = "/images/welcum.png";
 
 type SiteLayoutProps = {
   children: ReactNode;
@@ -15,19 +16,38 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
 
       <div className="container site-layout-root">
         <div className="header">
-          <img src={welcumImg} alt={t("welcum_alt")} className="header-logo" />
+          <img
+            src={welcumImg}
+            alt={t("welcum_alt")}
+            className="header-logo"
+            width="280"
+            height="70"
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
         <div className="flex-container">
           <aside className="sidebar sidebar-left">
-            <br />
-            <Link to="/">{t("about_title")}</Link>
-            <br />
-            <Link to="/favorites">{t("favorites")}</Link>
-            <br />
-            <Link to="/trips">{t("trips")}</Link>
-            <br />
-            <Link to="/diary">{t("diary")}</Link>
+            <nav aria-label="Site Navigation">
+              <br />
+              <Link to="/">{t("about_title")}</Link>
+              <br />
+              <Link to="/favorites">{t("favorites")}</Link>
+              <br />
+              <Link to="/trips">{t("trips")}</Link>
+              <br />
+              <Link to="/diary">{t("diary")}</Link>
+              <br />
+              <a
+                href="https://github.com/SantiiRepair"
+                target="_blank"
+                rel="me noopener noreferrer"
+                title="Santiago Ramirez on GitHub"
+              >
+                GitHub
+              </a>
+            </nav>
           </aside>
 
           <main className="main-content">{children}</main>

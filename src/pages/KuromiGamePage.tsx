@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import kuromiIdle from "../../images/sprites/idle.webp";
-import kuromiWalk from "../../images/sprites/walk.webp";
-import kuromiAttack from "../../images/sprites/attack.webp";
-import kuromiCelebrate from "../../images/sprites/jump2.webp";
-import kuromiWink from "../../images/sprites/wink.webp";
-import kuromiWink2 from "../../images/sprites/wink2.webp";
-import spotifyLogoUrl from "../../images/spotify.svg";
 import hitSoundUrl from "../../audio/hit.m4a";
 import missSoundUrl from "../../audio/huh.m4a";
 import bgMusicUrl from "../../audio/bg.m4a";
 import winSoundUrl from "../../audio/win.m4a";
-import "../../css/kuromi-game.css";
 import { t } from "../lib/i18n";
+
+const kuromiIdle = "/images/sprites/idle.webp";
+const kuromiWalk = "/images/sprites/walk.webp";
+const kuromiAttack = "/images/sprites/attack.webp";
+const kuromiCelebrate = "/images/sprites/jump2.webp";
+const kuromiWink = "/images/sprites/wink.webp";
+const kuromiWink2 = "/images/sprites/wink2.webp";
+const spotifyLogoUrl = "/images/spotify.svg";
 
 function getMonthsAndDaysSince(date: Date, today = new Date()): { months: number; days: number } {
   let months = (today.getFullYear() - date.getFullYear()) * 12 + (today.getMonth() - date.getMonth());

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://santiirepair.dev/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/about.png</image:loc>
+      <image:title>Santiago Ramirez (SantiiRepair) - Software Developer Avatar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/og-image.png</image:loc>
+      <image:title>SantiiRepair - Santiago Ramirez burn the ships</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://santiirepair.dev/trips</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/self.webp</image:loc>
+      <image:title>Ruta en moto por el Páramo de Mérida - SantiiRepair</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/pico.webp</image:loc>
+      <image:title>Pico Espejo Mérida Venezuela</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/beach.webp</image:loc>
+      <image:title>Viaje en moto a Choroní</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/mito.webp</image:loc>
+      <image:title>Cervecería artesanal Mito</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/paragliding.webp</image:loc>
+      <image:title>Vuelo en parapente Mérida</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/morro.webp</image:loc>
+      <image:title>Pueblo El Morro Mérida</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/azulita.webp</image:loc>
+      <image:title>Ruta La Azulita Mérida</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/alambique.webp</image:loc>
+      <image:title>Tasca Alambique</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/bodegon.webp</image:loc>
+      <image:title>Bahía de Cata Venezuela</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://santiirepair.dev/favorites</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/moto.png</image:loc>
+      <image:title>Voge Motorcycle - SantiiRepair</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://santiirepair.dev/images/tobby.webp</image:loc>
+      <image:title>Tobby el gato</image:title>
+    </image:image>
+  </url>
+</urlset>

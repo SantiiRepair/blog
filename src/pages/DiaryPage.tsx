@@ -3,11 +3,12 @@ import { useState } from "react";
 
 interface LogbookEntryProps {
   date: string;
+  rawDate: string;
   title: string;
   content: string;
 }
 
-function LogbookEntry({ date, title, content }: LogbookEntryProps) {
+function LogbookEntry({ date, rawDate, title, content }: LogbookEntryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,6 +23,7 @@ function LogbookEntry({ date, title, content }: LogbookEntryProps) {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
         style={{
           width: "100%",
           textAlign: "left",
@@ -37,24 +39,27 @@ function LogbookEntry({ date, title, content }: LogbookEntryProps) {
         }}
       >
         <span>
-          <span style={{ color: "#666", marginRight: "1rem", fontFamily: "monospace" }}>[{date}]</span>
-          <span style={{ fontWeight: "bold", color: "var(--accent-color, #f5c764)" }}>{title}</span>
+          <span style={{ color: "#888", marginRight: "1rem", fontFamily: "monospace" }}>
+            [{date}]
+          </span>
+          <span style={{ fontWeight: "bold", color: "var(--accent-color, #f5c764)" }}>
+            {title}
+          </span>
         </span>
         <span style={{ fontSize: "0.8rem", opacity: 0.5 }}>{isOpen ? "[-]" : "[+]"}</span>
       </button>
 
-      {isOpen && (
-        <div
-          style={{
-            padding: "0 1rem 1rem 1rem",
-            borderTop: "1px solid #222",
-            lineHeight: "1.6",
-            animation: "fadeIn 0.3s ease",
-          }}
-        >
-          <p style={{ marginTop: "1rem", whiteSpace: "pre-wrap" }}>{content}</p>
-        </div>
-      )}
+      <div
+        style={{
+          display: isOpen ? "block" : "none",
+          padding: "0 1rem 1rem 1rem",
+          borderTop: "1px solid #222",
+          lineHeight: "1.6",
+          animation: "fadeIn 0.3s ease",
+        }}
+      >
+        <p style={{ marginTop: "1rem", whiteSpace: "pre-wrap" }}>{content}</p>
+      </div>
     </div>
   );
 }
@@ -74,6 +79,7 @@ export default function DiaryPage() {
 
     entries.push({
       date: formattedDate,
+      rawDate,
       title: t(`diary_entry_${i}_title`),
       content: t(`diary_entry_${i}_text`),
     });
@@ -97,6 +103,7 @@ export default function DiaryPage() {
             <LogbookEntry
               key={index}
               date={entry.date}
+              rawDate={entry.rawDate}
               title={entry.title}
               content={entry.content}
             />

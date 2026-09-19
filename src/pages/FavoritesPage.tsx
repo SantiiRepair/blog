@@ -1,10 +1,10 @@
 import { t } from "../lib/i18n";
 import VideoCard from "../components/VideoCard";
 
-import motoImg from "../../images/moto.png";
-import tobby1Img from "../../images/tobby.webp";
-import tobby2Img from "../../images/tobby2.webp";
-import tobby3Img from "../../images/tobby3.webp";
+const motoImg = "/images/moto.png";
+const tobby1Img = "/images/tobby.webp";
+const tobby2Img = "/images/tobby2.webp";
+const tobby3Img = "/images/tobby3.webp";
 
 import harryVideo from "../../videos/harry_hermione_dance_to_forget_their_worries.mp4";
 import joeVideo from "../../videos/meet_joe_black_1998_coffee_shop_scene_part_2.mp4";
@@ -18,7 +18,7 @@ export default function FavoritesPage() {
       <div style={{ textAlign: "center" }}>
         <br />
         <br />
-        <img src={motoImg} alt={t("moto_alt")} style={{ width: "40%" }} />
+        <img src={motoImg} alt={t("moto_alt")} style={{ width: "40%" }} loading="lazy" decoding="async" />
         <br />
         <p>{t("intro_text")}</p>
 
@@ -27,13 +27,13 @@ export default function FavoritesPage() {
         <div className="image-gallery">
           <div className="image-row">
             <div className="image-item">
-              <img src={tobby1Img} alt={t("tobby1_alt")} />
+              <img src={tobby1Img} alt={t("tobby1_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={tobby2Img} alt={t("tobby2_alt")} />
+              <img src={tobby2Img} alt={t("tobby2_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={tobby3Img} alt={t("tobby3_alt")} />
+              <img src={tobby3Img} alt={t("tobby3_alt")} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

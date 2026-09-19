@@ -44,15 +44,19 @@ export default function App() {
       return t("kuromi_page_title");
     }
 
+    if (currentPath === "/diary") {
+      return `${t("diary_title")} — SantiiRepair`;
+    }
+
     if (currentPath === "/favorites") {
-      return t("favorites_title");
+      return `${t("favorites_title")} — SantiiRepair`;
     }
 
     if (currentPath === "/trips") {
-      return "we are infinite";
+      return "we are infinite — SantiiRepair";
     }
 
-    return t("title");
+    return `${t("title")} | SantiiRepair`;
   }, [currentPath]);
 
   useAnimatedTitle(currentPath, title);

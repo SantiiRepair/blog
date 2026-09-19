@@ -1,9 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { currentLanguage, initI18n } from "./lib/i18n";
-import "../css/style.css";
+
+// Seamless migration for legacy bookmarks with hash URLs (e.g. /#/diary -> /diary)
+if (window.location.hash.startsWith("#/")) {
+  const cleanPath = window.location.hash.slice(1);
+  window.history.replaceState(null, "", cleanPath);
+}
 
 async function bootstrap(): Promise<void> {
   await initI18n();
@@ -16,9 +21,9 @@ async function bootstrap(): Promise<void> {
 
   createRoot(rootElement).render(
     <React.StrictMode>
-      <HashRouter>
+      <BrowserRouter>
         <App />
-      </HashRouter>
+      </BrowserRouter>
     </React.StrictMode>
   );
 }

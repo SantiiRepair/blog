@@ -1,25 +1,122 @@
 <!doctype html>
-<html lang="en" translate="no">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Digital obsession, open-source philosophy, motorcycle road trips and alternative music." />
+    <title>SantiiRepair | Santiago Ramirez — Developer, Open-Source & Notes</title>
+    <meta name="description" content="Espacio personal de Santiago Ramirez (SantiiRepair) — desarrollo de software, filosofía open-source, viajes en motocicleta y notas sin filtro." />
+    <meta name="keywords" content="SantiiRepair, Santiago Ramirez, software developer, open source, Venezuela, python, typescript, go, motorcycle road trips, blog, Merida" />
+    <meta name="author" content="Santiago Ramirez (SantiiRepair)" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#1f2e34" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="burn the ships" />
+    <meta property="og:site_name" content="SantiiRepair" />
+    <meta property="og:title" content="SantiiRepair | Santiago Ramirez — burn the ships" />
+    <meta property="og:description" content="Espacio personal de Santiago Ramirez (SantiiRepair) — desarrollo de software, proyectos open-source, viajes en motocicleta y notas sin filtro." />
     <meta property="og:url" content="https://santiirepair.dev/" />
-    <meta property="og:description" content="Digital obsession, motorcycle road trips and alternative music" />
+    <meta property="og:image" content="https://santiirepair.dev/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SantiiRepair — Santiago Ramirez personal space and software development blog" />
+    <meta property="og:locale" content="es_VE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SantiiRepair" />
+    <meta name="twitter:creator" content="@SantiiRepair" />
+    <meta name="twitter:title" content="SantiiRepair | Santiago Ramirez — burn the ships" />
+    <meta name="twitter:description" content="Espacio personal de Santiago Ramirez (SantiiRepair) — desarrollo de software, proyectos open-source, viajes en motocicleta y notas sin filtro." />
+    <meta name="twitter:image" content="https://santiirepair.dev/images/og-image.png" />
+
+    <!-- Search Engine Verification Placeholders -->
+    <meta name="google-site-verification" content="GSC_VERIFICATION_TOKEN" />
+    <meta name="msvalidate.01" content="BING_VERIFICATION_TOKEN" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://santiirepair.dev/" />
-    <link rel="shortcut icon" href="images/favicon-5ico.png" type="image/png" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="/images/favicon-5ico.png" />
+    <link rel="shortcut icon" href="/images/favicon-5ico.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/favicon-5ico.png" />
+
+    <!-- DNS prefetch & Preconnect -->
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.cdnfonts.com" />
+    <link rel="dns-prefetch" href="https://cloud.umami.is" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/kuromi-game.css" />
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://santiirepair.dev/#website",
+          "url": "https://santiirepair.dev/",
+          "name": "SantiiRepair",
+          "description": "Espacio personal de Santiago Ramirez (SantiiRepair) — desarrollo de software, open-source, viajes y notas.",
+          "inLanguage": ["es", "en", "de"],
+          "publisher": {
+            "@id": "https://santiirepair.dev/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://santiirepair.dev/#person",
+          "name": "Santiago Ramirez",
+          "alternateName": ["SantiiRepair", "santiirepair"],
+          "url": "https://santiirepair.dev/",
+          "image": "https://santiirepair.dev/images/about.png",
+          "jobTitle": "Software Developer",
+          "knowsAbout": [
+            "Software Development",
+            "Open Source",
+            "Python",
+            "TypeScript",
+            "Go",
+            "React",
+            "Blockchain"
+          ],
+          "sameAs": [
+            "https://github.com/SantiiRepair"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- SPA redirect decode script for GitHub Pages -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+
+    <!-- Analytics -->
     <script
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="ce625abf-956a-4572-9c80-f5e651eb789d"
       data-auto-track="false"
     ></script>
-    <title>burn the ships</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

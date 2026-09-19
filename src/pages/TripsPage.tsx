@@ -1,14 +1,14 @@
 import { t } from "../lib/i18n";
 
-import selfImg from "../../images/self.webp";
-import picoImg from "../../images/pico.webp";
-import beachImg from "../../images/beach.webp";
-import mitoImg from "../../images/mito.webp";
-import paraglidingImg from "../../images/paragliding.webp";
-import morroImg from "../../images/morro.webp";
-import azulitaImg from "../../images/azulita.webp";
-import alambiqueImg from "../../images/alambique.webp";
-import bodegonImg from "../../images/bodegon.webp";
+const selfImg = "/images/self.webp";
+const picoImg = "/images/pico.webp";
+const beachImg = "/images/beach.webp";
+const mitoImg = "/images/mito.webp";
+const paraglidingImg = "/images/paragliding.webp";
+const morroImg = "/images/morro.webp";
+const azulitaImg = "/images/azulita.webp";
+const alambiqueImg = "/images/alambique.webp";
+const bodegonImg = "/images/bodegon.webp";
 
 export default function TripsPage() {
   return (
@@ -18,38 +18,38 @@ export default function TripsPage() {
         <div className="image-gallery">
           <div className="image-row">
             <div className="image-item">
-              <img src={selfImg} alt={t("paramo_alt")} />
+              <img src={selfImg} alt={t("paramo_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={picoImg} alt={t("pico_alt")} />
+              <img src={picoImg} alt={t("pico_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={beachImg} alt={t("beach_alt")} />
+              <img src={beachImg} alt={t("beach_alt")} loading="lazy" decoding="async" />
             </div>
           </div>
 
           <div className="image-row">
             <div className="image-item">
-              <img src={mitoImg} alt={t("mito_alt")} />
+              <img src={mitoImg} alt={t("mito_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={paraglidingImg} alt={t("paragliding_alt")} />
+              <img src={paraglidingImg} alt={t("paragliding_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={morroImg} alt={t("morro_alt")} />
+              <img src={morroImg} alt={t("morro_alt")} loading="lazy" decoding="async" />
             </div>
           </div>
 
           <p style={{ fontSize: "large" }}>{t("friends_quote")}</p>
           <div className="image-row">
             <div className="image-item">
-              <img src={azulitaImg} alt={t("azulita_alt")} />
+              <img src={azulitaImg} alt={t("azulita_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={alambiqueImg} alt={t("alambique_alt")} />
+              <img src={alambiqueImg} alt={t("alambique_alt")} loading="lazy" decoding="async" />
             </div>
             <div className="image-item">
-              <img src={bodegonImg} alt={t("cata_alt")} />
+              <img src={bodegonImg} alt={t("cata_alt")} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

@@ -6,24 +6,34 @@ interface LogbookEntryProps {
   rawDate: string;
   title: string;
   content: string;
+  hidden?: boolean;
 }
 
-function LogbookEntry({ date, rawDate, title, content }: LogbookEntryProps) {
+function LogbookEntry({ date, rawDate, title, content, hidden = false }: LogbookEntryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div
+      className={`diary-entry ${hidden ? "diary-entry-hidden" : ""}`}
+      data-hidden={hidden ? "true" : undefined}
       style={{
         marginBottom: "1.5rem",
         border: "1px solid #333",
         borderRadius: "4px",
         overflow: "hidden",
         backgroundColor: "rgba(0, 0, 0, 0.2)",
+        opacity: hidden ? 0.75 : 1,
       }}
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
+        type="button"
+        onClick={() => {
+          if (!hidden) {
+            setIsOpen(!isOpen);
+          }
+        }}
+        aria-expanded={hidden ? undefined : isOpen}
+        aria-disabled={hidden ? true : undefined}
         style={{
           width: "100%",
           textAlign: "left",
@@ -31,7 +41,7 @@ function LogbookEntry({ date, rawDate, title, content }: LogbookEntryProps) {
           background: "none",
           border: "none",
           color: "inherit",
-          cursor: "pointer",
+          cursor: hidden ? "default" : "pointer",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -46,17 +56,21 @@ function LogbookEntry({ date, rawDate, title, content }: LogbookEntryProps) {
             {title}
           </span>
         </span>
-        <span style={{ fontSize: "0.8rem", opacity: 0.5 }}>{isOpen ? "[-]" : "[+]"}</span>
+        <span style={{ fontSize: "0.8rem", opacity: 0.5, fontFamily: "monospace" }}>
+          {hidden ? "[hidden]" : isOpen ? "[-]" : "[+]"}
+        </span>
       </button>
 
       <div
         style={{
-          display: isOpen ? "block" : "none",
+          display: !hidden && isOpen ? "block" : "none",
           padding: "0 1rem 1rem 1rem",
           borderTop: "1px solid #222",
           lineHeight: "1.6",
           animation: "fadeIn 0.3s ease",
         }}
+        aria-hidden={hidden || !isOpen}
+        hidden={hidden || !isOpen}
       >
         <p style={{ marginTop: "1rem", whiteSpace: "pre-wrap" }}>{content}</p>
       </div>
@@ -77,11 +91,17 @@ export default function DiaryPage() {
       day: "numeric",
     }).format(new Date(rawDate + "T12:00:00")); // T12:00:00 evita desfases por zona horaria
 
+    const isHidden =
+      (exists(`diary_entry_${i}_hidden`) && t(`diary_entry_${i}_hidden`) === "true") ||
+      i === 5 ||
+      i === 6;
+
     entries.push({
       date: formattedDate,
       rawDate,
       title: t(`diary_entry_${i}_title`),
       content: t(`diary_entry_${i}_text`),
+      hidden: isHidden,
     });
     i++;
   }
@@ -101,11 +121,12 @@ export default function DiaryPage() {
         <div className="diary-entries">
           {reversedEntries.map((entry, index) => (
             <LogbookEntry
-              key={index}
+              key={entry.rawDate || index}
               date={entry.date}
               rawDate={entry.rawDate}
               title={entry.title}
               content={entry.content}
+              hidden={entry.hidden}
             />
           ))}
         </div>

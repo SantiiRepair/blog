@@ -128,7 +128,12 @@ const resources: TranslationResources = {
       seo_diary_title: "system_logs (Logbook) — SantiiRepair",
       lang_hint_text: "This page is also available in English.",
       lang_hint_action: "View in English",
-      diary_entry_link: "Link to this entry"
+      diary_entry_link: "Link to this entry",
+      start_menu: "Start",
+      window_zoom: "Maximize",
+      window_collapse: "Collapse",
+      chat_window_title: "Chat",
+      desktop_label: "Desktop"
     }
   },
   es: {
@@ -252,7 +257,12 @@ const resources: TranslationResources = {
       seo_diary_title: "system_logs (Bitácora) — SantiiRepair",
       lang_hint_text: "Esta página también está en español.",
       lang_hint_action: "Ver en español",
-      diary_entry_link: "Enlace a esta entrada"
+      diary_entry_link: "Enlace a esta entrada",
+      start_menu: "Inicio",
+      window_zoom: "Maximizar",
+      window_collapse: "Contraer",
+      chat_window_title: "Chat",
+      desktop_label: "Escritorio"
     }
   },
   de: {
@@ -377,7 +387,12 @@ const resources: TranslationResources = {
       seo_diary_title: "system_logs (Logbuch) — SantiiRepair",
       lang_hint_text: "Diese Seite gibt es auch auf Deutsch.",
       lang_hint_action: "Auf Deutsch ansehen",
-      diary_entry_link: "Link zu diesem Eintrag"
+      diary_entry_link: "Link zu diesem Eintrag",
+      start_menu: "Start",
+      window_zoom: "Maximieren",
+      window_collapse: "Einklappen",
+      chat_window_title: "Chat",
+      desktop_label: "Desktop"
     }
   },
   ru: {
@@ -502,7 +517,12 @@ const resources: TranslationResources = {
       seo_diary_title: "system_logs (Бортовой журнал) — SantiiRepair",
       lang_hint_text: "Эта страница есть и на русском.",
       lang_hint_action: "Открыть на русском",
-      diary_entry_link: "Ссылка на эту запись"
+      diary_entry_link: "Ссылка на эту запись",
+      start_menu: "Пуск",
+      window_zoom: "Развернуть",
+      window_collapse: "Свернуть",
+      chat_window_title: "Чат",
+      desktop_label: "Рабочий стол"
     }
   }
 };

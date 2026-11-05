@@ -69,9 +69,12 @@ def make_background_and_logo() -> None:
             print(f"  {out.relative_to(ROOT)}  {out.stat().st_size // 1024} KB")
 
     with Image.open(IMAGES / LOGO) as logo:
+        # Trim the transparent margin so the banner can sit on the desktop without a big empty box.
+        logo = logo.convert("RGBA")
+        logo = logo.crop(logo.getbbox())
         out = IMAGES / f"{Path(LOGO).stem}.webp"
         logo.save(out, "WEBP", lossless=True, method=6)
-        print(f"  {out.relative_to(ROOT)}  {out.stat().st_size // 1024} KB")
+        print(f"  {out.relative_to(ROOT)}  {logo.width}x{logo.height}  {out.stat().st_size // 1024} KB")
 
 
 def make_thumbs() -> dict:

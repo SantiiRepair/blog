@@ -1,50 +1,29 @@
 # robots.txt for https://santiirepair.dev
 # Optimized for Google, Bing, DuckDuckGo, and modern AI Search Assistants
 
+# Search engines: /diary and /nv are NOT blocked here on purpose.
+# Both pages ship <meta name="robots" content="noindex, ..."> (scripts/prerender.js),
+# and a crawler must be allowed to fetch a page to see that tag. Blocking them here
+# would let them show up in results as bare URLs, since every page links to /diary.
 User-agent: *
 Allow: /
-Disallow: /diary
-Disallow: /diary/
-Disallow: /nv
-Disallow: /nv/
 
-# Allow AI & Search Assistants to properly index, summarize, and cite Santiago Ramirez (SantiiRepair)
-User-agent: Googlebot
-Allow: /
-Disallow: /diary
-Disallow: /diary/
-Disallow: /nv
-
+# AI crawlers don't act on the noindex meta tag, so the logbook is excluded here
 User-agent: Google-Extended
 Allow: /
 Disallow: /diary
-Disallow: /diary/
-
-User-agent: Bingbot
-Allow: /
-Disallow: /diary
-Disallow: /diary/
-Disallow: /nv
-
-User-agent: Applebot
-Allow: /
-Disallow: /diary
-Disallow: /diary/
 
 User-agent: GPTBot
 Allow: /
 Disallow: /diary
-Disallow: /diary/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /diary
-Disallow: /diary/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /diary
-Disallow: /diary/
 
 # Disallow aggressive scraping bots
 User-agent: CCBot

@@ -50,10 +50,29 @@ const PixelSnow = () => {
       }
     }
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
+    // Visitors who ask the OS for reduced motion get the same snow, standing still.
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const drawFrame = (move: boolean) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((particle) => {
+        if (move) particle.update();
+        particle.draw();
+      });
+    };
+
+    const animate = () => {
+      drawFrame(true);
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    const start = () => {
+      cancelAnimationFrame(animationFrameId);
+      if (reducedMotion.matches) {
+        drawFrame(false);
+      } else {
+        animate();
+      }
     };
 
     const initParticles = () => {
@@ -63,21 +82,21 @@ const PixelSnow = () => {
       }
     };
 
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((particle) => {
-        particle.update();
-        particle.draw();
-      });
-      animationFrameId = requestAnimationFrame(animate);
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+      if (reducedMotion.matches) drawFrame(false);
     };
 
     window.addEventListener("resize", resizeCanvas);
+    reducedMotion.addEventListener("change", start);
     resizeCanvas();
-    animate();
+    start();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      reducedMotion.removeEventListener("change", start);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

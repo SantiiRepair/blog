@@ -131,7 +131,12 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}s? Really? I beat you 😝. Come on, you can do it faster",
       kuromi_surprise_age_label: "Happy",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Close"
+      kuromi_close: "Close",
+      not_found_text: "Sector not found or transmission lost.",
+      not_found_link: "[ Return to Home Base ]",
+      language_label: "Language",
+      photo_open: "View larger",
+      close: "Close"
     }
   },
   es: {
@@ -258,7 +263,12 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}s? ¿En serio? Te gané 😝. Vamos, puedes hacerlo más rápido",
       kuromi_surprise_age_label: "Felices",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Cerrar"
+      kuromi_close: "Cerrar",
+      not_found_text: "Sector no encontrado o transmisión perdida.",
+      not_found_link: "[ Volver a la base ]",
+      language_label: "Idioma",
+      photo_open: "Ver en grande",
+      close: "Cerrar"
     }
   },
   de: {
@@ -386,7 +396,12 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}s? Echt jetzt? Ich war schneller 😝. Du schaffst das noch schneller!",
       kuromi_surprise_age_label: "Aktuelles Alter:",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Schliessen"
+      kuromi_close: "Schliessen",
+      not_found_text: "Sektor nicht gefunden oder Übertragung verloren.",
+      not_found_link: "[ Zurück zur Basis ]",
+      language_label: "Sprache",
+      photo_open: "Größer anzeigen",
+      close: "Schließen"
     }
   },
   ru: {
@@ -511,17 +526,50 @@ const resources: TranslationResources = {
       kuromi_surprise_text_3: "NAHERLYS VALENTINA!!! {{bestTime}}с? Серьёзно? Я тебя обогнал 😝. Давай, ты можешь быстрее!",
       kuromi_surprise_age_label: "Текущий возраст:",
       kuromi_surprise_age_suffix: "s",
-      kuromi_close: "Закрыть"
+      kuromi_close: "Закрыть",
+      not_found_text: "Сектор не найден или передача потеряна.",
+      not_found_link: "[ Вернуться на базу ]",
+      language_label: "Язык",
+      photo_open: "Открыть крупнее",
+      close: "Закрыть"
     }
   }
 };
 
-export async function initI18n(): Promise<void> {
+export const SUPPORTED_LANGUAGES = ["es", "en", "de", "ru"] as const;
+export type Language = (typeof SUPPORTED_LANGUAGES)[number];
+
+// Language of the HTML generated at build time (matches <html lang="es"> in index.html).
+export const PRERENDER_LANGUAGE: Language = "es";
+
+const LANGUAGE_STORAGE_KEY = "lang";
+
+function isSupported(lang: string | null | undefined): lang is Language {
+  return !!lang && (SUPPORTED_LANGUAGES as readonly string[]).includes(lang);
+}
+
+// `lng` is passed explicitly when rendering at build time (no browser APIs there).
+export async function initI18n(lng?: Language): Promise<void> {
   await i18next.init({
-    lng: detectLanguage(),
+    lng: lng ?? detectLanguage(),
     fallbackLng: "en",
     resources
   });
+}
+
+export async function setLanguage(lang: Language): Promise<void> {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+  } catch {
+    // Storage can be unavailable (private mode); the choice just won't persist.
+  }
+  await i18next.changeLanguage(lang);
+  document.documentElement.lang = lang;
+}
+
+export function onLanguageChange(listener: (lang: string) => void): () => void {
+  i18next.on("languageChanged", listener);
+  return () => i18next.off("languageChanged", listener);
 }
 
 export function t(key: string, options?: Record<string, any>): string {
@@ -536,10 +584,17 @@ export function currentLanguage(): string {
   return i18next.language;
 }
 
-function detectLanguage(): string {
-  const browserLang = navigator.language;
-  const langCode = browserLang.split("-")[0];
-  const supportedLangs = ["en", "es", "de", "ru"];
+function detectLanguage(): Language {
+  let saved: string | null = null;
+  try {
+    saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  } catch {
+    saved = null;
+  }
+  if (isSupported(saved)) {
+    return saved;
+  }
 
-  return supportedLangs.includes(langCode) ? langCode : "en";
+  const langCode = navigator.language.split("-")[0];
+  return isSupported(langCode) ? langCode : "en";
 }

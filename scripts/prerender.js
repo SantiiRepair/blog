@@ -1,9 +1,12 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { execSync } = require("node:child_process");
+const { pathToFileURL } = require("node:url");
 
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(rootDir, "dist");
-const publicDir = path.resolve(rootDir, "public");
+// Output of `vite build --ssr src/entry-server.tsx` (see package.json "build")
+const serverEntry = path.resolve(rootDir, "dist-server", "entry-server.mjs");
 
 if (!fs.existsSync(distDir)) {
   console.error("Error: dist directory does not exist. Run vite build first.");
@@ -53,38 +56,7 @@ const routes = [
         }
       ]
     },
-    prerenderHtml: `
-      <div class="site-layout-root">
-        <div class="header">
-          <img src="/images/welcum.png" alt="Welcome" class="header-logo" width="280" height="70" />
-        </div>
-        <div class="flex-container">
-          <aside class="sidebar sidebar-left">
-            <nav aria-label="Site Navigation">
-              <a href="/">Sobre mí</a><br/>
-              <a href="/favorites">Favoritos</a><br/>
-              <a href="/trips">Viajes</a><br/>
-              <a href="/diary">Bitácora</a><br/>
-              <a href="https://github.com/SantiiRepair" target="_blank" rel="me noopener noreferrer">GitHub</a>
-            </nav>
-          </aside>
-          <main class="main-content">
-            <div class="text-container">
-              <div class="about-intro" style="text-align: center;">
-                <img src="/images/about.png" alt="Santiago Ramirez (SantiiRepair)" class="about-avatar" width="160" height="160" />
-                <h1 class="about-title">Rider fantasma, coder nocturno</h1>
-                <div style="color: #f5c764; font-family: monospace; margin: 0.5rem 0;">Santiago Ramirez • <a href="https://github.com/SantiiRepair" rel="me">@SantiiRepair</a></div>
-                <p class="about-lead">Carretera de dia, pantalla de noche. Este es mi rincon en internet.</p>
-                <p>Vivo entre asfalto y pantalla: de día ruta, de noche código, pelis, música y café.</p>
-                <div class="about-tags">
-                  <span>rutas</span> <span>noches de codigo</span> <span>cafe tarde</span>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-      </div>
-    `
+    prerender: true
   },
   {
     path: "/diary",
@@ -115,32 +87,7 @@ const routes = [
         "alternateName": "SantiiRepair"
       }
     },
-    prerenderHtml: `
-      <div class="site-layout-root">
-        <div class="header">
-          <img src="/images/welcum.png" alt="Welcome" class="header-logo" width="280" height="70" />
-        </div>
-        <div class="flex-container">
-          <aside class="sidebar sidebar-left">
-            <nav aria-label="Site Navigation">
-              <a href="/">Sobre mí</a><br/>
-              <a href="/favorites">Favoritos</a><br/>
-              <a href="/trips">Viajes</a><br/>
-              <a href="/diary">Bitácora</a><br/>
-              <a href="https://github.com/SantiiRepair" target="_blank" rel="me noopener noreferrer">GitHub</a>
-            </nav>
-          </aside>
-          <main class="main-content">
-            <div class="text-container">
-              <div style="text-align: center;">
-                <h1 style="font-size: large;">The best you ever had is just a memory</h1>
-                <p>Rutas en moto: Páramo de Mérida, Pico Espejo, Choroní, Cervecería Mito, Parapente, El Morro, La Azulita, Tasca Alambique, Bahía de Cata.</p>
-              </div>
-            </div>
-          </main>
-        </div>
-      </div>
-    `
+    prerender: true
   },
   {
     path: "/favorites",
@@ -155,32 +102,7 @@ const routes = [
       "name": "Favoritos — SantiiRepair",
       "url": "https://santiirepair.dev/favorites"
     },
-    prerenderHtml: `
-      <div class="site-layout-root">
-        <div class="header">
-          <img src="/images/welcum.png" alt="Welcome" class="header-logo" width="280" height="70" />
-        </div>
-        <div class="flex-container">
-          <aside class="sidebar sidebar-left">
-            <nav aria-label="Site Navigation">
-              <a href="/">Sobre mí</a><br/>
-              <a href="/favorites">Favoritos</a><br/>
-              <a href="/trips">Viajes</a><br/>
-              <a href="/diary">Bitácora</a><br/>
-              <a href="https://github.com/SantiiRepair" target="_blank" rel="me noopener noreferrer">GitHub</a>
-            </nav>
-          </aside>
-          <main class="main-content">
-            <div class="text-container">
-              <div style="text-align: center;">
-                <h1>i eat losers for breakfast</h1>
-                <p>Mascotas (Tobby el gato), Películas favoritas (Harry Potter, Meet Joe Black, Wolf of Wall Street), Series (Breaking Bad, The Office, Stranger Things), Música (Spotify Playlist).</p>
-              </div>
-            </div>
-          </main>
-        </div>
-      </div>
-    `
+    prerender: true
   },
   {
     path: "/nv",
@@ -194,7 +116,7 @@ const routes = [
 ];
 
 // Helper to replace or inject tags in HTML
-function renderRouteHtml(template, route) {
+function renderRouteHtml(template, route, appHtml) {
   let html = template;
 
   // Replace Title
@@ -259,42 +181,65 @@ function renderRouteHtml(template, route) {
     html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/i, "");
   }
 
-  // Inject fallback prerender content in #root
-  if (route.prerenderHtml) {
-    html = html.replace('<div id="root"></div>', `<div id="root">${route.prerenderHtml}</div>`);
+  // Put the real page markup (rendered from the React components) inside #root.
+  // data-prerendered-path tells src/main.tsx it can reuse this markup instead of re-rendering it.
+  if (appHtml) {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root" data-prerendered-path="${route.path}">${appHtml}</div>`
+    );
   }
 
   return html;
 }
 
-// Generate all routes
-console.log("Generating prerendered route HTML files...");
-for (const route of routes) {
-  const dir = path.dirname(route.outFile);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+// Date of the last commit that touched site content, used as <lastmod> in the sitemap.
+// CI needs the full git history for this (actions/checkout with fetch-depth: 0).
+function lastContentChange() {
+  try {
+    const date = execSync("git log -1 --format=%cs -- src public/images videos index.html", {
+      cwd: rootDir,
+      encoding: "utf-8"
+    }).trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+  } catch {
+    // git not available: fall through to today's date
   }
-  const rendered = renderRouteHtml(masterHtml, route);
-  fs.writeFileSync(route.outFile, rendered, "utf-8");
-  console.log(`✓ Created: ${path.relative(distDir, route.outFile)}`);
+  return new Date().toISOString().slice(0, 10);
 }
 
-// Ensure all public files and folders are copied to dist
-function copyDirSync(srcDir, destDir) {
-  if (!fs.existsSync(srcDir)) return;
-  if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
-  for (const item of fs.readdirSync(srcDir)) {
-    const srcPath = path.join(srcDir, item);
-    const destPath = path.join(destDir, item);
-    if (fs.statSync(srcPath).isDirectory()) {
-      copyDirSync(srcPath, destPath);
-    } else {
-      fs.copyFileSync(srcPath, destPath);
-      console.log(`✓ Synced to dist: ${path.relative(publicDir, srcPath)}`);
+async function main() {
+  if (!fs.existsSync(serverEntry)) {
+    console.error("Error: dist-server/entry-server.mjs not found. Run the SSR build first.");
+    process.exit(1);
+  }
+  const { render } = await import(pathToFileURL(serverEntry).href);
+
+  console.log("Generating prerendered route HTML files...");
+  for (const route of routes) {
+    const dir = path.dirname(route.outFile);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
     }
+    const appHtml = route.prerender ? await render(route.path) : "";
+    fs.writeFileSync(route.outFile, renderRouteHtml(masterHtml, route, appHtml), "utf-8");
+    console.log(`✓ Created: ${path.relative(distDir, route.outFile)}`);
   }
+
+  const sitemapPath = path.resolve(distDir, "sitemap.xml");
+  if (fs.existsSync(sitemapPath)) {
+    const lastmod = lastContentChange();
+    const sitemap = fs
+      .readFileSync(sitemapPath, "utf-8")
+      .replace(/<lastmod>.*?<\/lastmod>/g, `<lastmod>${lastmod}</lastmod>`);
+    fs.writeFileSync(sitemapPath, sitemap, "utf-8");
+    console.log(`✓ sitemap.xml lastmod set to ${lastmod}`);
+  }
+
+  console.log("Prerender & SEO build completed successfully!");
 }
 
-copyDirSync(publicDir, distDir);
-
-console.log("Prerender & SEO build completed successfully!");
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

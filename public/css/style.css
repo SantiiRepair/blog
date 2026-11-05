@@ -3,14 +3,22 @@
   font-style: normal;
   font-display: swap;
   font-family: "W95FA";
-  src: local("W95FA"),
-    url("https://fonts.cdnfonts.com/s/45697/W95FA.woff") format("woff");
+  src: local("W95FA"), url("/fonts/W95FA.woff") format("woff");
+}
+
+/* Site palette */
+:root {
+  --color-panel: #1f2e34;
+  --color-deep: #13092d;
+  --accent-color: #f5c764;
+  --color-lilac: #a49cba;
+  --color-frame: #a1a1a1;
 }
 
 body {
   font-family: "W95FA", system-ui;
   font-style: normal;
-  background-color: #1f2e34;
+  background-color: var(--color-panel);
   background-image: url("/images/bg.webp");
   background-size: cover;
   background-position: center;
@@ -20,8 +28,7 @@ body {
 
 * {
   box-sizing: border-box;
-  cursor: url(https://cur.cursors-4u.net/games/gam-14/gam1379.ani),
-    url(https://cur.cursors-4u.net/games/gam-14/gam1379.png), auto !important;
+  cursor: url("/images/cursor.png"), auto !important;
 }
 
 .container {
@@ -58,7 +65,7 @@ body {
 
 .navbar {
   height: 40px;
-  background-color: #13092d;
+  background-color: var(--color-deep);
   width: 100%;
 }
 
@@ -75,13 +82,13 @@ body {
 }
 
 .navbar li a {
-  color: #f5c764;
+  color: var(--accent-color);
   font-weight: 800;
   text-decoration: none;
 }
 
 .navbar li a:hover {
-  color: #a49cba;
+  color: var(--color-lilac);
   text-decoration: underline;
 }
 
@@ -91,7 +98,7 @@ body {
 }
 
 .sidebar {
-  background-color: #1f2e34;
+  background-color: var(--color-panel);
   width: 18%;
   min-height: 560px;
   border-image-slice: 27 27 27 27;
@@ -113,7 +120,7 @@ body {
 
 .main-content {
   overflow-y: auto;
-  background-color: #1f2e34;
+  background-color: var(--color-panel);
   flex: 1;
   width: 70%;
   min-height: 560px;
@@ -122,7 +129,7 @@ body {
   order: 2;
   text-align: center;
   font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-  border: 3px outset #a1a1a1;
+  border: 3px outset var(--color-frame);
   margin-top: -1%;
   overflow-x: hidden;
 }
@@ -136,7 +143,7 @@ body {
 }
 
 .footer {
-  background-color: #13092d;
+  background-color: var(--color-deep);
   width: 100%;
   height: 40px;
   padding: 10px;
@@ -148,7 +155,7 @@ body {
   height: 30px;
   padding: 10px;
   font-size: smaller;
-  background-color: #13092d;
+  background-color: var(--color-deep);
 }
 
 a:link {
@@ -163,6 +170,261 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Current section in the left menu */
+.sidebar-left a[aria-current="page"] {
+  color: var(--accent-color);
+}
+
+.lang-switch {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.lang-switch button {
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  background-color: var(--color-deep);
+  border: 2px outset var(--color-lilac);
+  padding: 2px 6px;
+}
+
+.lang-switch button[aria-pressed="true"] {
+  border-style: inset;
+  color: var(--color-lilac);
+}
+
+.about-intro {
+  text-align: center;
+}
+
+.about-author-badge {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-color);
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.about-author-badge a {
+  color: #48bfe3;
+}
+
+.favorites-moto {
+  width: 40%;
+  height: auto;
+}
+
+/* Logbook (diary) */
+.diary {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.about-title.diary-heading {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.about-lead.diary-subtitle {
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.diary-entry {
+  margin-bottom: 1.5rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.diary-entry-hidden {
+  opacity: 0.75;
+}
+
+.diary-entry-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+}
+
+.diary-entry-date {
+  color: #888;
+  margin-right: 1rem;
+  font-family: monospace;
+}
+
+.diary-entry-title {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.diary-entry-state {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  font-family: monospace;
+}
+
+.diary-entry-body {
+  padding: 0 1rem 1rem 1rem;
+  border-top: 1px solid #222;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease;
+}
+
+.diary-entry-body p {
+  margin-top: 1rem;
+  white-space: pre-wrap;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Gallery photo that opens larger */
+.photo-zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/* Enlarged photo window: same pixel frame as the sidebars */
+.photo-window {
+  padding: 8px 10px 10px;
+  max-width: 94vw;
+  max-height: 94vh;
+  overflow: hidden;
+  color: #dfdfdf;
+  background-color: var(--color-panel);
+  border-style: solid;
+  border-image-slice: 27 27 27 27;
+  border-image-width: 20px 20px 20px 20px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("/images/border.png");
+}
+
+.photo-window::backdrop {
+  background-color: rgba(19, 9, 45, 0.75);
+}
+
+.photo-window-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 8px;
+  font-size: 0.95rem;
+  color: var(--accent-color);
+}
+
+.photo-window-close {
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--accent-color);
+  background-color: var(--color-deep);
+  border: 2px outset var(--color-lilac);
+  padding: 2px 7px 4px;
+}
+
+.photo-window-close:active {
+  border-style: inset;
+}
+
+/* More specific than ".image-item img" so the enlarged photo isn't sized as a thumbnail */
+.image-item .photo-window img {
+  display: block;
+  width: min(88vw, calc(78vh * var(--photo-ratio)));
+  height: auto;
+  border: 2px solid var(--color-frame);
+}
+
+/* 88x31 buttons */
+.badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 24px;
+}
+
+.badges .badge88 {
+  display: inline-flex;
+  align-items: stretch;
+  width: 88px;
+  height: 31px;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent-color);
+  background-color: var(--color-deep);
+  border: 2px outset var(--color-lilac);
+}
+
+.badges .badge88-alt {
+  color: #dfdfdf;
+  background-color: var(--color-panel);
+  border-color: var(--color-frame);
+}
+
+.badge88-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  color: var(--color-deep);
+  background-color: var(--accent-color);
+}
+
+.badge88-alt .badge88-icon {
+  color: var(--color-panel);
+  background-color: var(--color-lilac);
+}
+
+.badge88-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0 2px;
+}
+
+.badges a.badge88:hover {
+  text-decoration: none;
+  border-style: inset;
+}
+
+/* 404 inside the layout */
+.not-found .about-lead {
+  margin-bottom: 1.5rem;
+}
+
+.not-found-link:link,
+.not-found-link:visited {
+  color: #52b788;
+  text-decoration: underline;
+}
+
 .ps-note {
   margin-top: 20px;
   font-size: large;
@@ -174,7 +436,7 @@ a:hover {
 
 .about-kicker {
   margin: 0;
-  color: #a49cba;
+  color: var(--color-lilac);
   font-size: 0.55em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -183,13 +445,14 @@ a:hover {
 .about-avatar {
   width: 30%;
   max-width: 280px;
-  border: 2px solid #a1a1a1;
+  height: auto;
+  border: 2px solid var(--color-frame);
   margin-top: 8px;
 }
 
 .about-title {
   margin: 10px 0 6px;
-  color: #f5c764;
+  color: var(--accent-color);
   font-size: 0.9em;
   line-height: 1.2;
 }
@@ -210,9 +473,9 @@ a:hover {
 }
 
 .about-tags span {
-  color: #f5c764;
-  background-color: #13092d;
-  border: 2px outset #a49cba;
+  color: var(--accent-color);
+  background-color: var(--color-deep);
+  border: 2px outset var(--color-lilac);
   font-size: 0.5em;
   padding: 4px 8px;
 }
@@ -403,7 +666,7 @@ audio {
 .image-item img {
   width: 100%;
   height: auto;
-  border: 2px solid #a1a1a1;
+  border: 2px solid var(--color-frame);
   display: block;
 }
 

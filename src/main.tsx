@@ -1,8 +1,9 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { currentLanguage, initI18n } from "./lib/i18n";
+import { PRERENDER_LANGUAGE, currentLanguage, initI18n } from "./lib/i18n";
+import { normalizePath } from "./lib/paths";
 
 // Seamless migration for legacy bookmarks with hash URLs (e.g. /#/diary -> /diary)
 if (window.location.hash.startsWith("#/")) {
@@ -19,13 +20,27 @@ async function bootstrap(): Promise<void> {
     return;
   }
 
-  createRoot(rootElement).render(
+  const app = (
     <React.StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </React.StrictMode>
   );
+
+  // scripts/prerender.js renders some pages into the HTML at build time (in Spanish).
+  // Reuse that markup when it matches what this visitor would see; otherwise render from scratch.
+  const prerenderedPath = rootElement.dataset.prerenderedPath;
+  const canHydrate =
+    prerenderedPath !== undefined &&
+    prerenderedPath === normalizePath(window.location.pathname) &&
+    currentLanguage() === PRERENDER_LANGUAGE;
+
+  if (canHydrate) {
+    hydrateRoot(rootElement, app);
+  } else {
+    createRoot(rootElement).render(app);
+  }
 }
 
 void bootstrap();

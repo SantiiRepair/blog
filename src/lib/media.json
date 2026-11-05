@@ -1,0 +1,207 @@
+{
+  "photos": {
+    "self": {
+      "src": "/images/self.webp",
+      "width": 3060,
+      "height": 4080,
+      "variants": [
+        {
+          "src": "/images/thumbs/self-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/self-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "pico": {
+      "src": "/images/pico.webp",
+      "width": 3000,
+      "height": 4000,
+      "variants": [
+        {
+          "src": "/images/thumbs/pico-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/pico-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "beach": {
+      "src": "/images/beach.webp",
+      "width": 2087,
+      "height": 2774,
+      "variants": [
+        {
+          "src": "/images/thumbs/beach-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/beach-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "mito": {
+      "src": "/images/mito.webp",
+      "width": 4000,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/mito-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/mito-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "paragliding": {
+      "src": "/images/paragliding.webp",
+      "width": 5568,
+      "height": 4176,
+      "variants": [
+        {
+          "src": "/images/thumbs/paragliding-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/paragliding-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "morro": {
+      "src": "/images/morro.webp",
+      "width": 4000,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/morro-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/morro-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "azulita": {
+      "src": "/images/azulita.webp",
+      "width": 4000,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/azulita-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/azulita-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "alambique": {
+      "src": "/images/alambique.webp",
+      "width": 4000,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/alambique-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/alambique-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "bodegon": {
+      "src": "/images/bodegon.webp",
+      "width": 2400,
+      "height": 1800,
+      "variants": [
+        {
+          "src": "/images/thumbs/bodegon-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/bodegon-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "tobby": {
+      "src": "/images/tobby.webp",
+      "width": 2250,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/tobby-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/tobby-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "tobby2": {
+      "src": "/images/tobby2.webp",
+      "width": 2250,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/tobby2-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/tobby2-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "tobby3": {
+      "src": "/images/tobby3.webp",
+      "width": 2250,
+      "height": 3000,
+      "variants": [
+        {
+          "src": "/images/thumbs/tobby3-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/tobby3-960.webp",
+          "width": 960
+        }
+      ]
+    },
+    "moto": {
+      "src": "/images/moto.png",
+      "width": 3000,
+      "height": 4000,
+      "variants": [
+        {
+          "src": "/images/thumbs/moto-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/moto-960.webp",
+          "width": 960
+        }
+      ]
+    }
+  },
+  "posters": {
+    "dune_part_two_paul_speaks": "/images/posters/dune_part_two_paul_speaks.jpg",
+    "every_that_s_what_she_said_ever": "/images/posters/every_that_s_what_she_said_ever.jpg",
+    "harry_hermione_dance_to_forget_their_worries": "/images/posters/harry_hermione_dance_to_forget_their_worries.jpg",
+    "meet_joe_black_1998_coffee_shop_scene_part_2": "/images/posters/meet_joe_black_1998_coffee_shop_scene_part_2.jpg",
+    "wolf_of_wall_street_motivational_speech": "/images/posters/wolf_of_wall_street_motivational_speech.jpg",
+    "yeahhh_come_on_baby": "/images/posters/yeahhh_come_on_baby.jpg"
+  }
+}

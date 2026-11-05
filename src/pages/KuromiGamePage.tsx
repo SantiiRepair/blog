@@ -4,6 +4,7 @@ import missSoundUrl from "../../audio/huh.m4a";
 import bgMusicUrl from "../../audio/bg.m4a";
 import winSoundUrl from "../../audio/win.m4a";
 import { t } from "../lib/i18n";
+import "../styles/kuromi-game.css";
 
 const kuromiIdle = "/images/sprites/idle.webp";
 const kuromiWalk = "/images/sprites/walk.webp";

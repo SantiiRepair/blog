@@ -1,33 +1,17 @@
-import { useEffect, useMemo } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import useAnimatedTitle from "./hooks/useAnimatedTitle";
 import SiteLayout from "./layout/SiteLayout";
 import AboutPage from "./pages/AboutPage";
 import FavoritesPage from "./pages/FavoritesPage";
-import KuromiGamePage from "./pages/KuromiGamePage";
 import TripsPage from "./pages/TripsPage";
 import DiaryPage from "./pages/DiaryPage";
-import { t } from "./lib/i18n";
+import NotFoundPage from "./pages/NotFoundPage";
+import { currentLanguage, onLanguageChange, t } from "./lib/i18n";
+import { KNOWN_PATHS, SECRET_PATH, normalizePath } from "./lib/paths";
 
-const SECRET_PATH = "/nv";
-const normalizePath = (path: string): string => {
-  const pathWithoutQuery = path.split("?")[0];
-  const pathWithoutHash = pathWithoutQuery.split("#")[0];
-
-  if (!pathWithoutHash) {
-    return "/";
-  }
-
-  const withLeadingSlash = pathWithoutHash.startsWith("/")
-    ? pathWithoutHash
-    : `/${pathWithoutHash}`;
-
-  if (withLeadingSlash === "/") {
-    return withLeadingSlash;
-  }
-
-  return withLeadingSlash.replace(/\/+$/, "");
-};
+// The game (code, CSS and sounds) only downloads when someone opens /nv.
+const KuromiGamePage = lazy(() => import("./pages/KuromiGamePage"));
 
 type UmamiWindow = Window & {
   umami?: {
@@ -38,6 +22,10 @@ type UmamiWindow = Window & {
 export default function App() {
   const location = useLocation();
   const currentPath = normalizePath(location.pathname);
+  const [language, setLanguage] = useState(currentLanguage);
+
+  // Pages read texts with t() while rendering, so re-render everything when the language changes.
+  useEffect(() => onLanguageChange(setLanguage), []);
 
   const title = useMemo(() => {
     if (currentPath === SECRET_PATH) {
@@ -56,8 +44,12 @@ export default function App() {
       return "we are infinite — SantiiRepair";
     }
 
+    if (!KNOWN_PATHS.includes(currentPath)) {
+      return "404 — SantiiRepair";
+    }
+
     return `${t("title")} | SantiiRepair`;
-  }, [currentPath]);
+  }, [currentPath, language]);
 
   useAnimatedTitle(currentPath, title);
 
@@ -71,7 +63,14 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/nv" element={<KuromiGamePage />} />
+      <Route
+        path={SECRET_PATH}
+        element={
+          <Suspense fallback={null}>
+            <KuromiGamePage />
+          </Suspense>
+        }
+      />
       <Route
         path="/"
         element={
@@ -104,7 +103,14 @@ export default function App() {
           </SiteLayout>
         }
       />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route
+        path="*"
+        element={
+          <SiteLayout>
+            <NotFoundPage />
+          </SiteLayout>
+        }
+      />
     </Routes>
   );
 }

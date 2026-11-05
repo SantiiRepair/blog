@@ -30,6 +30,7 @@ Thumbs.db
 *~
 
 /dist
+/dist-server
 /build
 /.next
 /out
@@ -150,3 +151,5 @@ yarn-debug.log*
 .ruby-version
 /.bundle
 /.PIL
+
+.claude/

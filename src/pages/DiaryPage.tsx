@@ -16,17 +16,10 @@ function LogbookEntry({ date, rawDate, title, content, hidden = false }: Logbook
     <div
       className={`diary-entry ${hidden ? "diary-entry-hidden" : ""}`}
       data-hidden={hidden ? "true" : undefined}
-      style={{
-        marginBottom: "1.5rem",
-        border: "1px solid #333",
-        borderRadius: "4px",
-        overflow: "hidden",
-        backgroundColor: "rgba(0, 0, 0, 0.2)",
-        opacity: hidden ? 0.75 : 1,
-      }}
     >
       <button
         type="button"
+        className="diary-entry-toggle"
         onClick={() => {
           if (!hidden) {
             setIsOpen(!isOpen);
@@ -34,45 +27,22 @@ function LogbookEntry({ date, rawDate, title, content, hidden = false }: Logbook
         }}
         aria-expanded={hidden ? undefined : isOpen}
         aria-disabled={hidden ? true : undefined}
-        style={{
-          width: "100%",
-          textAlign: "left",
-          padding: "1rem",
-          background: "none",
-          border: "none",
-          color: "inherit",
-          cursor: hidden ? "default" : "pointer",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontFamily: "inherit",
-        }}
       >
         <span>
-          <span style={{ color: "#888", marginRight: "1rem", fontFamily: "monospace" }}>
-            [{date}]
-          </span>
-          <span style={{ fontWeight: "bold", color: "var(--accent-color, #f5c764)" }}>
-            {title}
-          </span>
+          <span className="diary-entry-date">[{date}]</span>
+          <span className="diary-entry-title">{title}</span>
         </span>
-        <span style={{ fontSize: "0.8rem", opacity: 0.5, fontFamily: "monospace" }}>
+        <span className="diary-entry-state">
           {hidden ? "[hidden]" : isOpen ? "[-]" : "[+]"}
         </span>
       </button>
 
       <div
-        style={{
-          display: !hidden && isOpen ? "block" : "none",
-          padding: "0 1rem 1rem 1rem",
-          borderTop: "1px solid #222",
-          lineHeight: "1.6",
-          animation: "fadeIn 0.3s ease",
-        }}
+        className="diary-entry-body"
         aria-hidden={hidden || !isOpen}
         hidden={hidden || !isOpen}
       >
-        <p style={{ marginTop: "1rem", whiteSpace: "pre-wrap" }}>{content}</p>
+        <p>{content}</p>
       </div>
     </div>
   );
@@ -110,13 +80,11 @@ export default function DiaryPage() {
 
   return (
     <div className="text-container">
-      <div style={{ textAlign: "left", marginTop: "2rem" }}>
-        <h1 className="about-title" style={{ fontSize: "1.5rem", color: "var(--accent-color, #f5c764)" }}>
+      <div className="diary">
+        <h1 className="about-title diary-heading">
           {">"} {t("diary_title")}
         </h1>
-        <p className="about-lead" style={{ marginBottom: "3rem", opacity: 0.8 }}>
-          {t("diary_subtitle")}
-        </p>
+        <p className="about-lead diary-subtitle">{t("diary_subtitle")}</p>
 
         <div className="diary-entries">
           {reversedEntries.map((entry, index) => (

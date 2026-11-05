@@ -13,6 +13,7 @@
   --accent-color: #f5c764;
   --color-lilac: #a49cba;
   --color-frame: #a1a1a1;
+  --color-text: #dfdfdf;
 }
 
 body {
@@ -133,6 +134,8 @@ body {
 
 .main-content {
   overflow-y: auto;
+  /* Light text on the dark panel (it used to inherit the browser's default black) */
+  color: var(--color-text);
   background-color: var(--color-panel);
   flex: 1;
   width: 70%;
@@ -359,7 +362,7 @@ a:hover {
   max-width: 94vw;
   max-height: 94vh;
   overflow: hidden;
-  color: #dfdfdf;
+  color: var(--color-text);
   background-color: var(--color-panel);
   border-style: solid;
   border-image-slice: 27 27 27 27;
@@ -426,7 +429,7 @@ a:hover {
   padding: 26px 40px 14px;
   font-size: 0.95rem;
   text-align: center;
-  color: #dfdfdf;
+  color: var(--color-text);
   background-color: var(--color-panel);
   border-style: solid;
   border-image-slice: 27 27 27 27;
@@ -481,7 +484,7 @@ a:hover {
 }
 
 .badges .badge88-alt {
-  color: #dfdfdf;
+  color: var(--color-text);
   background-color: var(--color-panel);
   border-color: var(--color-frame);
 }
@@ -559,7 +562,7 @@ a:hover {
 .about-lead {
   margin: 0 auto;
   max-width: 720px;
-  color: #dfdfdf;
+  color: var(--color-text);
   font-size: 0.6em;
 }
 

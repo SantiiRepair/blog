@@ -8,11 +8,13 @@ const host = "santiirepair.dev";
 const key = "e8f49a21b3c74900a6e4d58097b61f25";
 const keyLocation = `https://${host}/${key}.txt`;
 
-const urlList = [
-  `https://${host}/`,
-  `https://${host}/trips`,
-  `https://${host}/favorites`
-];
+// Indexable pages in every language (Spanish has no prefix), with the trailing slash
+// GitHub Pages serves without redirecting.
+const languagePrefixes = ["", "/en", "/de", "/ru"];
+const pages = ["/", "/trips/", "/favorites/"];
+const urlList = languagePrefixes.flatMap((prefix) =>
+  pages.map((page) => `https://${host}${prefix}${page}`)
+);
 
 const payload = JSON.stringify({
   host,

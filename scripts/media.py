@@ -42,10 +42,36 @@ PHOTOS = [
     "tobby2.webp",
     "tobby3.webp",
     "moto.png",
+    "about.png",
 ]
 WIDTHS = [480, 960]
 WEBP_QUALITY = 80
 POSTER_WIDTH = 640
+
+# Page background: smaller copies picked by media queries in style.css.
+BACKGROUND = "bg.webp"
+BACKGROUND_WIDTHS = [1280, 1920]
+BACKGROUND_QUALITY = 75
+
+# Header logo (pixel art with transparency): lossless WebP copy of the PNG.
+LOGO = "welcum.png"
+
+
+def make_background_and_logo() -> None:
+    with Image.open(IMAGES / BACKGROUND) as original:
+        image = original.convert("RGB")
+        for width in BACKGROUND_WIDTHS:
+            height = round(image.height * width / image.width)
+            out = IMAGES / f"{Path(BACKGROUND).stem}-{width}.webp"
+            image.resize((width, height), Image.LANCZOS).save(
+                out, "WEBP", quality=BACKGROUND_QUALITY, method=6
+            )
+            print(f"  {out.relative_to(ROOT)}  {out.stat().st_size // 1024} KB")
+
+    with Image.open(IMAGES / LOGO) as logo:
+        out = IMAGES / f"{Path(LOGO).stem}.webp"
+        logo.save(out, "WEBP", lossless=True, method=6)
+        print(f"  {out.relative_to(ROOT)}  {out.stat().st_size // 1024} KB")
 
 
 def make_thumbs() -> dict:
@@ -104,6 +130,8 @@ def main() -> None:
     photos = make_thumbs()
     print("Video posters:")
     posters = make_posters()
+    print("Background and logo:")
+    make_background_and_logo()
     MANIFEST.write_text(
         json.dumps({"photos": photos, "posters": posters}, indent=2) + "\n",
         encoding="utf-8",

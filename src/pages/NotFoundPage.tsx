@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { t } from "../lib/i18n";
+import { currentLanguage, t } from "../lib/i18n";
+import { localizePath } from "../lib/paths";
 
 export default function NotFoundPage() {
   return (
@@ -11,7 +12,7 @@ export default function NotFoundPage() {
       <h1 className="about-title">404 // SYSTEM ERROR</h1>
       <p className="about-lead">{t("not_found_text")}</p>
       <p>
-        <Link to="/" className="not-found-link">
+        <Link to={localizePath("/", currentLanguage())} className="not-found-link">
           {t("not_found_link")}
         </Link>
       </p>

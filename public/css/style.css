@@ -26,6 +26,19 @@ body {
   margin: 0;
 }
 
+/* Smaller copies of the background for smaller screens (scripts/media.py) */
+@media (max-width: 1920px) {
+  body {
+    background-image: url("/images/bg-1920.webp");
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    background-image: url("/images/bg-1280.webp");
+  }
+}
+
 * {
   box-sizing: border-box;
   cursor: url("/images/cursor.png"), auto !important;
@@ -170,12 +183,23 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Current section in the left menu */
-.sidebar-left a[aria-current="page"] {
+/* Left menu: lilac links (readable on the panel, visited or not), yellow on hover,
+   accent yellow for the current section */
+.site-nav a:link,
+.site-nav a:visited {
+  color: var(--color-lilac);
+}
+
+.site-nav a:hover {
+  color: rgb(255, 200, 0);
+}
+
+.site-nav a[aria-current="page"] {
   color: var(--accent-color);
 }
 
-.lang-switch {
+/* Language links, drawn as the old buttons */
+.sidebar-left .lang-switch {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -183,16 +207,18 @@ a:hover {
   margin-top: 16px;
 }
 
-.lang-switch button {
-  font-family: inherit;
+.sidebar-left .lang-switch a:link,
+.sidebar-left .lang-switch a:visited {
   font-size: 0.8rem;
+  line-height: 1.2;
   color: var(--accent-color);
   background-color: var(--color-deep);
   border: 2px outset var(--color-lilac);
   padding: 2px 6px;
+  text-decoration: none;
 }
 
-.lang-switch button[aria-pressed="true"] {
+.sidebar-left .lang-switch a[aria-current="true"] {
   border-style: inset;
   color: var(--color-lilac);
 }
@@ -246,7 +272,28 @@ a:hover {
   opacity: 0.75;
 }
 
+.diary-entry-header {
+  display: flex;
+  align-items: center;
+}
+
+.diary-entry-anchor:link,
+.diary-entry-anchor:visited {
+  flex: none;
+  padding: 0 1rem 0 0;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--color-lilac);
+  opacity: 0.7;
+}
+
+.diary-entry-anchor:hover {
+  opacity: 1;
+}
+
 .diary-entry-toggle {
+  flex: 1;
+  min-width: 0;
   width: 100%;
   text-align: left;
   padding: 1rem;
@@ -335,7 +382,19 @@ a:hover {
   color: var(--accent-color);
 }
 
-.photo-window-close {
+.photo-window-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+
+.photo-window-count {
+  margin-right: 6px;
+  color: var(--color-lilac);
+}
+
+.photo-window-button {
   font-family: inherit;
   font-size: 0.9rem;
   line-height: 1;
@@ -345,16 +404,56 @@ a:hover {
   padding: 2px 7px 4px;
 }
 
-.photo-window-close:active {
+.photo-window-button:active {
   border-style: inset;
 }
 
-/* More specific than ".image-item img" so the enlarged photo isn't sized as a thumbnail */
-.image-item .photo-window img {
+.photo-window img {
   display: block;
   width: min(88vw, calc(78vh * var(--photo-ratio)));
   height: auto;
   border: 2px solid var(--color-frame);
+}
+
+/* "Also in your language" popup, same frame as the sidebars */
+.lang-hint {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: min(320px, calc(100vw - 32px));
+  /* side padding leaves room for the [x] button, keeping the text centered */
+  padding: 26px 40px 14px;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #dfdfdf;
+  background-color: var(--color-panel);
+  border-style: solid;
+  border-image-slice: 27 27 27 27;
+  border-image-width: 20px 20px 20px 20px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("/images/border.png");
+}
+
+.lang-hint p {
+  margin: 4px 0 10px;
+}
+
+.lang-hint-close {
+  position: absolute;
+  top: 24px;
+  right: 14px;
+}
+
+.lang-hint .lang-hint-action:link,
+.lang-hint .lang-hint-action:visited {
+  color: var(--accent-color);
+}
+
+/* Videos can be played with the keyboard (Tab + Enter/Space) */
+.video-container video:focus-visible {
+  outline: 2px solid var(--color-lilac);
+  outline-offset: 2px;
 }
 
 /* 88x31 buttons */
@@ -547,8 +646,26 @@ audio {
     margin-top: 0;
   }
 
+  /* The menu window goes above the content, links in a row */
   .sidebar-left {
-    order: 2;
+    order: 0;
+    min-height: 0;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px 16px;
+    padding-top: 6px;
+  }
+
+  .site-nav br {
+    display: none;
+  }
+
+  .sidebar-left .lang-switch {
+    margin-top: 8px;
   }
 
   .sidebar-right {

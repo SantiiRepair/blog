@@ -27,6 +27,14 @@ export default function VideoCard({ noteKey, titleKey, src, poster }: VideoCardP
     }
   };
 
+  const toggle = () => {
+    if (videoRef.current?.paused) {
+      play();
+    } else {
+      stop();
+    }
+  };
+
   return (
     <div className="video-container">
       <p className="ps-note">{t(noteKey)}</p>
@@ -35,13 +43,15 @@ export default function VideoCard({ noteKey, titleKey, src, poster }: VideoCardP
         src={src}
         poster={posterUrl(poster)}
         title={t(titleKey)}
+        aria-label={t(titleKey)}
+        tabIndex={0}
         muted
         loop
         playsInline
         preload="none"
         controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
         disablePictureInPicture
-        // Mouse: plays while hovering. Touch/pen: each tap toggles play/pause.
+        // Mouse: plays while hovering. Touch/pen: each tap toggles. Keyboard: Enter/Space toggle.
         onPointerEnter={(event) => {
           if (event.pointerType === "mouse") play();
         }}
@@ -52,13 +62,15 @@ export default function VideoCard({ noteKey, titleKey, src, poster }: VideoCardP
           lastPointerType.current = event.pointerType;
         }}
         onClick={() => {
-          if (lastPointerType.current === "mouse") return;
-          if (videoRef.current?.paused) {
-            play();
-          } else {
-            stop();
+          if (lastPointerType.current !== "mouse") toggle();
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggle();
           }
         }}
+        onBlur={stop}
       />
     </div>
   );

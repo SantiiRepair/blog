@@ -194,6 +194,21 @@
           "width": 960
         }
       ]
+    },
+    "about": {
+      "src": "/images/about.png",
+      "width": 3000,
+      "height": 4000,
+      "variants": [
+        {
+          "src": "/images/thumbs/about-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/thumbs/about-960.webp",
+          "width": 960
+        }
+      ]
     }
   },
   "posters": {

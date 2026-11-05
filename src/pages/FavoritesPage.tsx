@@ -1,5 +1,6 @@
 import { t } from "../lib/i18n";
 import Photo from "../components/Photo";
+import { useGallery } from "../components/Gallery";
 import VideoCard from "../components/VideoCard";
 
 import harryVideo from "../../videos/harry_hermione_dance_to_forget_their_worries.mp4";
@@ -12,6 +13,12 @@ import officeVideo from "../../videos/every_that_s_what_she_said_ever.mp4";
 const MOTO_SIZES = "(max-width: 1000px) 40vw, 240px";
 
 export default function FavoritesPage() {
+  const tobby = useGallery([
+    { name: "tobby", alt: t("tobby1_alt") },
+    { name: "tobby2", alt: t("tobby2_alt") },
+    { name: "tobby3", alt: t("tobby3_alt") }
+  ]);
+
   return (
     <div className="text-container">
       <div style={{ textAlign: "center" }}>
@@ -25,17 +32,12 @@ export default function FavoritesPage() {
         <p className="ps-note">{t("tobby_note")}</p>
         <div className="image-gallery">
           <div className="image-row">
-            <div className="image-item">
-              <Photo zoomable name="tobby" alt={t("tobby1_alt")} />
-            </div>
-            <div className="image-item">
-              <Photo zoomable name="tobby2" alt={t("tobby2_alt")} />
-            </div>
-            <div className="image-item">
-              <Photo zoomable name="tobby3" alt={t("tobby3_alt")} />
-            </div>
+            <div className="image-item">{tobby.thumb(0)}</div>
+            <div className="image-item">{tobby.thumb(1)}</div>
+            <div className="image-item">{tobby.thumb(2)}</div>
           </div>
         </div>
+        {tobby.viewer}
 
         <p>{t("movies_title")}</p>
         <VideoCard

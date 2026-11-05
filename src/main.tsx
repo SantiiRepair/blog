@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { PRERENDER_LANGUAGE, currentLanguage, initI18n } from "./lib/i18n";
+import { initI18n } from "./lib/i18n";
 import { normalizePath } from "./lib/paths";
 
 // Seamless migration for legacy bookmarks with hash URLs (e.g. /#/diary -> /diary)
@@ -13,7 +13,6 @@ if (window.location.hash.startsWith("#/")) {
 
 async function bootstrap(): Promise<void> {
   await initI18n();
-  document.documentElement.lang = currentLanguage();
 
   const rootElement = document.getElementById("root");
   if (!rootElement) {
@@ -28,13 +27,13 @@ async function bootstrap(): Promise<void> {
     </React.StrictMode>
   );
 
-  // scripts/prerender.js renders some pages into the HTML at build time (in Spanish).
-  // Reuse that markup when it matches what this visitor would see; otherwise render from scratch.
+  // scripts/prerender.js puts each page's markup into its HTML at build time (one file per
+  // language). The language comes from the URL, so when the file matches the current URL
+  // React reuses that markup; otherwise (e.g. the SPA fallback for an unknown URL) it renders.
   const prerenderedPath = rootElement.dataset.prerenderedPath;
   const canHydrate =
     prerenderedPath !== undefined &&
-    prerenderedPath === normalizePath(window.location.pathname) &&
-    currentLanguage() === PRERENDER_LANGUAGE;
+    normalizePath(prerenderedPath) === normalizePath(window.location.pathname);
 
   if (canHydrate) {
     hydrateRoot(rootElement, app);

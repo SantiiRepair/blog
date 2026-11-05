@@ -1,6 +1,8 @@
 import { t } from "../lib/i18n";
+import { photoAttributes } from "../lib/media";
 
-const aboutImg = "/images/about.png";
+// Matches .about-avatar widths in style.css (30% of the column, 45% / up to 260px on small screens).
+const AVATAR_SIZES = "(max-width: 600px) 260px, (max-width: 1000px) 45vw, 170px";
 
 export default function AboutPage() {
   return (
@@ -9,11 +11,9 @@ export default function AboutPage() {
         <br />
         <br />
         <img
-          src={aboutImg}
+          {...photoAttributes("about", AVATAR_SIZES)}
           alt={`Santiago Ramirez (SantiiRepair) - ${t("about_intro_title")}`}
           className="about-avatar"
-          width="240"
-          height="320"
           loading="eager"
           decoding="async"
         />

@@ -101,9 +101,9 @@
       }(window.location))
     </script>
 
-    <!-- Analytics -->
+    <!-- Analytics: async so the site never waits for it (page views sent from src/lib/analytics.ts) -->
     <script
-      defer
+      async
       src="https://cloud.umami.is/script.js"
       data-website-id="ce625abf-956a-4572-9c80-f5e651eb789d"
       data-auto-track="false"

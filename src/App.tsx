@@ -1,64 +1,58 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { Fragment, lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import useAnimatedTitle from "./hooks/useAnimatedTitle";
 import SiteLayout from "./layout/SiteLayout";
 import AboutPage from "./pages/AboutPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import TripsPage from "./pages/TripsPage";
-import DiaryPage from "./pages/DiaryPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import { currentLanguage, onLanguageChange, t } from "./lib/i18n";
-import { KNOWN_PATHS, SECRET_PATH, normalizePath } from "./lib/paths";
+import { preferredLanguage, setActiveLanguage, t, DEFAULT_LANGUAGE } from "./lib/i18n";
+import { trackPageview } from "./lib/analytics";
+import {
+  SECRET_PATH,
+  isKnownPage,
+  languageFromPath,
+  languagePrefixes,
+  normalizePath,
+  pagePath
+} from "./lib/paths";
 
-// The game (code, CSS and sounds) only downloads when someone opens /nv.
+// Loaded only when visited: the game (code, CSS, sounds) and the logbook (all its texts).
 const KuromiGamePage = lazy(() => import("./pages/KuromiGamePage"));
+const DiaryPage = lazy(() => import("./pages/DiaryPage"));
 
-type UmamiWindow = Window & {
-  umami?: {
-    track: () => void;
-  };
-};
+function pageTitle(page: string, isSecret: boolean): string {
+  if (isSecret) return t("kuromi_page_title");
+  if (page === "/diary") return `${t("diary_title")} — SantiiRepair`;
+  if (page === "/favorites") return `${t("favorites_title")} — SantiiRepair`;
+  if (page === "/trips") return "we are infinite — SantiiRepair";
+  if (!isKnownPage(page)) return "404 — SantiiRepair";
+  return `${t("title")} | SantiiRepair`;
+}
 
 export default function App() {
   const location = useLocation();
   const currentPath = normalizePath(location.pathname);
-  const [language, setLanguage] = useState(currentLanguage);
+  const isSecret = currentPath === SECRET_PATH;
 
-  // Pages read texts with t() while rendering, so re-render everything when the language changes.
-  useEffect(() => onLanguageChange(setLanguage), []);
+  // The URL decides the language ("/en/trips" -> English). The secret game has no
+  // language prefix, so it uses the visitor's preference. Set before any page renders.
+  const lang = isSecret
+    ? typeof window === "undefined"
+      ? DEFAULT_LANGUAGE
+      : preferredLanguage()
+    : languageFromPath(currentPath);
+  setActiveLanguage(lang);
 
-  const title = useMemo(() => {
-    if (currentPath === SECRET_PATH) {
-      return t("kuromi_page_title");
-    }
-
-    if (currentPath === "/diary") {
-      return `${t("diary_title")} — SantiiRepair`;
-    }
-
-    if (currentPath === "/favorites") {
-      return `${t("favorites_title")} — SantiiRepair`;
-    }
-
-    if (currentPath === "/trips") {
-      return "we are infinite — SantiiRepair";
-    }
-
-    if (!KNOWN_PATHS.includes(currentPath)) {
-      return "404 — SantiiRepair";
-    }
-
-    return `${t("title")} | SantiiRepair`;
-  }, [currentPath, language]);
-
-  useAnimatedTitle(currentPath, title);
+  const page = isSecret ? SECRET_PATH : pagePath(currentPath);
+  useAnimatedTitle(page, pageTitle(page, isSecret));
 
   useEffect(() => {
-    const umamiWindow = window as UmamiWindow;
+    document.documentElement.lang = lang;
+  }, [lang]);
 
-    if (typeof umamiWindow.umami?.track === "function") {
-      umamiWindow.umami.track();
-    }
+  useEffect(() => {
+    trackPageview();
   }, [currentPath]);
 
   return (
@@ -71,46 +65,25 @@ export default function App() {
           </Suspense>
         }
       />
-      <Route
-        path="/"
-        element={
-          <SiteLayout>
-            <AboutPage />
-          </SiteLayout>
-        }
-      />
-      <Route
-        path="/favorites"
-        element={
-          <SiteLayout>
-            <FavoritesPage />
-          </SiteLayout>
-        }
-      />
-      <Route
-        path="/trips"
-        element={
-          <SiteLayout>
-            <TripsPage />
-          </SiteLayout>
-        }
-      />
-      <Route
-        path="/diary"
-        element={
-          <SiteLayout>
-            <DiaryPage />
-          </SiteLayout>
-        }
-      />
-      <Route
-        path="*"
-        element={
-          <SiteLayout>
-            <NotFoundPage />
-          </SiteLayout>
-        }
-      />
+      {/* One layout for every page, so the chat and the snow stay put while navigating */}
+      <Route element={<SiteLayout />}>
+        {languagePrefixes().map((prefix) => (
+          <Fragment key={prefix || "default"}>
+            <Route path={`${prefix}/`} element={<AboutPage />} />
+            <Route path={`${prefix}/favorites`} element={<FavoritesPage />} />
+            <Route path={`${prefix}/trips`} element={<TripsPage />} />
+            <Route
+              path={`${prefix}/diary`}
+              element={
+                <Suspense fallback={null}>
+                  <DiaryPage />
+                </Suspense>
+              }
+            />
+          </Fragment>
+        ))}
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
     </Routes>
   );
 }

@@ -1,16 +1,24 @@
-import type { ReactNode } from "react";
-import { NavLink } from "react-router-dom";
-import { SUPPORTED_LANGUAGES, currentLanguage, setLanguage, t } from "../lib/i18n";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { SUPPORTED_LANGUAGES, currentLanguage, savePreferredLanguage, t } from "../lib/i18n";
+import { isKnownPage, localizePath, pagePath, type Page } from "../lib/paths";
 import PixelSnow from "../components/PixelSnow";
+import LanguageHint from "../components/LanguageHint";
 
-const welcumImg = "/images/welcum.png";
+const welcumImg = "/images/welcum.webp";
 
-type SiteLayoutProps = {
-  children: ReactNode;
-};
-
-export default function SiteLayout({ children }: SiteLayoutProps) {
+export default function SiteLayout() {
+  const location = useLocation();
   const activeLanguage = currentLanguage();
+  const page = pagePath(location.pathname);
+
+  const navLink = (target: Page, label: string) => (
+    <Link
+      to={localizePath(target, activeLanguage)}
+      aria-current={page === target ? "page" : undefined}
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <>
@@ -31,17 +39,15 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
 
         <div className="flex-container">
           <aside className="sidebar sidebar-left">
-            <nav aria-label="Site Navigation">
+            <nav className="site-nav" aria-label="Site Navigation">
               <br />
-              <NavLink to="/" end>
-                {t("about_title")}
-              </NavLink>
+              {navLink("/", t("about_title"))}
               <br />
-              <NavLink to="/favorites">{t("favorites")}</NavLink>
+              {navLink("/favorites", t("favorites"))}
               <br />
-              <NavLink to="/trips">{t("trips")}</NavLink>
+              {navLink("/trips", t("trips"))}
               <br />
-              <NavLink to="/diary">{t("diary")}</NavLink>
+              {navLink("/diary", t("diary"))}
               <br />
               <a
                 href="https://github.com/SantiiRepair"
@@ -53,22 +59,26 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               </a>
             </nav>
 
-            <div className="lang-switch" role="group" aria-label={t("language_label")}>
+            {/* Same page in each language; real links so search engines find every version */}
+            <nav className="lang-switch" aria-label={t("language_label")}>
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <button
+                <Link
                   key={lang}
-                  type="button"
+                  to={localizePath(isKnownPage(page) ? page : "/", lang) + location.hash}
                   lang={lang}
-                  aria-pressed={activeLanguage === lang}
-                  onClick={() => void setLanguage(lang)}
+                  hrefLang={lang}
+                  aria-current={activeLanguage === lang ? "true" : undefined}
+                  onClick={() => savePreferredLanguage(lang)}
                 >
                   {lang.toUpperCase()}
-                </button>
+                </Link>
               ))}
-            </div>
+            </nav>
           </aside>
 
-          <main className="main-content">{children}</main>
+          <main className="main-content">
+            <Outlet />
+          </main>
 
           <aside className="sidebar sidebar-right" id="cbox-container">
             <iframe
@@ -86,10 +96,10 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
 
         {/* Old-web 88x31 buttons, drawn with CSS */}
         <footer className="badges">
-          <a className="badge88" href="/" title="santiirepair.dev">
+          <Link className="badge88" to={localizePath("/", activeLanguage)} title="santiirepair.dev">
             <span className="badge88-icon">SR</span>
             <span className="badge88-text">burn the ships</span>
-          </a>
+          </Link>
           <span className="badge88 badge88-alt">
             <span className="badge88-icon">800</span>
             <span className="badge88-text">best viewed 800x600</span>
@@ -110,6 +120,8 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
           </a>
         </footer>
       </div>
+
+      <LanguageHint />
     </>
   );
 }

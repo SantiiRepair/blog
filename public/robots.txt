@@ -12,18 +12,30 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 Disallow: /diary
+Disallow: /en/diary
+Disallow: /de/diary
+Disallow: /ru/diary
 
 User-agent: GPTBot
 Allow: /
 Disallow: /diary
+Disallow: /en/diary
+Disallow: /de/diary
+Disallow: /ru/diary
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /diary
+Disallow: /en/diary
+Disallow: /de/diary
+Disallow: /ru/diary
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /diary
+Disallow: /en/diary
+Disallow: /de/diary
+Disallow: /ru/diary
 
 # Disallow aggressive scraping bots
 User-agent: CCBot

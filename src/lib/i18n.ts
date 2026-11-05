@@ -19,26 +19,6 @@ const resources: TranslationResources = {
       diary: "Logbook",
       diary_title: "system_logs",
       diary_subtitle: "Logging things everyday... perhaps?",
-      diary_entry_1_date: "2026-05-07",
-      diary_entry_1_title: "reparenting",
-      diary_entry_1_text: "Today I went to the movies, I saw the Super Mario Galaxy movie even though I was 13 minutes late; I liked it.\n\nLeaving the theater, I remembered something I was told a couple of weeks before: going to the movies alone is somewhat depressing. The person who told me claimed that if they worked there and saw me alone with my popcorn and snacks entering the theater, they would laugh at me; I'm not sure if it was a joke or serious yet, but it made me think about why I go alone. I really enjoy it, I don't mind going alone, I like going to the movies, hearing others' laughter, screams of excitement, turning around and seeing others' faces happy, scared, concentrated, the surround sound of the room... I don't know, I like that, but at the same time I thought about the repercussions.\nAnd that made me think about other expenses I have like accessories and, among the most usual ones, food. I remembered McDonald's and why I go so much; thinking about that made me realize the reality of those things: 'reparenting' or 'hypercompensation'. As a child I only went to the movies 3 or 4 times; I don't remember the first movies, but I do remember the last ones: they were Home and Finding Dory.\n\nI saw Home with my parents. It wasn't really planned to see that movie; I think we went out for lunch, went to the movies, and it was the only kids' or 'nice' movie playing. Did I like it? No, haha, but hey, it was the only movie I saw with my parents; also, I think it was the last outing with them together.\n\nFinding Dory... hmm, meh, but I went out, I did something different that day; the initiative came from the daughter of a friend of my mom.\n\nThe point is that many things I didn't do/have as a child, today I do very often and that can become a problem; I must work on that.",
-      diary_entry_2_date: "2026-05-11",
-      diary_entry_2_title: "wallflower",
-      diary_entry_2_text: "The power went out (as usual), so I took the Voge out to La Culata; it was its first time there, you know? It's like a tradition, I guess; well, I haven't taken the car to La Culata yet, haha. I rode with fear; I'm sure it was because I wasn't wearing my gloves. It seems they've become part of me; I feel vulnerable. It's funny and worrying that I've lost my gloves; it's really not like me. Note to self: I need to buy new gloves. Anyway... staying home unable to work because my laptop battery dies in 40 minutes wasn't the plan, and if I slept I felt like I'd be wasting time.\n\nYesterday I read about a movie called Dead Poets Society, checked out the synopsis and it reminded me of The Perks of Being a Wallflower; like a needle in my mind, there was this pressure to watch it again. The first time I saw it was a couple of years ago and I loved it.\n\nNow I've just watched it again, after several, many, quite a few months, and it's incredible how the way we perceive things changes. Is it because of the maturity we're gaining? I don't know. I love all the chemistry in the movie; it would have been incredible to have lived something like that.\n\nThis time, when I heard the iconic dialogue between Charlie and Mr. Anderson, it hit me differently. Even though the context of the question that arises is romantic, it's a reality in all fields; yes, maybe it seems nonsensical, but look at it from another angle.\n\nThe effect of watching it again was almost the same as the first time, a bit more intense, yes. It was... tears, laughter, sorrow... or things like pausing the movie to think about actions and reactions; that effect hasn't been caused by many movies and only I know why.",
-      diary_entry_3_date: "2026-05-18",
-      diary_entry_3_title: "out of control",
-      diary_entry_3_text: "Crappy day, I woke up early to finish the final touches on the project, my mind was so jumbled that ideas weren't flowing, I woke up tired without wanting to see a fucking screen all day, I went out to the parking lot to see my belongings so maybe I'd get some motivation... a car tire was flat, destroyed by the weight of the car, yesterday after so much insistence I agreed to take a friend of mom's to so-and-so's place, I really didn't want to do it, I had a hunch... anyway, I've always said it but I'm an idiot, you get nothing for being good. Damn SYCOPHANT!\n\nThe day passed and I was still the same, sitting and my mind wouldn't work, there were no ideas, no spark, so I would go to bed and set an alarm because I knew if I didn't I'd fall into a deep sleep, I'd wake up and Voilà! There was a spark, but then I'd be blank again, I spent the whole day like that until sleeping didn't work anymore.\n\nThe meeting came and it was terrible, presenting the new stuff my English disappeared I don't know what happened, I forgot words and that led to something else, doubts while speaking, about whether I was pronouncing correctly, if I was conjugating the words right; a total disaster.\n\nI received a message with a not-so-pleasant tone, I kind of think my boss believes I'm taking everything lightly, maybe I misinterpreted it, I don't know, but it was the icing on the cake, one more thought for tomorrow.\n\nI'm afraid and not because of the above, my memory is failing me, I feel suffocated being in my room, I'm having headaches more often, feeling like throwing up without being sick, everything is becoming a cycle again, I know I should express this to someone but the only person I have left is no longer here, maybe it's time to write to Dr. Eddy, well, I still think paying someone to unload your mind is absurd. At this moment I just want a hug.\n\nNot having control over things is terrifying.",
-      diary_entry_4_date: "2026-06-15",
-      diary_entry_4_title: "maracaibo",
-      diary_entry_4_text: "I had forgotten to tell you but I went to Maracaibo, how about that? The truth is I thought it would be horrible but it was great, the Airbnb where I stayed the attention was super, the AC perfect, the food delicious, being there I didn't experience power outages, mind you the heat is horrible, I almost fainted downtown, I had really heard bad things from there, it even looks very safe, I was with the motorcycle around the city at night and everything was fine, you can see people respect the traffic, I had no scares.\n\nOn the trip there I experienced some motogp moments hahaha but yes I AM A GREAT RIDER, the motorcycle behaved perfectly on every trip I like it more.\n\nThe Sambil is brutal, a fucking work of art, the cinema is cinesunidos and wow it's beautiful, I must go see a movie, the food court is huge and with variety, I always wanted to try KFC, and I did, I loved the dynamic to order, a project is coming 👀.\n\nThe bros behaved great, the reaction was epic I think they thought it was a lie that I would go to Maracaibo to visit but nah we had a super time, the places, the bowling, the drinks everything super cool.\n\nI will go again, I don't know when but knowing me, it will be out of nowhere again, a day that I'm bored, don't hold back from doing something, LIVE.\n\nThis month has been better than the previous one without a doubt, let's hope it ends just as well.",
-      diary_entry_5_date: "2026-08-13",
-      diary_entry_5_title: "feeling",
-      diary_entry_5_text: "I'm going on a trip this Saturday, I'm a little bit scared, it's weird this time, but it is what it is, I want to get away from here for a bit and rest a couple of days somewhere else. I've been tired for no reason, what someone else would call laziness, I don't know what it is in my case but it's horrible, waking up with no energy at all, I must have a health problem for sure but I'm too stubborn to go to the doctor haha.\n\nLately I've been feeling that inadequacy *feeling*, not with myself but with others, it's funny because among so many things my mom says, she has always said that my dad and I are alike because we are both very giving with other people and that we are very silly for doing that, but at the same time I feel like I'm not giving enough.\n\nAmong other things, the project I'm working on with the other guys has had super slow development lately, they do whatever they want with meetings, delivery times and if they run out of tokens in the AIs they use, they pause the development because they don't really know how to code. It's really a good idea but I'm starting to think that we won't be able to present it because of the negligence of others... maybe I should have developed it alone from the beginning.",
-      diary_entry_5_hidden: "true",
-      diary_entry_6_date: "2026-09-01",
-      diary_entry_6_title: "news",
-      diary_entry_6_text: "Today I received some incredible news, and thank God, the day started out like shit I woke up without electricity and that is always stressful, I went out in the car to eat empanadas for breakfast because I was too hungry, on the way I received multiple calls from one of the guys from the mallapos team, I ignored him because driving I do that; I don't want accidents but among the messages I could see that he sent he said we had received the email from casa212 to proceed with an interview with Diego Salas the Co-Founder and CFO of Yummy Rides, it was incredible, out of 400 people we made it to the final 16 of the cohort that really lifted my spirits. Following that I wrote to tell the news to someone who, well, is very special to me, a girl who is a parasite in my mind, she was the first person I told what happened, she congratulated me and so on, then I told my friends and no one else.\n\nI feel like we have an incredible connection the two of us, but unfortunately there is something that stops things from happening, I invited her out to \"celebrar\" the news days later and to give her something she asked for on the last trip I made, an errand and besides that to give her some gifts I bought her, yes, I'm an idiot. Her response was yes, she told me the days she had free in quite a cheerful tone, did I misinterpret things? was she really cheerful? I will never know, with her it's like that, she's very weird, I told her what day would be perfect to go out and after that everything vanished again, one moment she sounds happy about the invitation and agrees and the next she takes a long time to reply and her messages are very dry, she's fucking indecisive. That night I got tired, it has happened several times already we agree on something and the whole plan goes to shit because of her, I don't understand her, she should learn to say no and put things in their place, that would make me not waste time and her too, but maybe she likes that doesn't she? having someone after her to boost her ego, no more, I'm tired.\n\nI hope not to return to the same thing, this was the second time, and I haven't been the one who started it all.\nThere won't be a third time.",
-      diary_entry_6_hidden: "true",
       contact: "Contact",
       about_image_alt: "me",
       about_intro_kicker: "home base",
@@ -136,7 +116,19 @@ const resources: TranslationResources = {
       not_found_link: "[ Return to Home Base ]",
       language_label: "Language",
       photo_open: "View larger",
-      close: "Close"
+      photo_prev: "Previous photo",
+      photo_next: "Next photo",
+      close: "Close",
+      seo_home_title: "SantiiRepair | Santiago Ramirez — Developer, Open-Source & Notes",
+      seo_home_description: "Personal space of Santiago Ramirez (SantiiRepair) — software development, open-source philosophy, motorcycle road trips and unfiltered notes.",
+      seo_trips_title: "Motorcycle Trips & Routes — SantiiRepair | Santiago Ramirez",
+      seo_trips_description: "Motorcycle routes and trips across Venezuela: Páramo de Mérida, Pico Espejo, Choroní, La Azulita and more, by Santiago Ramirez.",
+      seo_favorites_title: "Favorites (Movies, Series, Music) — SantiiRepair",
+      seo_favorites_description: "Favorite movies, series, pets and playlist of Santiago Ramirez (SantiiRepair).",
+      seo_diary_title: "system_logs (Logbook) — SantiiRepair",
+      lang_hint_text: "This page is also available in English.",
+      lang_hint_action: "View in English",
+      diary_entry_link: "Link to this entry"
     }
   },
   es: {
@@ -151,26 +143,6 @@ const resources: TranslationResources = {
       diary: "Bitácora",
       diary_title: "logs_del_sistema",
       diary_subtitle: "Registrando cosas cada día... ¿tal vez?",
-      diary_entry_1_date: "2026-05-07",
-      diary_entry_1_title: "reparentalidad",
-      diary_entry_1_text: "Hoy fui al cine, vi la película de Super Mario Galaxy aunque llegué 13 minutos tarde; me gustó.\n\nAl salir del cine recordé algo que me dijeron un par de semanas antes: ir al cine solo es algo deprimente. La persona que me lo dijo afirmó que si trabajara allí y me viera solo con mis cotufas y chuches entrando al cine se reiría de mí; no estoy seguro si fue en broma o en serio aún, pero eso me hizo pensar en por qué voy solo. Realmente lo disfruto, no me importa ir solo, me gusta ir al cine, oír las risas de los demás, los gritos de emoción, voltear y ver los rostros de los demás felices, asustados, concentrados, el sonido envolvente de la sala... no sé, me gusta eso, pero a la vez pensé en las repercusiones.\nY eso me hizo pensar en otros gastos que hago como accesorios y, entre los más usuales, comida. Recordé McDonald's y por qué voy tanto; pensar en eso me hizo darme cuenta de la realidad de esas cosas: «reparentalidad» o «hipercompensación». De niño solo fui unas 3 o 4 veces al cine; las primeras no recuerdo qué películas fueron, pero las últimas sí: fueron Home: No hay lugar como el hogar y Buscando a Dory.\n\nHome la vi con mis padres. Realmente no estaba planeado ir a ver esa película; creo que salimos de comer, fuimos al cine y fue la única película para niños o «sana» en cartelera. ¿Me gustó? No, jaja, pero oye, fue la única película que vi con mis padres; además, creo que fue la última salida con ellos juntos.\n\nBuscando a Dory... hmm, meh, pero salí, hice algo diferente ese día; la iniciativa fue de la hija de una amiga de mamá.\n\nEl punto es que muchas cosas que no hice/tuve de niño hoy en día las hago muy seguido y eso se puede convertir en un problema; debo trabajar en eso",
-      diary_entry_2_date: "2026-05-11",
-      diary_entry_2_title: "wallflower",
-      diary_entry_2_text: "Cortaron la electricidad (como de costumbre), así que salí en el Voge a La Culata; lo desvirgué, porque lo llevé allá, ¿sabes? Es como una tradición, supongo; bueno, el carro aún no lo llevo a La Culata, jaja. Manejé con miedo; estoy seguro de que fue por no llevar los guantes. Parece que se volvieron parte de mí; me siento vulnerable. Es gracioso y preocupante que haya extraviado mis guantes; realmente no es algo usual de mi parte. Anotado: debo comprar nuevos guantes. En fin... quedarme en casa sin poder trabajar porque la batería de mi laptop muere a los 40 minutos no era mi plan, y si dormía sentía que iba a desperdiciar tiempo.\n\nAyer leí sobre una película llamada La sociedad de los poetas muertos, le eché un ojo a su sinopsis y me recordó a The Perks of Being a Wallflower; como una aguja en mi mente era la presión por verla de nuevo. La primera vez que la vi fue hace un par de años y me encantó.\n\nAhora acabo de verla de nuevo, después de varios, muchos, bastantes meses, y es increíble cómo cambia la forma en la que percibimos las cosas. ¿Será por la madurez que vamos tomando? No lo sé. Me encanta toda la química de la película; hubiera sido increíble haber vivido algo así.\n\nEsta vez, cuando escuché el icónico diálogo entre Charlie y Mr. Anderson, me golpeó diferente. A pesar de que el contexto bajo la pregunta que surge es romántico, es una realidad en todos los campos; sí, quizás parece que no tiene sentido, pero míralo desde otro ángulo.\n\nEl efecto al verla de nuevo fue casi el mismo que la primera vez, un poco más intenso, sí. Fue... lágrimas, risas, pena... o cosas como pausar la película y pensar en acciones y reacciones; ese efecto no me lo han causado muchas películas y solo yo sé por qué.",
-      diary_entry_3_date: "2026-05-18",
-      diary_entry_3_title: "fuera de control",
-      diary_entry_3_text: "Día de mierda, me desperté temprano para terminar los toques finales del proyecto, tenía la mente tan revuelta que no me fluían las ideas, me desperté cansado sin ganas de ver una puta pantalla en todo el día, salí al estacionamiento a ver mis pertenencias así quizás tomaba algo de motivación... un caucho del carro espichado, destruido por el peso del carro; ayer, después de tanta insistencia, accedí a llevar a una amiga de mamá a donde fulanita, realmente no quería hacerlo, tenía una corazonada... en fin, siempre lo he dicho, pero soy un idiota, uno por bueno no saca nada. ¡Maldito JALABOLAS!\n\nPasó el día y seguía igual, sentado y no me daba la mente, no había ideas, no había chispa, así que me iba a la cama y ponía alarma porque sabía que si no lo hacía entraría en sueño profundo, me despertaba y ¡Voilà! Había chispa, pero después volvía a estar en blanco, pasé todo el día en eso hasta que ya el dormir no funcionó.\n\nLlegó la reunión y fue terrible; exponiendo lo nuevo mi inglés desapareció, no sé qué pasó, olvidé palabras y eso llevó a otra cosa: dudas mientras hablaba sobre si estaba pronunciando bien, si estaba conjugando las palabras bien; todo un desastre.\n\nRecibí un mensaje con un tono no muy agradable, más o menos pienso que mi jefe cree que me estoy tomando todo a la ligera, quizás lo malinterpreté, no sé, pero fue la cereza del pastel, un pensamiento más para el mañana.\n\nTengo miedo y no por lo anterior: me está fallando la memoria, me siento asfixiado estando en mi cuarto, estoy teniendo dolores de cabeza más seguido, ganas de vomitar sin estar enfermo, todo se está volviendo un ciclo de nuevo, sé que debería expresar esto con alguien pero la única persona que me queda ya no está aquí, quizás sea momento de escribirle a la Dr. Eddy; bueno, aún pienso que pagarle a alguien para descargar tu mente es algo absurdo. En este momento solo quisiera un abrazo.\n\nEl no tener control sobre las cosas es aterrador.",
-      diary_entry_4_date: "2026-06-15",
-      diary_entry_4_title: "maracaibo",
-      diary_entry_4_text: "Había olvidado contarlo pero fui a Maracaibo, ¿qué tal? La verdad pensé que sería horrible pero fue genial, el Airbnb donde me quedé la atención fue super, el aire perfecto, la comida riquísima, estando allá no experimenté fallas de electricidad, eso sí el calor es horrible, casi me desmayo en el centro, realmente había oído cosas malas de allá, incluso se ve muy seguro, estuve con la moto por la ciudad de noche y todo bien, el tránsito se ve que la gente lo respeta, no tuve sustos.\n\nEn el viaje de ida hacia allá experimenté unos momentos motogp hahaha pero sí SOY UN PILOTAZO, la moto se portó al pelo en cada viaje me gusta más.\n\nEl Sambil es brutal, una puta obra de arte, el cine es cinesunidos y wow es precioso, debo ir a ver una peli, la feria de comida enorme y con variedad, siempre quise probar KFC, y lo hice, me encantó la dinámica para pedir, se viene proyecto 👀.\n\nLos panas se portaron al toque, fue épico la reacción creo que pensaban que era mentira que yo iría a Maracaibo a visitar pero nah la pasamos super, los lugares, el bowling, los tragos todo super cool.\n\nIré de nuevo, no sé cuándo pero como soy yo, será de la nada de nuevo, un día que esté aburrido, no te cohibas de hacer algo, VIVE.\n\nEste mes ha sido mejor que el anterior sin dudas, esperemos termine igual de bien.",
-      diary_entry_5_date: "2026-08-13",
-      diary_entry_5_title: "feeling",
-      diary_entry_5_text: "El sábado me voy de viaje, tengo un poquito de miedo, es raro esta vez, pero es lo que es, quiero separarme un poco de aquí y descansar un par de días en otro lado. He estado cansado sin razón, lo que alguien más llamaría pereza, no sé qué es en mi caso pero es horrible, levantarse sin energías de nada, debo tener un problema de salud de seguro pero soy muy terco para ir al médico jaja.\n\nÚltimamente he sentido ese *feeling* de insuficiencia no conmigo mismo sino con los demás, es chistoso porque entre tantas cosas que dice mi madre siempre ha dicho que mi papá y yo nos parecemos porque ambos somos muy dados con las demás personas y que somos muy bobos por hacer eso, pero a la vez siento que no estoy dando lo suficiente.\n\nEntre otras cosas el proyecto en el cual estoy trabajando con los demás muchachos últimamente ha estado súper lento el desarrollo, hacen lo que quieren con las reuniones, tiempos de entrega y si se les acaban los tokens en las IA que usan pausan el desarrollo porque no saben programar de verdad. Realmente es una buena idea pero estoy llegando a pensar que no lograremos presentarlo por culpa de la negligencia de otros... quizás debí haberlo desarrollado solo desde el principio.",
-      diary_entry_5_hidden: "true",
-      diary_entry_6_date: "2026-09-01",
-      diary_entry_6_title: "noticias",
-      diary_entry_6_text: "Hoy recibí una noticia increíble, y gracias a Dios, el día inició como una mierda desperté sin servicio eléctrico y eso es estresante siempre, salí en el carro a desayunar empanadas porque tenía demasiada hambre, en el camino recibo múltiples llamadas de uno de los chicos del equipo de mallapos, lo ignoré porque manejando hago eso; no quiero accidentes pero entre los mensajes que pude ver que envió dijo que habíamos recibido el correo de parte de casa212 para proceder con una entrevista con Diego Salas el Co-Founder y CFO de Yummy Rides, fue increíble, de 400 personas quedamos entre los 16 finales de cohorte eso me subió mucho los ánimos. Seguido de eso le escribí para contarle de la noticia a alguien que, bueno, es muy especial para mí, una chica que es un parásito en mi mente, fue a la primera persona que le conté lo sucedido, ella me felicitó y demás, luego le conté a mis amigos y a más nadie.\n\nSiento que tenemos una conexión increíble nosotros dos, pero desgraciadamente hay algo que frena que las cosas se den, la invité a salir para \"celebrar\" la noticia días después y para entregarle algo que me pidió en el último viaje que hice, un encargo y además de eso entregarle unos regalos que le compré, sí, soy un idiota. Su respuesta fue de que sí, me dijo los días que tenía libre en un tono bastante alegre, ¿mal interpreté las cosas? ¿en verdad estaba alegre? nunca lo sabré, con ella es así, es muy extraña, le dije qué día sería perfecto para salir y después de eso todo se esfumó de nuevo, un momento suena feliz sobre la invitación y accede y al otro tarda en responder y sus mensajes son muy secos, es jodidamente indecisa. Esa noche me cansé, ya ha pasado eso varias veces quedamos en algo y todo el plan se va a la mierda por ella misma, no la entiendo, debería aprender a decir no y poner las cosas en su lugar, eso haría que yo no pierda tiempo y ella igual, pero quizás le gusta eso ¿no? tener a alguien detrás de ella para hacerle subir el ego, no más, me cansé.\n\nEspero no volver a lo mismo, esta fue la segunda vez, y yo no he sido el que inició todo.\nNo habrá una tercera vez.",
-      diary_entry_6_hidden: "true",
       contact: "Contacto",
       about_image_alt: "yo",
       about_intro_kicker: "base",
@@ -268,7 +240,19 @@ const resources: TranslationResources = {
       not_found_link: "[ Volver a la base ]",
       language_label: "Idioma",
       photo_open: "Ver en grande",
-      close: "Cerrar"
+      photo_prev: "Foto anterior",
+      photo_next: "Foto siguiente",
+      close: "Cerrar",
+      seo_home_title: "SantiiRepair | Santiago Ramirez — Developer, Open-Source & Notes",
+      seo_home_description: "Espacio personal de Santiago Ramirez (SantiiRepair) — desarrollo de software, filosofía open-source, viajes en motocicleta y notas sin filtro.",
+      seo_trips_title: "Viajes & Rutas en Moto — SantiiRepair | Santiago Ramirez",
+      seo_trips_description: "Rutas y viajes en motocicleta por Venezuela: Páramo de Mérida, Pico Espejo, Choroní, La Azulita y más por Santiago Ramirez.",
+      seo_favorites_title: "Favoritos (Películas, Series, Música) — SantiiRepair",
+      seo_favorites_description: "Colección de películas, series, mascotas y playlist favorita de Santiago Ramirez (SantiiRepair).",
+      seo_diary_title: "system_logs (Bitácora) — SantiiRepair",
+      lang_hint_text: "Esta página también está en español.",
+      lang_hint_action: "Ver en español",
+      diary_entry_link: "Enlace a esta entrada"
     }
   },
   de: {
@@ -283,26 +267,6 @@ const resources: TranslationResources = {
       diary: "Logbuch",
       diary_title: "system_logs",
       diary_subtitle: "Täglich Dinge protokollieren... vielleicht?",
-      diary_entry_1_date: "2026-05-07",
-      diary_entry_1_title: "reparenting",
-      diary_entry_1_text: "Heute war ich im Kino und habe den Super Mario Galaxy Film gesehen, obwohl ich 13 Minuten zu spät kam; er hat mir gefallen.\n\nAls ich das Kino verließ, erinnerte ich mich an etwas, das mir ein paar Wochen zuvor gesagt wurde: Alleine ins Kino zu gehen, sei irgendwie deprimierend. Die Person, die mir das sagte, behauptete, wenn sie dort arbeiten würde und mich alleine mit meinem Popcorn und meinen Süßigkeiten ins Kino gehen sähe, würde sie mich auslachen; ich bin mir noch nicht sicher, ob das ein Scherz oder Ernst war, aber es hat mich darüber nachdenken lassen, warum ich alleine gehe. Ich genieße es wirklich, es macht mir nichts aus, alleine zu gehen, ich gehe gerne ins Kino, höre das Lachen der anderen, die Freudenschreie, drehe mich um und sehe die glücklichen, verängstigten, konzentrierten Gesichter der anderen, den Surround-Sound des Saals... ich weiß nicht, ich mag das, aber gleichzeitig dachte ich über die Auswirkungen nach.\nUnd das ließ mich über andere Ausgaben nachdenken, die ich tätige, wie Accessoires und, am häufigsten, Essen. Ich erinnerte mich an McDonald's und why ich so oft dorthin gehe; das Nachdenken darüber ließ mich die Realität dieser Dinge erkennen: 'Reparenting' oder 'Hyperkompensation'. Als Kind war ich nur 3 oder 4 Mal im Kino; an die ersten Filme erinnere ich mich nicht, aber an die letzten schon: Es waren Home – Ein smektakulärer Trip und Findet Dorie.\n\nHome habe ich mit meinen Eltern gesehen. Es war eigentlich nicht geplant, diesen Film zu sehen; ich glaube, wir waren essen, gingen ins Kino und es war der einzige Kinder- oder 'familienfreundliche' Film im Programm. Hat er mir gefallen? Nein, haha, but hey, es war der einzige Film, den ich mit meinen Eltern gesehen habe; außerdem war es, glaube ich, der letzte gemeinsame Ausflug mit ihnen.\n\nFindet Dorie... hmm, naja, aber ich war draußen, habe an diesem Tag mal was anderes gemacht; die Initiative ging von der Tochter einer Freundin meiner Mutter aus.\n\nDer Punkt ist, dass ich viele Dinge, die ich als Kind nicht getan/gehabt habe, heute sehr oft tue, und das kann zu einem Problem werden; ich muss daran arbeiten.",
-      diary_entry_2_date: "2026-05-11",
-      diary_entry_2_title: "wallflower",
-      diary_entry_2_text: "Der Strom fiel aus (wie üblich), also fuhr ich mit der Voge nach La Culata; es war das erste Mal für sie dort, weißt du? Es ist wohl so eine Art Tradition; nun ja, das Auto habe ich noch nicht nach La Culata gebracht, haha. Ich fuhr mit Angst; ich bin sicher, es lag daran, dass ich keine Handschuhe trug. Es scheint, als wären sie ein Teil von mir geworden; ich fühle mich verwundbar. Es ist lustig und besorgniserregend zugleich, dass ich meine Handschuhe verloren habe; das sieht mir eigentlich gar nicht ähnlich. Notiz: Ich muss neue Handschuhe kaufen. Wie auch immer... zu Hause zu bleiben und nicht arbeiten zu können, weil der Akku meines Laptops nach 40 Minuten den Geist aufgibt, war nicht der Plan, und wenn ich geschlafen hätte, hätte ich das Gefühl gehabt, Zeit zu verschwenden.\n\nGestern las ich über einen Film namens Der Club der toten Dichter, sah mir die Inhaltsangabe an und er erinnerte mich an Vielleicht lieber morgen (The Perks of Being a Wallflower); wie eine Nadel in meinem Kopf war da dieser Drang, ihn wieder zu sehen. Das erste Mal sah ich ihn vor ein paar Jahren und ich liebte ihn.\n\nJetzt habe ich ihn gerade wieder gesehen, nach einigen, vielen, ziemlich vielen Monaten, und es ist unglaublich, wie sich die Art und Weise, wie wir Dinge wahrnehmen, verändert. Liegt es an der Reife, die wir erlangen? Ich weiß es nicht. Ich liebe die ganze Chemie in dem Film; es wäre unglaublich gewesen, so etwas erlebt zu haben.\n\nDieses Mal, als ich den ikonischen Dialog zwischen Charlie und Mr. Anderson hörte, traf er mich anders. Obwohl der Kontext der aufkommenden Frage romantisch ist, ist es eine Realität in allen Bereichen; ja, vielleicht scheint es sinnlos, aber betrachte es mal aus einem anderen Blickwinkel.\n\nDer Effekt, ihn wieder zu sehen, war fast derselbe wie beim ersten Mal, ein bisschen intensiver, ja. Es waren... Tränen, Lachen, Kummer... oder Dinge wie den Film anzuhalten und über Aktionen und Reaktionen nachzudenken; diesen Effekt haben nicht viele Filme bei mir ausgelöst, und nur ich weiß, warum.",
-      diary_entry_3_date: "2026-05-18",
-      diary_entry_3_title: "außer kontrolle",
-      diary_entry_3_text: "Schrecklicher Tag, ich bin früh aufgewacht, um dem Projekt den letzten Schliff zu geben, mein Kopf war so durcheinander, dass die Ideen nicht flossen, ich bin müde aufgewacht und hatte den ganzen Tag keine Lust, einen verdammten Bildschirm zu sehen, ich ging auf den Parkplatz, um nach meinen Sachen zu sehen, damit ich vielleicht etwas Motivation bekäme... ein Autoreifen war platt, zerstört durch das Gewicht des Autos, gestern nach so viel Drängen stimmte ich zu, eine Freundin von Mama zu Soundso zu bringen, ich wollte es wirklich nicht tun, ich hatte so eine Vorahnung... wie auch immer, ich habe es schon immer gesagt, aber ich bin ein Idiot, man bekommt nichts dafür, gut zu sein. Verdammter ARSCHKRIECHER!\n\nDer Tag verging und ich war immer noch derselbe, saß da und mein Verstand wollte nicht arbeiten, es gab keine Ideen, keinen Funken, also legte ich mich ins Bett und stellte den Wecker, weil ich wusste, dass ich sonst in einen Tiefschlaf fallen würde, ich wachte auf und Voilà! Da war ein Funke, aber dann war ich wieder leer, ich verbrachte den ganzen Tag so, bis Schlafen nicht mehr funktionierte.\n\nDas Meeting kam und es war schrecklich, als ich das Neue präsentierte, verschwand mein Englisch, ich weiß nicht, was passierte, ich vergaß Wörter und das führte zu etwas anderem, Zweifel beim Sprechen, ob ich richtig aussprach, ob ich die Wörter richtig konjugierte; ein totales Desaster.\n\nIch erhielt eine Nachricht in einem nicht sehr angenehmen Ton, ich glaube irgendwie, mein Chef denkt, ich nehme alles auf die leichte Schulter, vielleicht habe ich es falsch interpretiert, ich weiß nicht, aber es war das i-Tüpfelchen, ein weiterer Gedanke für morgen.\n\nIch habe Angst und nicht wegen des Vorherigen, mein Gedächtnis lässt mich im Stich, ich fühle mich in meinem Zimmer erstickt, ich habe öfter Kopfschmerzen, Übelkeitsgefühl, ohne krank zu sein, alles wird wieder zu einem Kreislauf, ich weiß, ich sollte das jemandem gegenüber ausdrücken, aber die einzige Person, die mir geblieben ist, ist nicht mehr hier, vielleicht ist es an der Zeit, Dr. Eddy zu schreiben, nun ja, ich denke immer noch, dass es absurd ist, jemanden zu bezahlen, um seinen Geist zu entladen. In diesem Moment möchte ich einfach nur eine Umarmung.\n\nKeine Kontrolle über die Dinge zu haben, ist beängstigend.",
-      diary_entry_4_date: "2026-06-15",
-      diary_entry_4_title: "maracaibo",
-      diary_entry_4_text: "Ich hatte vergessen, es zu erzählen, aber ich war in Maracaibo, wie wäre es damit? Ehrlich gesagt dachte ich, es wäre schrecklich, aber es war großartig, das Airbnb, in dem ich übernachtet habe, die Betreuung war super, die Klimaanlage perfekt, das Essen sehr lecker, als ich dort war, habe ich keine Stromausfälle erlebt, allerdings ist die Hitze schrecklich, ich bin in der Innenstadt fast in Ohnmacht gefallen, ich hatte wirklich schlechte Dinge von dort gehört, es sieht sogar sehr sicher aus, ich war nachts mit dem Motorrad in der Stadt unterwegs und alles war gut, man sieht, dass die Leute den Verkehr respektieren, ich hatte keine Schrecksekunden.\n\nAuf der Hinfahrt habe ich einige MotoGP-Momente erlebt hahaha, aber ja, ICH BIN EIN SUPER FAHRER, das Motorrad hat sich perfekt verhalten, bei jeder Fahrt mag ich es mehr.\n\nDas Sambil ist brutal, ein verdammtes Kunstwerk, das Kino ist Cinesunidos und wow, es ist wunderschön, ich muss unbedingt einen Film sehen, der Food-Court ist riesig und mit viel Auswahl, ich wollte schon immer KFC probieren, und das habe ich getan, ich liebte die Dynamik beim Bestellen, ein Projekt steht an 👀.\n\nDie Kumpels haben sich toll verhalten, die Reaktion war episch, ich glaube, sie dachten, es wäre eine Lüge, dass ich Maracaibo besuchen würde, aber nein, wir hatten eine super Zeit, die Orte, das Bowling, die Drinks, alles super cool.\n\nIch werde wieder hinfahren, ich weiß nicht wann, aber da ich ich bin, wird es wieder aus dem Nichts sein, an einem Tag, an dem mir langweilig ist, halte dich nicht davon ab, etwas zu tun, LEBE.\n\nDieser Monat war zweifellos besser als der vorherige, hoffen wir, dass er genauso gut endet.",
-      diary_entry_5_date: "2026-08-13",
-      diary_entry_5_title: "feeling",
-      diary_entry_5_text: "Ich fahre diesen Samstag auf eine Reise, ich habe ein bisschen Angst, es ist seltsam dieses Mal, aber es ist wie es ist, ich möchte ein bisschen von hier wegkommen und mich ein paar Tage woanders ausruhen. Ich war ohne Grund müde, was jemand anderes als Faulheit bezeichnen würde, ich weiß nicht, was es in meinem Fall ist, aber es ist schrecklich, ohne jegliche Energie aufzuwachen, ich muss sicher ein gesundheitliches Problem haben, aber ich bin zu stur, um zum Arzt zu gehen haha.\n\nIn letzter Zeit hatte ich dieses *feeling* der Unzulänglichkeit, nicht mir selbst gegenüber, sondern anderen gegenüber. Es ist lustig, denn unter so vielen Dingen, die meine Mutter sagt, hat sie immer gesagt, dass mein Vater und ich uns ähnlich sind, weil wir beide sehr freigiebig mit anderen Menschen sind und dass wir sehr dumm sind, das zu tun, aber gleichzeitig habe ich das Gefühl, dass ich nicht genug gebe.\n\nUnter anderem war das Projekt, an dem ich mit den anderen Jungs arbeite, in letzter Zeit in der Entwicklung super langsam, sie machen was sie wollen mit Meetings, Lieferzeiten und wenn ihnen die Tokens in den KIs ausgehen, die sie benutzen, pausieren sie die Entwicklung, weil sie nicht wirklich programmieren können. Es ist wirklich eine gute Idee, aber ich fange an zu glauben, dass wir sie wegen der Nachlässigkeit anderer nicht präsentieren können... vielleicht hätte ich sie von Anfang an alleine entwickeln sollen.",
-      diary_entry_5_hidden: "true",
-      diary_entry_6_date: "2026-09-01",
-      diary_entry_6_title: "neuigkeiten",
-      diary_entry_6_text: "Heute habe ich unglaubliche Neuigkeiten erhalten, und Gott sei Dank, der Tag begann wie Scheiße, ich wachte ohne Strom auf und das ist immer stressig, ich fuhr mit dem Auto los, um Empanadas zum Frühstück zu essen, weil ich zu hungrig war, auf dem Weg erhielt ich mehrere Anrufe von einem der Jungs aus dem mallapos-Team, ich ignorierte ihn, weil ich das beim Fahren so mache; ich will keine Unfälle, aber unter den Nachrichten, die ich sehen konnte, stand, dass wir die E-Mail von casa212 erhalten hatten, um mit einem Interview mit Diego Salas, dem Mitbegründer und CFO von Yummy Rides, fortzufahren, es war unglaublich, von 400 Leuten kamen wir unter die letzten 16 der Kohorte, das hat meine Stimmung wirklich gehoben. Danach schrieb ich, um die Neuigkeiten jemandem zu erzählen, der mir nun ja, sehr wichtig ist, ein Mädchen, das wie ein Parasit in meinem Kopf ist, sie war die erste Person, der ich erzählte, was passiert war, sie gratulierte mir und so weiter, dann erzählte ich es meinen Freunden und sonst niemandem.\n\nIch habe das Gefühl, dass wir beide eine unglaubliche Verbindung haben, aber leider gibt es etwas, das verhindert, dass sich die Dinge entwickeln, ich lud sie ein, um die Neuigkeiten Tage später zu \"feiern\" und ihr etwas zu geben, worum sie mich auf der letzten Reise gebeten hatte, eine Besorgung und außerdem ihr einige Geschenke zu geben, die ich ihr gekauft habe, ja, ich bin ein Idiot. Ihre Antwort war ja, sie nannte mir die Tage, an denen sie frei hatte, in einem recht fröhlichen Ton, habe ich die Dinge falsch interpretiert? war sie wirklich fröhlich? Ich werde es nie erfahren, mit ihr ist es so, sie ist sehr seltsam, ich sagte ihr, welcher Tag perfekt zum Ausgehen wäre, und danach hat sich alles wieder in Luft aufgelöst, in einem Moment klingt sie glücklich über die Einladung und sagt zu, und im nächsten braucht sie lange zum Antworten und ihre Nachrichten sind sehr trocken, sie ist verdammt unentschlossen. In dieser Nacht wurde ich müde, das ist schon mehrmals passiert, wir einigen uns auf etwas und der ganze Plan geht wegen ihr den Bach runter, ich verstehe sie nicht, sie sollte lernen, Nein zu sagen und die Dinge an ihren Platz zu stellen, das würde dazu führen, dass ich keine Zeit verschwende und sie auch nicht, aber vielleicht gefällt ihr das, oder? jemanden hinter sich her zu haben, um ihr Ego zu stärken, nicht mehr, ich bin müde.\n\nIch hoffe, nicht wieder zum selben Punkt zurückzukehren, das war das zweite Mal, und ich war nicht derjenige, der das alles angefangen hat.\nEs wird kein drittes Mal geben.",
-      diary_entry_6_hidden: "true",
       contact: "Kontakt",
       about_image_alt: "ich",
       about_intro_kicker: "home base",
@@ -401,7 +365,19 @@ const resources: TranslationResources = {
       not_found_link: "[ Zurück zur Basis ]",
       language_label: "Sprache",
       photo_open: "Größer anzeigen",
-      close: "Schließen"
+      photo_prev: "Vorheriges Foto",
+      photo_next: "Nächstes Foto",
+      close: "Schließen",
+      seo_home_title: "SantiiRepair | Santiago Ramirez — Entwickler, Open Source & Notizen",
+      seo_home_description: "Persönlicher Bereich von Santiago Ramirez (SantiiRepair) — Softwareentwicklung, Open-Source-Philosophie, Motorradreisen und ungefilterte Notizen.",
+      seo_trips_title: "Motorradreisen & Routen — SantiiRepair | Santiago Ramirez",
+      seo_trips_description: "Motorradrouten und Reisen durch Venezuela: Páramo de Mérida, Pico Espejo, Choroní, La Azulita und mehr, von Santiago Ramirez.",
+      seo_favorites_title: "Favoriten (Filme, Serien, Musik) — SantiiRepair",
+      seo_favorites_description: "Lieblingsfilme, -serien, Haustiere und Playlist von Santiago Ramirez (SantiiRepair).",
+      seo_diary_title: "system_logs (Logbuch) — SantiiRepair",
+      lang_hint_text: "Diese Seite gibt es auch auf Deutsch.",
+      lang_hint_action: "Auf Deutsch ansehen",
+      diary_entry_link: "Link zu diesem Eintrag"
     }
   },
   ru: {
@@ -416,12 +392,6 @@ const resources: TranslationResources = {
       diary: "Бортовой журнал",
       diary_title: "system_logs",
       diary_subtitle: "Записываю что-то каждый день... наверное?",
-      diary_entry_1_date: "2026-05-07",
-      diary_entry_1_title: "репарентинг",
-      diary_entry_1_text: "Сегодня я ходил в кино, смотрел фильм Super Mario Galaxy, хотя опоздал на 13 минут; мне понравилось.\n\nВыходя из кинотеатра, я вспомнил слова, сказанные мне пару недель назад: ходить в кино одному — это как-то депрессивно. Человек, который это сказал, утверждал, что если бы он там работал и увидел меня одного с попкорном и сладостями, заходящего в зал, он бы надо мной посмеялся; я до сих пор не уверен, была ли это шутка или всё серьезно, но это заставило меня задуматься, почему я хожу один. На самом деле мне это нравится, мне не важно, что я один, я люблю ходить в кино, слышать смех других, крики восторга, оборачиваться и видеть лица других — счастливые, испуганные, сосредоточенные, объемный звук зала... не знаю, мне это нравится, но в то же время я подумал о последствиях.\nИ это заставило меня задуматься о других тратах, которые я совершаю, таких как аксессуары и, чаще всего, еда. Я вспомнил Макдоналдс и то, почему я так часто туда хожу; размышления об этом заставили меня осознать реальность этих вещей: «репарентинг» или «гиперкомпенсация». В детстве я был в кино всего 3 или 4 раза; первые фильмы я не помню, но последние — да: это были «Дом» и «В поисках Дори».\n\n«Дом» я смотрел с родителями. Поход на этот фильм на самом деле не планировался; кажется, мы вышли пообедать, пошли в кино, и это был единственный детский или «приличный» фильм в прокате. Понравился ли он мне? Нет, ха-ха, но эй, это был единственный фильм, который я посмотрел с родителями; кроме того, кажется, это была наша последняя совместная прогулка.\n\n«В поисках Дори»... хм, ну такое, но я вышел в свет, сделал что-то необычное в тот день; инициатива исходила от дочки маминой подруги.\n\nСуть в том, что многие вещи, которые я не делал или которых у меня не было в детстве, сегодня я делаю очень часто, и это может стать проблемой; мне нужно над этим работать.",
-      diary_entry_2_date: "2026-05-11",
-      diary_entry_2_title: "wallflower",
-      diary_entry_2_text: "Отключили электричество (как обычно), поэтому я поехал на Voge в Ла-Кулата; это был его первый раз там, понимаешь? Наверное, это своего рода традиция; ну, машину я в Ла-Кулата еще не возил, ха-ха. Ехал со страхом; уверен, это из-за того, что был без перчаток. Кажется, они стали частью меня; чувствую себя уязвимым. Забавно и тревожно, что я потерял свои перчатки; это совсем на меня не похоже. Заметка: нужно купить новые перчатки. В общем... сидеть дома без возможности работать, потому что батарея ноутбука садится через 40 минут, не входило в мои планы, а если бы я лег спать, то чувствовал бы, что трачу время впустую.\n\nВчера я прочитал о фильме под названием «Общество мертвых поэтов», заглянул в синопсис, и он напомнил мне «Хорошо быть тихоней»; словно игла в мозгу, возникло навязчивое желание пересмотреть его. Первый раз я видел его пару лет назад, и он мне очень понравился.\n\nИ вот я только что пересмотрел его снова, спустя несколько, много, довольно много месяцев, и поразительно, как меняется наше восприятие вещей. Может, дело в зрелости, которую мы обретаем? Не знаю. Мне безумно нравится химия в этом фильме; было бы здорово прожить нечто подобное.\n\nНа этот раз, когда я услышал тот самый культовый диалог между Чарли и мистером Андерсоном, он зацепил меня иначе. Несмотря на то, что контекст вопроса романтический, это реальность во всех сферах; да, возможно, это кажется бессмысленным, но посмотри на это под другим углом.\n\nЭффект от повторного просмотра был почти таким же, как в первый раз, только чуть острее. Было всё... слезы, смех, печаль... или моменты, когда я ставил фильм на паузу и думал о причинах и следствиях; немногие фильмы вызывали у меня подобный эффект, и только я знаю почему.",
       contact: "Контакт",
       about_image_alt: "я",
       about_intro_kicker: "home base",
@@ -452,17 +422,6 @@ const resources: TranslationResources = {
       favorites_description: "Мой раздел с избранным, если тебе интересно, вот он.",
       favorites_title: "i eat losers for breakfast",
       moto_alt: "Мотоцикл",
-      diary_entry_3_date: "2026-05-18",
-      diary_entry_3_title: "вне контроля",
-      diary_entry_3_text: "Ужасный день, проснулся рано, чтобы внести последние штрихи в проект, в голове была такая каша, что идеи не шли, проснулся уставшим, без желания весь день смотреть в чертов экран, вышел на парковку посмотреть на свои вещи, может, это придало бы мотивации... шина у машины спустила, ее раздавило весом машины, вчера после долгих уговоров я согласился отвезти подругу маминой подруги к такой-то, я правда не хотел этого делать, было предчувствие... в общем, я всегда это говорил, но я идиот, за доброту ничего не получаешь. Проклятый ПОДЛИЗА!\n\nДень шел, а я все так же сидел, и мозг не работал, идей не было, искры не было, поэтому я шел в кровать и ставил будильник, потому что знал, что если не сделаю этого, то провалюсь в глубокий сон, просыпался и — Вуаля! Искра была, но потом снова пустота, провел в этом весь день, пока сон не перестал помогать.\n\nНастало время встречи, и это было ужасно, когда я рассказывал о новом, мой английский куда-то исчез, не знаю, что случилось, забывал слова, и это потянуло за собой другое — сомнения во время разговора: правильно ли я произношу, правильно ли склоняю слова; полный провал.\n\nПолучил сообщение не в самом приятном тоне, кажется, мой босс думает, что я ко всему отношусь легкомысленно, может, я неправильно понял, не знаю, но это стало вишенкой на торте, еще одна мысль на завтра.\n\nМне страшно, и не из-за вышесказанного, мне изменяет память, я чувствую, что задыхаюсь в своей комнате, у меня все чаще болит голова, тошнит, хотя я не болен, все снова превращается в замкнутый круг, я знаю, что должен выговориться кому-то, но единственного человека, который у меня был, больше нет здесь, может, пришло время написать доктору Эдди, ну, я все еще думаю, что платить кому-то за то, чтобы разгрузить голову, — это абсурд. В этот момент мне просто хочется, чтобы меня обняли.\n\nОтсутствие контроля над вещами пугает.",
-      diary_entry_4_date: "2026-06-15",
-      diary_entry_4_title: "maracaibo",
-      diary_entry_4_text: "Я забыл рассказать, но я ездил в Маракайбо, как вам такое? Честно говоря, я думал, что это будет ужасно, но это было здорово, Airbnb, где я остановился, обслуживание было супер, кондиционер идеальный, еда очень вкусная, находясь там, я не сталкивался с отключениями электричества, правда, жара ужасная, я чуть не упал в обморок в центре, я действительно слышал плохие вещи оттуда, он даже выглядит очень безопасным, я ездил на мотоцикле по городу ночью, и все было хорошо, видно, что люди соблюдают правила дорожного движения, я ни разу не испугался.\n\nПо дороге туда я пережил несколько моментов motogp, ха-ха-ха, но да, Я СУПЕР ГОНЩИК, мотоцикл вел себя идеально в каждой поездке, он нравится мне все больше.\n\nSambil — это просто жесть, чертово произведение искусства, кинотеатр — cinesunidos, и вау, он прекрасен, я должен сходить посмотреть фильм, фуд-корт огромный и с большим выбором, я всегда хотел попробовать KFC, и я это сделал, мне очень понравилась динамика заказа, грядет проект 👀.\n\nПарни вели себя отлично, реакция была эпичной, я думаю, они думали, что это ложь, что я поеду в Маракайбо в гости, но нет, мы суперски провели время, места, боулинг, напитки, все супер круто.\n\nЯ поеду снова, не знаю когда, но зная меня, это снова будет из ниоткуда, в день, когда мне будет скучно, не сдерживай себя от того, чтобы что-то сделать, ЖИВИ.\n\nЭтот месяц, несомненно, был лучше предыдущего, будем надеяться, что он закончится так же хорошо.",
-      diary_entry_5_date: "2026-08-13",
-      diary_entry_5_title: "feeling",
-      diary_entry_5_text: "В эту субботу я отправляюсь в поездку, мне немного страшно, в этот раз как-то странно, но что есть, то есть, я хочу немного отдалиться отсюда и пару дней отдохнуть в другом месте. Я уставал без причины, то, что кто-то другой назвал бы ленью, я не знаю, что это в моем случае, но это ужасно, просыпаться без сил, у меня наверняка проблемы со здоровьем, но я слишком упрям, чтобы идти к врачу, ха-ха.\n\nВ последнее время я испытываю этот *feeling* недостаточности не по отношению к себе, а по отношению к другим, это забавно, потому что среди стольких вещей, которые говорит моя мама, она всегда говорила, что мы с папой похожи, потому что мы оба очень отдаем себя другим людям и что мы очень глупы, делая это, но в то же время я чувствую, что отдаю недостаточно.\n\nСреди прочего, проект, над которым я работаю с остальными ребятами, в последнее время продвигается супер медленно, они делают что хотят с собраниями, сроками сдачи, и если у них заканчиваются токены в ИИ, которые они используют, они приостанавливают разработку, потому что на самом деле не умеют программировать. Это действительно хорошая идея, но я начинаю думать, что мы не сможем ее представить из-за халатности других... возможно, мне следовало с самого начала разрабатывать ее одному.",
-      diary_entry_5_hidden: "true",
-      diary_entry_6_hidden: "true",
       intro_text:
         "Маленькие вещи, простые вещи... ехать куда угодно просто чтобы сжечь бензин, слушать ностальгическую музыку старых групп, смотреть фэнтези фильмы или сериалы, пить Nescafe ранним утром, наблюдать восход солнца, пить и смеяться пока не заболит грудь... просто наслаждаться чем угодно в этом хаотичном мире.",
       pets_title: "питомцы",
@@ -531,7 +490,19 @@ const resources: TranslationResources = {
       not_found_link: "[ Вернуться на базу ]",
       language_label: "Язык",
       photo_open: "Открыть крупнее",
-      close: "Закрыть"
+      photo_prev: "Предыдущее фото",
+      photo_next: "Следующее фото",
+      close: "Закрыть",
+      seo_home_title: "SantiiRepair | Сантьяго Рамирес — разработчик, open source и заметки",
+      seo_home_description: "Личное пространство Сантьяго Рамиреса (SantiiRepair) — разработка ПО, философия open source, мотопутешествия и заметки без фильтров.",
+      seo_trips_title: "Мотопутешествия и маршруты — SantiiRepair | Сантьяго Рамирес",
+      seo_trips_description: "Маршруты и мотопутешествия по Венесуэле: Парамо-де-Мерида, Пико-Эспехо, Чорони, Ла-Асулита и другие — Сантьяго Рамирес.",
+      seo_favorites_title: "Избранное (фильмы, сериалы, музыка) — SantiiRepair",
+      seo_favorites_description: "Любимые фильмы, сериалы, питомцы и плейлист Сантьяго Рамиреса (SantiiRepair).",
+      seo_diary_title: "system_logs (Бортовой журнал) — SantiiRepair",
+      lang_hint_text: "Эта страница есть и на русском.",
+      lang_hint_action: "Открыть на русском",
+      diary_entry_link: "Ссылка на эту запись"
     }
   }
 };
@@ -539,62 +510,63 @@ const resources: TranslationResources = {
 export const SUPPORTED_LANGUAGES = ["es", "en", "de", "ru"] as const;
 export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
-// Language of the HTML generated at build time (matches <html lang="es"> in index.html).
-export const PRERENDER_LANGUAGE: Language = "es";
+// Spanish lives at "/", the other languages under "/en/", "/de/", "/ru/".
+export const DEFAULT_LANGUAGE: Language = "es";
 
 const LANGUAGE_STORAGE_KEY = "lang";
 
-function isSupported(lang: string | null | undefined): lang is Language {
+export function isSupported(lang: string | null | undefined): lang is Language {
   return !!lang && (SUPPORTED_LANGUAGES as readonly string[]).includes(lang);
 }
 
-// `lng` is passed explicitly when rendering at build time (no browser APIs there).
-export async function initI18n(lng?: Language): Promise<void> {
+export async function initI18n(): Promise<void> {
   await i18next.init({
-    lng: lng ?? detectLanguage(),
+    lng: DEFAULT_LANGUAGE,
     fallbackLng: "en",
-    resources
+    resources,
+    showSupportNotice: false
   });
 }
 
-export async function setLanguage(lang: Language): Promise<void> {
-  try {
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
-  } catch {
-    // Storage can be unavailable (private mode); the choice just won't persist.
-  }
-  await i18next.changeLanguage(lang);
-  document.documentElement.lang = lang;
+// The language comes from the URL. App sets it at the start of every render, before any
+// page calls t(), so all texts of a render use the same language (also at build time).
+let activeLanguage: Language = DEFAULT_LANGUAGE;
+
+export function setActiveLanguage(lang: Language): void {
+  activeLanguage = lang;
 }
 
-export function onLanguageChange(listener: (lang: string) => void): () => void {
-  i18next.on("languageChanged", listener);
-  return () => i18next.off("languageChanged", listener);
+export function currentLanguage(): Language {
+  return activeLanguage;
 }
 
 export function t(key: string, options?: Record<string, any>): string {
-  return i18next.t(key, options);
+  return i18next.t(key, { lng: activeLanguage, ...options });
 }
 
 export function exists(key: string): boolean {
-  return i18next.exists(key);
+  return i18next.exists(key, { lng: activeLanguage });
 }
 
-export function currentLanguage(): string {
-  return i18next.language;
-}
-
-function detectLanguage(): Language {
-  let saved: string | null = null;
+// What the visitor would rather read: their last explicit choice, else the browser language.
+export function preferredLanguage(): Language {
   try {
-    saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (isSupported(saved)) {
+      return saved;
+    }
   } catch {
-    saved = null;
-  }
-  if (isSupported(saved)) {
-    return saved;
+    // Storage unavailable (private mode): fall back to the browser language.
   }
 
-  const langCode = navigator.language.split("-")[0];
-  return isSupported(langCode) ? langCode : "en";
+  const browserLanguage = navigator.language.split("-")[0];
+  return isSupported(browserLanguage) ? browserLanguage : "en";
+}
+
+export function savePreferredLanguage(lang: Language): void {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+  } catch {
+    // Storage unavailable: the choice just won't be remembered.
+  }
 }

@@ -1,6 +1,6 @@
 ---
 date: 2026-05-18
-hidden: false
+hidden: true
 ---
 
 ## es: fuera de control
